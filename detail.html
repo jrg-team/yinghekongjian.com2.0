@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>硬核空间</title>
+  <meta name="keyword"
+    content="硬核空间, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
+  <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+  <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="./css/detail.scss">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      头部
+    </header>
+    <div class="swiper-container pc">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <!-- slides -->
+        <swiper-slide>
+          <div class="pic pic-1">I'm Slide 1</div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="pic pic-2">I'm Slide 2</div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="pic pic-3">I'm Slide 3</div>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+    </div>
+    <section class="container" v-if="1 === activeIndex">
+      <h1 class="title">终于来了，面向未来的全栈开发体系课1</h1>
+      <div class="md-wrapper" v-html="renderMd()"></div>
+    </section>
+    <section class="container" v-if="2 === activeIndex">
+      <h1 class="title">终于来了，面向未来的全栈开发体系课2</h1>
+      <div class="md-wrapper" v-html="renderMd()"></div>
+    </section>
+    <section class="container" v-if="3 === activeIndex">
+      <h1 class="title">终于来了，面向未来的全栈开发体系课3</h1>
+      <div class="md-wrapper" v-html="renderMd()"></div>
+    </section>
+    <footer>
+      底部
+    </footer>
+  </div>
+
+  <script src="./js/detail.js"></script>
+</body>
+
+</html>
