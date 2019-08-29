@@ -1,0 +1,18 @@
+@import url('./reset.scss');
+@import url("./base.scss");
+@import url('./navigator.scss');
+
+.mobile {
+  display: none;
+}
+
+
+
+@media (max-width: 499px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}

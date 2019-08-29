@@ -1,0 +1,14 @@
+@import 'vars';
+@import url("./base.scss");
+
+.black-navigator {
+  min-height: 48px;
+  background-color: $black-navigator-bg-color;
+}
+.content {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 22px;
+  position: relative;
+  display: flex;
+}

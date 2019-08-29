@@ -6,6 +6,7 @@
   "author": "Zegendary <zxw1992513@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "layout": "^2.2.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
