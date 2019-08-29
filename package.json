@@ -4,5 +4,14 @@
   "main": "index.js",
   "repository": "git@github.com:jrg-team/yinghekongjian.com2.0.git",
   "author": "Zegendary <zxw1992513@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "vue-template-compiler": "^2.6.10"
+  }
 }
