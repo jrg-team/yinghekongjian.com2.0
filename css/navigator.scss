@@ -1,14 +1,60 @@
 @import 'vars';
-@import url("./base.scss");
+@import "./base.scss";
 
-.black-navigator {
-  min-height: 48px;
-  background-color: $black-navigator-bg-color;
-}
-.content {
-  margin: 0 auto;
-  max-width: 980px;
-  padding: 0 22px;
-  position: relative;
-  display: flex;
+header {
+  .content {
+    margin: 0 auto;
+    max-width: 980px;
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+
+  .black-navigator {
+    min-height: 48px;
+    padding: 0 22px;
+    background-color: $black-navigator-bg-color;
+    display: flex;
+    align-items: center;
+    .content {
+      > a {
+        max-width: 8em;
+        flex: 1;
+        text-align: center;
+        span {
+          font-size: 14px;
+          color: #fff;
+          &.active {
+            color: #A5A5A5;
+          }
+        }
+      }
+    }
+  }
+  .white-navigator {
+    padding: 0 22px;
+    .content {
+      padding: 20px 0 16px 0;
+      justify-content: space-between;
+      .items {
+        a {
+          font-size: 12px;
+          min-width: 4em;
+          margin: 0 16px;
+        }
+      }
+    }
+    .content::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: $background-grey;
+      height: 1px;
+      z-index: 1;
+    }
+  }
+
 }
