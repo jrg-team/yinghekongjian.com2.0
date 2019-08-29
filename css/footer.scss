@@ -42,7 +42,7 @@ footer> .content {
       span {
         color: $blue;
       }
-      border-bottom: 1px solid #d6d6d6;
+      border-bottom: $light-border;
     }
     .copyright, .contact {
       color: $text_sub;
@@ -51,7 +51,7 @@ footer> .content {
       >a:first-child {margin-left: 20px;}
       >a {
         padding-right: 10px;
-        border-right: 1px solid #d6d6d6;
+        border-right: $light-border;
         margin-right: 10px;
       }
       >a:last-child {border: none;}

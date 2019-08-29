@@ -5,6 +5,9 @@
   "repository": "git@github.com:jrg-team/yinghekongjian.com2.0.git",
   "author": "Zegendary <zxw1992513@qq.com>",
   "license": "MIT",
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.js"
+  },
   "dependencies": {
     "layout": "^2.2.0",
     "vue": "^2.6.10",
