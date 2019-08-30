@@ -1,5 +1,5 @@
 <template>
-  <section class="course-background">
+  <section class="course-wrapper">
     <div class="title">
       <h3>课程如何开展</h3>
       <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
@@ -80,7 +80,7 @@
 
 <style scoped lang="scss">
   @import '../css/vars';
-  .course-background {
+  .course-wrapper {
     background-color: #F2F2F2;
     position: relative;
     padding: 20vh 0 10vh;
@@ -88,7 +88,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      h3 { margin-bottom: 10px}
+      h3 { margin-bottom: 20px}
     }
     .image-wrapper {
       max-width: 900px;
