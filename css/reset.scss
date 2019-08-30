@@ -7,6 +7,13 @@ a {text-decoration: none; color: inherit;}
 ul, ol {list-style: none;}
 input, button, select, textarea {font: inherit;}
 
+body {
+  font-family: sans-serif, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+  @media(max-width: 499px){ font-size: 14px; }
+}
+
 p {
   font-weight: normal
 }
+
+[v-cloak] { display: none }
