@@ -14,42 +14,40 @@
 </head>
 
 <body>
-  <div id="app">
-    <header>
-      头部
-    </header>
+  <div id="app" v-cloak>
+    <my-navigator></my-navigator>
     <div class="swiper-container pc">
       <swiper :options="swiperOption" ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide>
-          <div class="pic pic-1">I'm Slide 1</div>
+        <swiper-slide :key="index" v-for="item,index in course_details">
+          <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_url)})`}">
+            <div class="name">{{item.name}}</div>
+          </div>
         </swiper-slide>
-        <swiper-slide>
-          <div class="pic pic-2">I'm Slide 2</div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="pic pic-3">I'm Slide 3</div>
-        </swiper-slide>
-        <!-- Optional controls -->
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+
+        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
+        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
       </swiper>
     </div>
-    <section class="container" v-if="1 === activeIndex">
-      <h1 class="title">终于来了，面向未来的全栈开发体系课1</h1>
-      <div class="md-wrapper" v-html="renderMd()"></div>
-    </section>
-    <section class="container" v-if="2 === activeIndex">
-      <h1 class="title">终于来了，面向未来的全栈开发体系课2</h1>
-      <div class="md-wrapper" v-html="renderMd()"></div>
-    </section>
-    <section class="container" v-if="3 === activeIndex">
-      <h1 class="title">终于来了，面向未来的全栈开发体系课3</h1>
-      <div class="md-wrapper" v-html="renderMd()"></div>
-    </section>
-    <footer>
-      底部
-    </footer>
+    <div class="swiper-container mobile">
+      <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
+        <swiper-slide :key="index" v-for="item,index in course_details">
+          <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_url)})`}">
+            <div class="name">{{item.name}}</div>
+            <div class="cover"></div>
+          </div>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
+        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
+      </swiper>
+    </div>
+    <transition-group name="fade" tag="div">
+      <section class="container" :key="index" v-for="item,index in course_details" v-if="index === activeIndex">
+        <h2 class="title">{{item.article_title}}</h2>
+        <div class="md-wrapper" v-html="marked(item.article)"></div>
+      </section>
+    </transition-group>
+    <my-footer></my-footer>
   </div>
 
   <script src="./js/detail.js"></script>
