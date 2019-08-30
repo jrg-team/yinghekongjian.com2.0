@@ -1,14 +1,118 @@
 @import 'vars';
-@import url("./base.scss");
-
-.black-navigator {
-  min-height: 48px;
-  background-color: $black-navigator-bg-color;
-}
-.content {
-  margin: 0 auto;
-  max-width: 980px;
-  padding: 0 22px;
-  position: relative;
-  display: flex;
+@import "./base.scss";
+header {
+  .content {
+    margin: 0 auto;
+    max-width: 980px;
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+  .iconfont {
+    color: white;
+  }
+  .hcsp-icon-white {
+    margin-right: 2em;
+  }
+  .black-navigator {
+    min-height: 48px;
+    padding: 0 22px;
+    background-color: $black-navigator-bg-color;
+    display: flex;
+    align-items: center;
+    .content {
+      > a {
+        max-width: 8em;
+        flex: 1;
+        text-align: center;
+        span {
+          font-size: 14px;
+          color: #fff;
+          &.active {
+            color: #A5A5A5;
+          }
+        }
+      }
+    }
+  }
+  .white-navigator {
+    padding: 0 22px;
+    .content {
+      padding: 20px 0 16px 0;
+      justify-content: space-between;
+      .items {
+        a {
+          font-size: 12px;
+          min-width: 4em;
+          margin: 0 16px;
+        }
+      }
+    }
+    .content::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: $background-grey;
+      height: 1px;
+      z-index: 1;
+    }
+  }
+  .navigator.mobile {
+    .icon-wrapper {
+      position: relative;
+      background-color: $black-navigator-bg-color;
+      padding: 10px;
+      .hcsp-zhankai {
+        position: relative;
+        z-index: $navigator-z-index
+      }
+      .logo {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .hcsp-icon-white {margin-right: 0}
+      }
+      z-index: $navigator-z-index;
+      &.black {background-color: black;}
+    }
+    .black-modal {
+      visibility: hidden;
+      &.active {visibility: visible}
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      .items-wrapper {
+        padding: 45px 40px 8px;
+        color: white;
+        li {
+          padding: 10px 0;
+          border-bottom: 1px solid #282828;
+          > ul {
+            display: none;
+          }
+        }
+        li:last-child, li.active {border: none;}
+        li.active {
+          color: #A5A5A5;
+          margin-bottom: 0;
+          > ul {
+            display: block;
+            margin-left: 1em;
+          }
+        }
+      }
+    }
+  }
 }

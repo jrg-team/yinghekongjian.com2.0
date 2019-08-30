@@ -1,6 +1,6 @@
-@import url('https://at.alicdn.com/t/font_1376020_clbo8wt68ot.css');
+@import url("https://at.alicdn.com/t/font_1376020_g5evri20dhn.css");
 h1 {
-  font-size: 72px;
+  font-size: 64px;
   line-height: 120%;
 }
 
@@ -26,7 +26,12 @@ h5 {
   line-height: 112.5%;
 }
 
+h1,h2,h3,h4,h5 {
+  font-weight: 600;
+}
+
 p {
   font-size: 16px;
   line-height: 180%;
 }
+
