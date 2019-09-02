@@ -1,8 +1,8 @@
 <template>
-  <section class="course-wrapper">
-    <div class="title">
+  <section class="course-wrapper section-margin">
+    <div class="title title-margin">
       <h3>课程如何开展</h3>
-      <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, sint?</p>
     </div>
     <div class="image-wrapper">
       <div class="row">
@@ -82,14 +82,6 @@
   @import '../css/vars';
   .course-wrapper {
     background-color: #F2F2F2;
-    position: relative;
-    padding: 20vh 0 10vh;
-    .title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h3 { margin-bottom: 20px}
-    }
     .image-wrapper {
       max-width: 900px;
       position: relative;

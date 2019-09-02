@@ -1,25 +1,25 @@
 <template>
-  <div class="preview-wrapper">
-    <h3 class="title">国内顶级水平Java教学</h3>
+  <div class="preview-wrapper section-margin">
+    <h3 class="title title-margin">国内顶级水平Java教学</h3>
     <div class="items-wrapper">
       <div class="row">
         <div class="item">
-          <h4>xxxxxxxxx</h4>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, molestias?</p>
         </div>
         <div class="item">
-          <h4>xxxxxxxxx</h4>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eveniet?</p>
         </div>
       </div>
       <div class="row">
         <div class="item">
-          <h4>xxxxxxxxx</h4>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, ullam!</p>
         </div>
         <div class="item">
-          <h4>xxxxxxxxx</h4>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <h4>Lorem ipsum.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, velit.</p>
         </div>
       </div>
     </div>
@@ -38,7 +38,6 @@
 <style scoped lang="scss">
   @import '../css/vars';
   .preview-wrapper {
-    padding: 20vh 0 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

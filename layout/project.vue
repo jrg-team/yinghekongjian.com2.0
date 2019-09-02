@@ -1,14 +1,14 @@
 <template>
-  <section class="project-wrapper">
-    <div class="title">
+  <section class="project-wrapper section-margin">
+    <div class="title title-margin">
       <h3>全面、深度、紧贴实战</h3>
-      <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx长文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi debitis facilis impedit inventore laudantium maiores minus neque omnis repellendus repudiandae.</p>
     </div>
     <div class="row">
       <div class="col vertical-center">
         <div class="text">
-          <h4>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
-          <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, necessitatibus!</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolor ea est fugit illum nam nisi, nobis quas reiciendis ullam.</p>
           <a href="#">查看完整课程大纲 <i class="iconfont hcsp-right"></i> </a>
         </div>
       </div>
@@ -25,8 +25,8 @@
       <div class="col vertical-center text-wrapper">
         <div class="text">
           <p>实战项目</p>
-          <h4>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
-          <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+          <h4>Lorem ipsum dolor sit amet.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi eveniet excepturi iusto, nam nulla praesentium tenetur ut veritatis voluptas!</p>
           <a href="#">进一步了解课程详情 <i class="iconfont hcsp-right"></i> </a>
         </div>
       </div>
@@ -45,21 +45,6 @@
   @import '../css/vars';
   .project-wrapper {
     background-color: #F2F2F2;
-    position: relative;
-    padding: 20vh 0 10vh;
-    overflow: hidden;
-    .title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h3 { margin-bottom: 20px}
-      p {
-        max-width: 30em;
-        word-break: break-word;
-        text-align: center;
-      }
-      margin-bottom: 10vh;
-    }
     .row {
       display: flex;
       max-width: 980px;

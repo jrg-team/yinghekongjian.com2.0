@@ -1,6 +1,6 @@
 <template>
-  <section class="learning-wrapper">
-    <div class="title">
+  <section class="learning-wrapper section-margin">
+    <div class="title title-margin">
       <h3>学习与就业保障</h3>
       <p>我们提供尽可能好的教学服务，让学生轻松、真实的环境下学习。保障学习效果，保障就业</p>
     </div>
@@ -59,14 +59,7 @@
   @import "../css/vars";
   .learning-wrapper {
     background-color: #F2F2F2;
-    position: relative;
-    padding-bottom: 10vh;
-    .title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h3 { margin-bottom: 20px}
-    }
+    padding-top: 0;
     .text-wrapper {
       max-width: 980px;
       position: relative;
