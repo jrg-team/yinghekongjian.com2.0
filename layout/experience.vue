@@ -64,20 +64,13 @@
 		margin: 0 auto;
 		position: relative;
 		max-width: 980px;
-		.row {
-			display: flex;
-			align-items: center;
-		}
+		.row {display: flex; align-items: center;}
 		.row > .col {
 			max-width: 50%;
 			&.title {
 				padding-right: 5vw;
-				p {
-					margin: 20px 0 10px;
-				}
-				a {
-					color: $blue;
-				}
+				p {margin: 20px 0 10px;}
+				a {color: $blue;}
 			}
 		}
 	}
@@ -89,15 +82,9 @@
 			color: $blue;
 			font-size: 16px;
 		}
-		h4 {
-			padding: 14px 0 30px;
-		}
-		p {
-			min-height: 108px;
-		}
-		& + & {
-			margin-left: 40px;
-		}
+		h4 {padding: 14px 0 30px;}
+		p {min-height: 108px;}
+		& + & {margin-left: 40px;}
 	}
 	section.contact-download-wrapper {
 		background-color: #F2F2F2;
