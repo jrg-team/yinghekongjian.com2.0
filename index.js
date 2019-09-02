@@ -6,10 +6,11 @@ import CustomVideo from './components/CustomVideo'
 import Course from './layout/course'
 import Project from './layout/project'
 import Learning from './layout/learningAndJob'
+import Experience from './layout/experience'
 
 new Vue({
   el: '#app',
   components: {
-    MyNavigator, MyFooter, CustomVideo, Preview, Course, Project, Learning
+    MyNavigator, MyFooter, CustomVideo, Preview, Course, Project, Learning, Experience
   }
 })

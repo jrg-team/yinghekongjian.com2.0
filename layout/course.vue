@@ -87,7 +87,7 @@
       position: relative;
       left: 0;
       right: 0;
-      margin: 100px auto 0;
+      margin: 0 auto;
       > .row {
         display: flex;
         position: relative;

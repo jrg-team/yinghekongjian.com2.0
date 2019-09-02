@@ -1,6 +1,6 @@
 @import 'vars';
 footer {
-  background-color: #f2f2f2;
+  background-color: #EAE9E9;
 }
 footer> .content {
   padding-top: 36px;
@@ -53,6 +53,10 @@ footer> .content {
         padding-right: 10px;
         border-right: $light-border;
         margin-right: 10px;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
       >a:last-child {border: none;}
     }
