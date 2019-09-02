@@ -29,17 +29,21 @@
 			</div>
 		</section>
 		<section class="contact-download-wrapper">
-			<div class="text-wrapper">
-				<i class="iconfont hcsp-article"></i>
-				<h6>联系我们</h6>
-				<p>可通过电话、微信或在线交流方式咨询。</p>
-				<a href="#">进一步了解<i class="iconfont hcsp-right"></i></a>
+			<div class="col">
+				<div class="text-wrapper">
+					<i class="iconfont hcsp-comment"></i>
+					<h6>联系我们</h6>
+					<p>可通过电话、微信或在线交流方式咨询。</p>
+					<a href="#">进一步了解<i class="iconfont hcsp-right"></i></a>
+				</div>
 			</div>
-			<div class="text-wrapper">
-				<i class="iconfont hcsp-article"></i>
-				<h6>联系我们</h6>
-				<p>可通过电话、微信或在线交流方式咨询。</p>
-				<a href="#">进一步了解<i class="iconfont hcsp-right"></i></a>
+			<div class="col">
+				<div class="text-wrapper">
+					<i class="iconfont hcsp-article"></i>
+					<h6>下载课程大纲</h6>
+					<p>下载 PDF 格式的课程大纲</p>
+					<a href="#">进一步了解<i class="iconfont hcsp-right"></i></a>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -100,18 +104,35 @@
 		padding: 15vh 0;
 		display: flex;
 		justify-content: center;
+		.col {
+			max-width: 50%; flex: 1;
+			display: flex;
+			&:first-child {justify-content: flex-end;}
+			&:last-child {justify-content: flex-start;}
+		}
 		div.text-wrapper {
 			text-align: center;
-			>i.iconfont {
+			> i.iconfont {
 				display: block;
 				font-size: 48px;
 				color: #888888;
 				margin-bottom: 20px;
 			}
-			>h6 {font-weight: $font-bold; margin-bottom: 10px}
-			>p {font-size: 14px; margin-bottom: 10px; max-width: 20em;}
-			>a {font-size: 14px; color: $blue; padding-left: 10px; }
-			&:last-child {margin-left: 10vw;}
+			> h6 {
+				font-weight: $font-bold;
+				margin-bottom: 10px
+			}
+			> p {
+				font-size: 14px;
+				margin-bottom: 10px;
+				max-width: 20em;
+			}
+			> a {
+				font-size: 14px;
+				color: $blue;
+				padding-left: 10px;
+			}
+			margin: 0 8vw;
 		}
 	}
 
