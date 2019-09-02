@@ -1,0 +1,84 @@
+@import url('./reset.scss');
+@import url("./base.scss");
+
+.mobile {
+  display: none;
+}
+
+.banner{
+  width: 100%;
+  vertical-align: center;
+}
+
+h2,h3{
+  &.pc{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+.arrangements{
+  &.pc{
+    .row{
+      display: flex;
+      &.reverse{
+        flex-direction: row-reverse;
+        .content{
+          padding: 60px 100px 60px 120px;
+        }
+      }
+      .image,.content{width: 50%}
+      .image{
+        background-position: center;
+        background-size: cover;
+      }
+      .content{
+        background: #FAFAFA;
+        padding: 60px 120px 60px 100px;
+      }
+    }
+  }
+}
+.additions{
+  &.pc{
+    max-width: 960px;
+    margin: 0 auto;
+    .addition{
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      .imgWrapper{
+        width: 400px;
+        min-height: 200px;
+        img{width: 400px;height: auto;}
+      }
+      .content{
+        padding: 30px;
+      }
+    }
+  }
+}
+.protections{
+  &.pc{
+    max-width: 960px;
+    margin: 0 auto 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+    .odd{
+      margin-right: 4%;
+    }
+    .protection{
+      width: 48%;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
