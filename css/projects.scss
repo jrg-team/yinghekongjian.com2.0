@@ -1,0 +1,76 @@
+@import url('./reset.scss');
+@import url("./base.scss");
+
+.mobile {
+  display: none;
+}
+
+h2,h3{
+  &.pc{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  &.mobile{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.projects{
+  &.pc{
+    .row{
+      display: flex;
+      min-height: 360px;
+      &.reverse{
+        flex-direction: row-reverse;
+        .content{
+          padding: 60px 100px 60px 120px;
+        }
+      }
+      .image,.content{width: 50%}
+      .image{
+        background-position: center;
+        background-size: cover;
+      }
+      .content{
+        background: linear-gradient(180deg, #F4F4F4 0%, #FFFFFF 99.96%);
+        padding: 60px 120px 60px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        a{color: #3475C6;}
+      }
+    }
+  }
+  &.mobile{
+    .project{
+      margin-bottom: 50px;
+      position: relative;
+      img{width: 100%;vertical-align: center;}
+      .content{
+        position: relative;
+        padding: 0 10px;
+        >a{
+          display: block;
+          text-align: center;
+          background: #333333;
+          padding: 5px 0;
+          color: #FFF;
+          margin: 40px 0 50px 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 499px) {
+  .pc {
+    display: none!important;
+  }
+  .mobile {
+    display: block;
+  }
+}
