@@ -23,7 +23,7 @@
         </div>
       </div>
     </nav>
-    <nav class="navigator mobile">
+    <nav class="navigator mobile" @touchmove.prevent>
       <div class="icon-wrapper">
         <i class="iconfont hcsp-zhankai" @click="toggleModalVisible"></i>
         <div class="logo">

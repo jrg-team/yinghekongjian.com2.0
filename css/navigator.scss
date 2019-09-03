@@ -87,12 +87,13 @@ header {
     .black-modal {
       visibility: hidden;
       &.active {visibility: visible}
-      position: absolute;
+      position: fixed;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       background-color: black;
+      z-index: $mask-z-index;
       .items-wrapper {
         padding: 45px 40px 8px;
         color: white;
