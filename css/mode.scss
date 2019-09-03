@@ -27,10 +27,14 @@ h2,h3,h4{
   &.pc{
     .row{
       display: flex;
+      min-height: 360px;
       &.reverse{
         flex-direction: row-reverse;
         .content{
           padding: 60px 100px 60px 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
       }
       .image,.content{width: 50%}
@@ -41,6 +45,7 @@ h2,h3,h4{
       .content{
         background: #FAFAFA;
         padding: 60px 120px 60px 100px;
+        a{color: #3475C6;}
       }
     }
   }
@@ -105,7 +110,7 @@ h2,h3,h4{
     }
   }
 }
-.protections{
+.guarantees{
   &.pc{
     max-width: 960px;
     margin: 0 auto 60px auto;
@@ -114,7 +119,7 @@ h2,h3,h4{
     .odd{
       margin-right: 4%;
     }
-    .protection{
+    .guarantee{
       width: 48%;
     }
   }
