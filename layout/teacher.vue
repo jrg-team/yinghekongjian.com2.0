@@ -3,7 +3,7 @@
     <swiper :options="teacherSwiperOption" ref="swiperImages">
       <swiper-slide v-for="(slide, index) in swiperSlides" :key="index">
         <div class="image-wrapper">
-          <img :src="customImage(index)" :alt="slide.name"/>
+          <img :src="$cdn(customImage(index))" :alt="slide.name"/>
         </div>
       </swiper-slide>
     </swiper>
@@ -141,6 +141,11 @@
           justify-content: center;
           align-items: center;
           cursor: pointer;
+          @media (max-width: 499px) {
+            margin-top: 10px;
+            height: 40px;
+            font-size: 16px;
+          }
         }
         .swiper-slide-active {
           opacity: 1;

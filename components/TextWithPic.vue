@@ -1,7 +1,7 @@
 <template>
   <div class="text-picture-wrapper">
     <slot name="image">
-      <img :src="imageSrc" alt="展示图"/>
+      <img :src="$cdn(imageSrc)" alt="展示图"/>
     </slot>
     <slot>
       <h3>{{title}}</h3>
@@ -51,6 +51,9 @@ export default {
       font-size: 14px;
       padding: 10px 0;
       margin-top: 10px;
+    }
+    & + & {
+      margin-top: 20px;
     }
   }
 

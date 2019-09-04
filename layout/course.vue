@@ -30,7 +30,7 @@
     <div class="image-wrapper mobile">
       <div v-for="row in items">
         <div class="section-wrapper" v-for="col in row" v-if="col.visible">
-          <img class="image" :src="col.image"/>
+          <img class="image" :src="$cdn(col.image)"/>
           <div class="text">
             <p>{{col.title}}</p>
             <h5>{{col.content}}</h5>

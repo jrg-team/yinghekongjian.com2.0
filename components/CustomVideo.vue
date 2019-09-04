@@ -1,23 +1,25 @@
 <template>
   <div class="video-wrapper">
     <div class="video-background-wrapper">
-      <img class="poster pc" :src="poster" alt="封面"/>
-      <div class="center-icon-wrapper">
+      <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
+      <video :poster="poster" ref="mobileVideo" class="mobile mobile-video">
+        <source :src="link" type="video/mp4">
+      </video>
+      <div class="center-icon-wrapper" :class="{playing: playing}">
         <i class="iconfont hcsp-bofang controller-button"
            @click="toggleModalVisible"></i>
         <h3 class="text">播放影片</h3>
       </div>
-      <a class="get-description" href="#">
+      <a class="get-description" href="#" :class="{playing: playing}">
         获取文字描述 <i class="iconfont hcsp-right"></i>
       </a>
     </div>
-    <div class="video-modal pc" v-show="modalVisible">
+    <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
       <div class="video-mask"></div>
       <div class="video-container">
-        <video id="introduction-video" :poster="poster">
+        <video :poster="poster" controls ref="pcVideo">
           <source :src="link" type="video/mp4">
         </video>
-        <i class="iconfont hcsp-bofang controller-button" @click="toggleModalVisible"></i>
         <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="toggleModalVisible"></i>
       </div>
     </div>
@@ -39,13 +41,24 @@
     name: 'CustomVideo',
     data() {
       return {
-        modalVisible: false
+        modalVisible: false,
+        playing: false,
+        isMobile: document.body.clientWidth < 500
       }
     },
     methods: {
       toggleModalVisible() {
+        const video = this.isMobile ? this.$refs.mobileVideo : this.$refs.pcVideo
+        if (this.modalVisible) {
+          this.playing = false
+          video.pause()
+        } else {
+          this.playing = true
+          video.controls = true
+          video.play()
+        }
         this.modalVisible = !this.modalVisible
-      }
+      },
     }
   }
 </script>
@@ -85,6 +98,7 @@
           width: 64px;
           font-size: 64px;
           display: block;
+          &.playing {display: none}
         }
       }
       a.get-description {
@@ -96,6 +110,35 @@
         left: 0;
         right: 0;
         margin: 0 auto;
+      }
+    }
+    @media (max-width: 499px) {
+      .video-background-wrapper {
+        max-width: 90vw;
+        div.center-icon-wrapper {
+          h3.text {
+            margin-top: 10px;
+            font-size: 14px;
+          }
+          i.controller-button {
+            width: 32px;
+            font-size: 32px;
+          }
+          &.playing {display: none}
+        }
+        .mobile-video {
+          width: 100%;
+        }
+        .playing {
+          display: none;
+        }
+        a.get-description {
+          padding: 10px 0;
+          bottom: 0;
+          &, .iconfont {
+            font-size: 12px;
+          }
+        }
       }
     }
   }
@@ -124,9 +167,10 @@
       video {
         max-width: 80vw;
         max-height: 80vh;
+        outline:none;
       }
       .playing {
-        display: none;
+        opacity: 0;
       }
       .controller-button {
         width: 64px;
@@ -141,6 +185,7 @@
         left: 0;
         right: 0;
         margin: auto;
+        transition: opacity .8s ease;
       }
       .hcsp-wentixuanzhong {
         font-size: 48px;

@@ -18,9 +18,9 @@
     </div>
     <div class="row wide pc">
       <div class="image-wrapper">
-        <img src="../assets/project1.png" alt="pic"/>
-        <img src="../assets/project1.png" alt="pic"/>
-        <img src="../assets/project1.png" alt="pic"/>
+        <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
+        <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
+        <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
       </div>
       <div class="col vertical-center text-wrapper">
         <div class="text">
@@ -46,9 +46,9 @@
     >
       <template v-slot:image>
         <div class="image-wrapper">
-          <img src="../assets/project1.png" alt="pic"/>
-          <img src="../assets/project1.png" alt="pic"/>
-          <img src="../assets/project1.png" alt="pic"/>
+          <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
+          <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
+          <img :src="$cdn('https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-17-44-29.png')" alt="pic"/>
         </div>
       </template>
     </TextWithPic>
