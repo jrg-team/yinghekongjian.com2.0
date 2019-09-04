@@ -4,7 +4,7 @@
       <h3>全面、深度、紧贴实战</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi debitis facilis impedit inventore laudantium maiores minus neque omnis repellendus repudiandae.</p>
     </div>
-    <div class="row">
+    <div class="row pc">
       <div class="col vertical-center">
         <div class="text">
           <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, necessitatibus!</h4>
@@ -16,7 +16,7 @@
         <img src="../assets/course-list.png" alt="pic"/>
       </div>
     </div>
-    <div class="row wide">
+    <div class="row wide pc">
       <div class="image-wrapper">
         <img src="../assets/project1.png" alt="pic"/>
         <img src="../assets/project1.png" alt="pic"/>
@@ -31,13 +31,22 @@
         </div>
       </div>
     </div>
-
+    <TextWithPic
+      class="mobile"
+      image-src="https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg"
+      title="hhhhhhh"
+      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at dolores ea, eius enim exercitationem facere itaque mollitia odio officiis placeat praesentium quaerat quas quis tenetur, veniam vero, voluptas. In."
+    ></TextWithPic>
   </section>
 </template>
 
 <script>
+  import TextWithPic from '../components/TextWithPic'
   export default {
-    name: 'project'
+    name: 'project',
+    components: {
+      TextWithPic
+    }
   }
 </script>
 
@@ -45,6 +54,9 @@
   @import '../css/vars';
   .project-wrapper {
     background-color: #F2F2F2;
+    @media (max-width: 499px) {
+      padding-top: 0;
+    }
     .row {
       display: flex;
       max-width: 980px;
