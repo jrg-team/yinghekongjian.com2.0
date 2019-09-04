@@ -65,7 +65,7 @@
       position: relative;
       left: 0;
       right: 0;
-      margin: 10vh auto 0;
+      margin: 0 auto;
       .row {
         display: flex;
         .col {

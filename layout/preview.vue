@@ -43,13 +43,9 @@
     justify-content: center;
     align-items: center;
     .items-wrapper {
-      margin-top: 10vh;
       max-width: 60vw;
       flex: 1;
-      .row {
-        display: flex;
-      }
-
+      .row {display: flex;}
       .row > .item{
         max-width: 50%;
         padding: 0 5vw;
@@ -63,7 +59,7 @@
       }
     }
     a {
-      margin-top: 20px;
+      margin-top: 40px;
       .appointment-button {
         padding: 10px;
         font-size: 16px;

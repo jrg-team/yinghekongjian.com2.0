@@ -76,7 +76,7 @@
           任何问题请致电 <span>400-618-3005</span> , 或者添加客服微信: <span>hungervalley</span>
         </div>
         <div class="copyright">
-          Copyright © 2019 Apple Inc. 保留所有权利。
+          Copyright © 2019 Hungervalley Inc. 保留所有权利。
           <a>隐私政策</a>
           <a>使用条款</a>
           <a>销售政策</a>

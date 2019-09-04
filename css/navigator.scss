@@ -85,14 +85,13 @@ header {
       &.black {background-color: black;}
     }
     .black-modal {
-      visibility: hidden;
-      &.active {visibility: visible}
-      position: absolute;
+      position: fixed;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       background-color: black;
+      z-index: $mask-z-index;
       .items-wrapper {
         padding: 45px 40px 8px;
         color: white;
@@ -100,19 +99,37 @@ header {
           padding: 10px 0;
           border-bottom: 1px solid #282828;
           > ul {
-            display: none;
+            color: #A5A5A5;
+            display: block;
+            margin-left: 1em;
           }
         }
         li:last-child, li.active {border: none;}
         li.active {
           color: #A5A5A5;
           margin-bottom: 0;
-          > ul {
-            display: block;
-            margin-left: 1em;
-          }
         }
       }
+    }
+    .menu-enter-active, .menu-leave-active {
+      transition: opacity .5s;
+    }
+    .menu-enter, .menu-leave-to{
+      opacity: 0;
+    }
+    .submenu-enter-active {
+      transition: opacity .5s;
+    }
+    .submenu-enter {
+      opacity: 0;
+    }
+    .submenu-leave-active {
+      overflow: hidden;
+      height: 5em;
+      transition: height .3s ease-out;
+    }
+    .submenu-leave-to {
+      height: 0;
     }
   }
 }
