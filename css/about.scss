@@ -1,0 +1,139 @@
+@import url('./reset.scss');
+@import url("./base.scss");
+
+.mobile {
+  display: none;
+}
+
+.banner{
+  width: 100%;
+  vertical-align: center;
+}
+
+h2,h3,h4{
+  &.pc{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  &.mobile{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.arrangements{
+  &.pc{
+    .row{
+      display: flex;
+      min-height: 360px;
+      &.reverse{
+        flex-direction: row-reverse;
+        .content{
+          padding: 60px 100px 60px 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+      .image,.content{width: 50%}
+      .image{
+        background-position: center;
+        background-size: cover;
+      }
+      .content{
+        background: #FAFAFA;
+        padding: 60px 120px 60px 100px;
+        a{color: #3475C6;}
+      }
+    }
+  }
+  &.mobile{
+    .arrangement{
+      margin-bottom: 50px;
+      position: relative;
+      .imageWrapper{
+        position: relative;
+        img{width: 100%;vertical-align: center;}
+        .imgCover{
+          position: absolute;
+          background: linear-gradient(360deg, #FFFFFF 0%, #FFFFFF 23.96%, rgba(255, 255, 255, 0) 100%);
+          bottom: 0;left: 0;right: 0;top: 0;
+        }
+      }
+      .content{
+        position: relative;
+        margin-top: -120px;
+        padding: 0 10px;
+        .md-wrapper{
+          a{
+            display: block;
+            text-align: center;
+            background: #333333;
+            padding: 5px 0;
+            color: #FFF;
+            margin: 40px 0 50px 0;
+          }
+        }
+      }
+    }
+  }
+}
+.additions{
+  &.pc{
+    max-width: 960px;
+    margin: 0 auto;
+    .addition{
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      .imgWrapper{
+        width: 400px;
+        min-height: 200px;
+        img{width: 400px;height: auto;}
+      }
+      .content{
+        padding: 30px;
+      }
+    }
+  }
+  &.mobile{
+    padding: 0 10px;
+    margin-bottom: 60px;
+    .addition{
+      margin-bottom: 50px;
+      .imgWrapper{
+        width: 100%;
+        img{width: 100%;vertical-align: top;}
+      }
+    }
+  }
+}
+.guarantees{
+  &.pc{
+    max-width: 960px;
+    margin: 0 auto 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+    .odd{
+      margin-right: 4%;
+    }
+    .guarantee{
+      width: 48%;
+    }
+  }
+  &.mobile{
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 499px) {
+  .pc {
+    display: none!important;
+  }
+  .mobile {
+    display: block;
+  }
+}
