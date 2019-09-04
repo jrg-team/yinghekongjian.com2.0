@@ -37,7 +37,7 @@
 							<li v-for="(item,index) in node" :class="{active: item.expanded}">
 								<a :href="item.link || 'javascript:void(0);'" @click="toggleSubmenu(index)">{{item.title}}</a>
 								<transition name="submenu">
-									<ul v-if="item.expanded && item.children && item.children.length > 0" v-if="item.expanded">
+									<ul v-if="item.expanded && item.children && item.children.length > 0">
 										<li v-for="child in item.children">
 											<a :href="child.link">{{child.title}}</a>
 										</li>

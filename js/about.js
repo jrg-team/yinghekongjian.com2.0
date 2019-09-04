@@ -19,35 +19,17 @@ new Vue({
         },
         slidesPerView: 'auto',
         centeredSlides: true,
-        spaceBetween: 30,
-        on: {
-          slideChange: () => {
-            if(this.swiper){
-              this.activeIndex = this.swiper.activeIndex
-            }
-          }
-        }
+        spaceBetween: 30
       },
-      phoneSwiperOption: {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        on: {
-          slideChange: () => {
-            if(this.swiper){
-              this.activeIndex = this.phoneSwiper.activeIndex
-            }
-          }
-        }
-      },
-      activeIndex: 0,
-      course_details: []
+      about: {
+        videos: [],
+        companies: []
+      }
     }
   },
   created(){
-    axios.get('/settings/course_details').then((response) => {
-      this.course_details = response.data.resource.items[TYPE]
+    axios.get('/settings/about').then((response) => {
+      this.about = response.data.resource.items[TYPE]
     })
   },
   components: {
@@ -55,14 +37,6 @@ new Vue({
     swiperSlide,
     MyNavigator,
     MyFooter
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    },
-    phoneSwiper(){
-      return this.$refs.myPhoneSwiper.swiper
-    }
   },
   methods: {
     marked
