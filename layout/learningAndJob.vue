@@ -63,9 +63,6 @@
   @import "../css/vars";
   .learning-wrapper {
     background-color: #F2F2F2;
-    @media (min-width: 500px) {
-      padding-top: 0;
-    }
     .text-wrapper {
       max-width: 980px;
       position: relative;

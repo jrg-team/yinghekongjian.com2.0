@@ -1,9 +1,12 @@
 <template>
   <div class="text-picture-wrapper">
-    <img :src="imageSrc" alt="展示图"/>
+    <slot name="image">
+      <img :src="imageSrc" alt="展示图"/>
+    </slot>
     <slot>
       <h3>{{title}}</h3>
       <p>{{content}}</p>
+      <a v-if="linkTo !== {}" :href="linkTo.link">{{linkTo.text}}<i class="iconfont hcsp-right"></i></a>
     </slot>
   </div>
 </template>
@@ -21,12 +24,17 @@ export default {
     },
     content: {
       type: String
+    },
+    linkTo: {
+      type: Object,
+      default: {}
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+  @import "../css/vars";
   .text-picture-wrapper {
     position: relative;
     img {
@@ -36,6 +44,13 @@ export default {
     }
     h3 {
       margin: 20px 0;
+    }
+    a {
+      display: inline-block;
+      color: $blue;
+      font-size: 14px;
+      padding: 10px 0;
+      margin-top: 10px;
     }
   }
 

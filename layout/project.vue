@@ -7,7 +7,7 @@
     <div class="row pc">
       <div class="col vertical-center">
         <div class="text">
-          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, necessitatibus!</h4>
+          <h4>体系课涵盖20个阶段，初、中、高级Java核心知识</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolor ea est fugit illum nam nisi, nobis quas reiciendis ullam.</p>
           <a href="#">查看完整课程大纲 <i class="iconfont hcsp-right"></i> </a>
         </div>
@@ -25,7 +25,7 @@
       <div class="col vertical-center text-wrapper">
         <div class="text">
           <p>实战项目</p>
-          <h4>Lorem ipsum dolor sit amet.</h4>
+          <h4>三大实战项目，让你轻松应对日常工作与面试</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi eveniet excepturi iusto, nam nulla praesentium tenetur ut veritatis voluptas!</p>
           <a href="#">进一步了解课程详情 <i class="iconfont hcsp-right"></i> </a>
         </div>
@@ -34,9 +34,24 @@
     <TextWithPic
       class="mobile"
       image-src="https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg"
-      title="hhhhhhh"
+      title="体系课涵盖20个阶段，初、中、高级Java核心知识"
       content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at dolores ea, eius enim exercitationem facere itaque mollitia odio officiis placeat praesentium quaerat quas quis tenetur, veniam vero, voluptas. In."
+      :link-to="{link: '#', text: '查看完整课程大纲'}"
     ></TextWithPic>
+    <TextWithPic
+      class="mobile"
+      title="三大实战项目，让你轻松应对日常工作与面试"
+      content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at dolores ea, eius enim exercitationem facere itaque mollitia odio officiis placeat praesentium quaerat quas quis tenetur, veniam vero, voluptas. In."
+      :link-to="{link: '#', text: '进一步了解详细课程'}"
+    >
+      <template v-slot:image>
+        <div class="image-wrapper">
+          <img src="../assets/project1.png" alt="pic"/>
+          <img src="../assets/project1.png" alt="pic"/>
+          <img src="../assets/project1.png" alt="pic"/>
+        </div>
+      </template>
+    </TextWithPic>
   </section>
 </template>
 
@@ -54,8 +69,10 @@
   @import '../css/vars';
   .project-wrapper {
     background-color: #F2F2F2;
-    @media (max-width: 499px) {
+    @media (min-width: 500px) {
+      background-color: #F0FBF9;
       padding-top: 0;
+      padding-bottom: 0;
     }
     .row {
       display: flex;
@@ -83,7 +100,7 @@
         align-items: center;
       }
     }
-    .row > .image-wrapper {
+    .image-wrapper {
       margin: 10vh 0 10vh 10vw;
       padding-top: 40px;
       img {
@@ -100,6 +117,21 @@
         position: relative;
         top: -80px;
         left: 80px;
+      }
+      @media (max-width: 499px) {
+        margin: 0;
+        height: 40vh;
+        img {width: 80vw; left: -10px}
+        img:nth-child(2) {
+          position: relative;
+          top: -60px;
+          left: 10px;
+        }
+        img:nth-child(3) {
+          position: relative;
+          top: -120px;
+          left: 30px;
+        }
       }
     }
     .row > .text-wrapper {
