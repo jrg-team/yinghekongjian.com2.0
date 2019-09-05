@@ -27,7 +27,9 @@ export default {
     },
     linkTo: {
       type: Object,
-      default: {}
+      default: function () {
+        return {}
+      }
     }
   }
 }
@@ -40,10 +42,13 @@ export default {
     img {
       width: 100vw;
       position: relative;
-      left: -30px;
+      left: -20px;
     }
     h3 {
-      margin: 20px 0;
+      margin: 60px 0 20px;
+    }
+    h6 + h3 {
+      margin-top: 20px;
     }
     a {
       display: inline-block;

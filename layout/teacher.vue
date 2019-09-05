@@ -100,6 +100,7 @@
 </script>
 
 <style lang="scss">
+  @import "../css/vars";
   section.teacher-wrapper {
     .image-wrapper {
       img {
@@ -120,17 +121,16 @@
           background-color: #C9C9C9;
           height: 1px;
         }
-        .tab {
-          .swiper-slide-active {
-            border-bottom: 1px solid #3475C6;
-          }
-        }
       }
       margin: 0 auto;
       .tab {
         max-width: 800px;
         position: relative;
         margin: 0 auto;
+        .swiper-slide-active {
+          border-bottom: 1px solid #3475C6;
+          font-weight: $font-bold;
+        }
         .swiper-slide {
           height: 100%;
           opacity: 0.4;

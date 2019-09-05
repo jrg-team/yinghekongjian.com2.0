@@ -80,7 +80,7 @@
         }
       }
       ul {
-        margin: 16px 20px;
+        margin: 24px 20px;
         min-height: 8em;
       }
       li {
