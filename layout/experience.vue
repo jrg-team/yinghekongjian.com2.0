@@ -24,7 +24,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore molestiae, molestias
             mollitia
             nesciunt numquam pariatur quam qui reiciendis tenetur?</p>
-          <black-button>查看幻灯片</black-button>
+          <black-button class="black-button">查看幻灯片</black-button>
         </div>
       </text-with-pic>
       <div class="row cards-wrapper">
@@ -79,6 +79,9 @@
   @import "../css/vars";
   .background {
     background-color: $background-grey-light;
+  }
+  a.black-button {
+    display: block;
   }
   section.experience-wrapper {
     margin: 0 auto;
