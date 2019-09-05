@@ -3,6 +3,7 @@ import marked from 'marked'
 import axios from '../lib/axios'
 import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
+import pictureTextList from '../layout/pictureTextList'
 
 const TYPE = 'yinghekongjian'
 
@@ -20,7 +21,8 @@ new Vue({
   },
   components: {
     MyNavigator,
-    MyFooter
+    MyFooter,
+    pictureTextList
   },
   methods: {
     marked
