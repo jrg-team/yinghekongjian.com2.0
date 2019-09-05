@@ -1,0 +1,106 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>硬核空间-关于我们</title>
+  <meta name="keyword"
+    content="硬核空间, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
+  <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+  <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="./css/about.scss">
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <my-navigator></my-navigator>
+    <div class="swiper-container pc">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <swiper-slide :key="index" v-for="video,index in about.videos">
+          <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(video.image_url)})`}">
+            <div class="name"><span>{{video.name}}</span><i class="iconfont hcsp-bofang"></i></div>
+          </div>
+        </swiper-slide>
+
+        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
+        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
+      </swiper>
+    </div>
+    <div class="banner mobile" v-if="about.videos[0]">
+      <img :src="about.videos[0].image_phone_url" alt="">
+    </div>
+    <h2 class="pc">关于公司</h2>
+    <h3 class="mobile">关于公司</h3>
+    <section class="pc companies">
+      <div :key="index" :class="{reverse: index % 2 === 0}" v-for="company,index in about.companies" class="row">
+        <div class="image" :style="{backgroundImage: `url(${$cdn(company.image_url)})`}" alt=""></div>
+        <div class="content">
+          <div class="md-wrapper" v-html="marked(company.content)"></div>
+          <a v-if="company.link" :href="company.link">{{company.link_text}}</a>
+        </div>
+      </div>
+    </section>
+    <section class="mobile companies">
+      <div :key="index" v-for="company,index in about.companies" class="row">
+        <div class="imageWrapper">
+          <img :src="$cdn(company.image_url)" alt=""/>
+          <div class="imgCover"></div>
+        </div>
+        <div class="content">
+          <div class="md-wrapper" v-html="marked(company.content)"></div>
+          <a v-if="company.link" :href="company.link">{{company.link_text}}</a>
+        </div>
+      </div>
+    </section>
+    <h2 class="pc">关于人员</h2>
+    <h3 class="mobile">关于人员</h3>
+    <section class="partners">
+      <div class="partner" :key="index" v-for="partner,index in about.partners">
+        <img :src="$cdn(partner.image_url)" alt=""/>
+        <div class="name">{{partner.name}}</div>
+        <div class="position">{{partner.position}}</div>
+        <div class="description">{{partner.description}}</div>
+      </div>
+    </section>
+    <h2 class="pc">我们的产品</h2>
+    <h3 class="mobile">我们的产品</h3>
+    <section class="pc products">
+      <div :key="index" :class="{reverse: index % 2 === 0}" v-for="product,index in about.products" class="row">
+        <div class="image" :style="{backgroundImage: `url(${$cdn(product.image_url)})`}" alt=""></div>
+        <div class="content">
+          <div class="md-wrapper" v-html="marked(product.content)"></div>
+          <a v-if="product.link" :href="product.link">{{product.link_text}}</a>
+        </div>
+      </div>
+    </section>
+    <section class="mobile products">
+      <div :key="index" v-for="product,index in about.products" class="row">
+        <div class="imageWrapper">
+          <img :src="$cdn(product.image_url)" alt=""/>
+          <div class="imgCover"></div>
+        </div>
+        <div class="content">
+          <div class="md-wrapper" v-html="marked(product.content)"></div>
+          <a v-if="product.link" :href="product.link">{{product.link_text}}</a>
+        </div>
+      </div>
+    </section>
+    <h2 class="pc">我们的活动</h2>
+    <h3 class="mobile">我们的活动</h3>
+    <section class="activities">
+      <div class="activity" :key="index" v-for="activity,index in about.activities">
+        <img :src="$cdn(activity.image_url)" alt=""/>
+        <div class="name">{{activity.name}}</div>
+        <div class="introduction">{{activity.introduction}}</div>
+        <div class="content">{{activity.content}}</div>
+      </div>
+    </section>
+    <my-footer></my-footer>
+  </div>
+
+  <script src="./js/about.js"></script>
+</body>
+
+</html>

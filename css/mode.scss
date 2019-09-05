@@ -66,15 +66,13 @@ h2,h3,h4{
         position: relative;
         margin-top: -120px;
         padding: 0 10px;
-        .md-wrapper{
-          a{
-            display: block;
-            text-align: center;
-            background: #333333;
-            padding: 5px 0;
-            color: #FFF;
-            margin: 40px 0 50px 0;
-          }
+        >a{
+          display: block;
+          text-align: center;
+          background: #333333;
+          padding: 5px 0;
+          color: #FFF;
+          margin: 40px 0 50px 0;
         }
       }
     }
