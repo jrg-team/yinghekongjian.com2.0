@@ -18,29 +18,7 @@
     <my-navigator></my-navigator>
     <img :src="course_mode.imageUrl" alt="" class="banner pc">
     <img :src="course_mode.imageUrlPhone" alt="" class="banner mobile">
-    <h2 class="pc">课程安排与学习模式</h2>
-    <h3 class="mobile">课程安排与学习模式</h3>
-    <section class="pc arrangements">
-      <div :key="index" :class="{reverse: index % 2 === 0}" v-for="arrangement,index in course_mode.arrangements" class="row">
-        <div class="image" :style="{backgroundImage: `url(${$cdn(arrangement.image_url)})`}" alt=""></div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(arrangement.content)"></div>
-          <a v-if="arrangement.link" href="">{{arrangement.text}}</a>
-        </div>
-      </div>
-    </section>
-    <section class="mobile arrangements">
-      <div :key="index" v-for="arrangement,index in course_mode.arrangements" class="arrangement">
-        <div class="imageWrapper">
-          <img :src="$cdn(arrangement.image_url)" alt=""/>
-          <div class="imgCover"></div>
-        </div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(arrangement.content)"></div>
-          <a v-if="arrangement.link" href="">{{arrangement.text}}</a>
-        </div>
-      </div>
-    </section>
+    <picture-text-list title="课程安排与学习模式" :listdata="course_mode.arrangements"></picture-text-list>
     <h3 class="pc">除了以上。还有</h3>
     <h3 class="mobile">除了以上。还有</h3>
     <section class="pc additions">
