@@ -64,6 +64,7 @@
     .row{
       display: flex;
       min-height: 360px;
+      margin: 20px;
       &.reverse{
         flex-direction: row-reverse;
         .content{
