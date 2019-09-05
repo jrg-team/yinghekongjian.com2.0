@@ -7,15 +7,17 @@
         <source :src="link" type="video/mp4">
       </video>
     </div>
-    <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
-      <div class="video-mask"></div>
-      <div class="video-container">
-        <video :poster="$cdn(poster)" controls ref="pcVideo">
-          <source :src="link" type="video/mp4">
-        </video>
-        <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="togglePlayStatus"></i>
+    <transition name="modal">
+      <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
+        <div class="video-mask"></div>
+        <div class="video-container">
+          <video :poster="$cdn(poster)" controls ref="pcVideo">
+            <source :src="link" type="video/mp4">
+          </video>
+          <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="togglePlayStatus"></i>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 
 </template>
@@ -203,5 +205,6 @@
       }
     }
   }
-
+  .modal-leave-active, .modal-enter-active {transition: opacity 0.5s ease-in-out;}
+  .modal-enter, .modal-leave-to {opacity: 0;}
 </style>
