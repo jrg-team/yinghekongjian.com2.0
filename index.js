@@ -2,7 +2,7 @@ import Vue from './lib/vue'
 import MyNavigator from './layout/navigator'
 import MyFooter from './layout/footer'
 import Preview from './layout/preview'
-import CustomVideo from './components/CustomVideo'
+import MyVideo from './layout/video'
 import Course from './layout/course'
 import Project from './layout/project'
 import Learning from './layout/learningAndJob'
@@ -14,7 +14,7 @@ new Vue({
 	components: {
 		MyNavigator,
     MyFooter,
-    CustomVideo,
+    MyVideo,
     Preview,
     Course,
     Project,

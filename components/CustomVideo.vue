@@ -1,26 +1,19 @@
 <template>
   <div class="video-wrapper">
     <div class="video-background-wrapper">
-      <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <video :poster="poster" ref="mobileVideo" class="mobile mobile-video">
+      <slot :togglePlayStatus="togglePlayStatus"></slot>
+      <video :poster="$cdn(poster)" ref="mobileVideo" class="mobile mobile-video"
+             :class="{active: isMobile && playing, hide: !posterVisible}">
         <source :src="link" type="video/mp4">
       </video>
-      <div class="center-icon-wrapper" :class="{playing: playing}">
-        <i class="iconfont hcsp-bofang controller-button"
-           @click="toggleModalVisible"></i>
-        <h3 class="text">播放影片</h3>
-      </div>
-      <a class="get-description" href="#" :class="{playing: playing}">
-        获取文字描述 <i class="iconfont hcsp-right"></i>
-      </a>
     </div>
     <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
       <div class="video-mask"></div>
       <div class="video-container">
-        <video :poster="poster" controls ref="pcVideo">
+        <video :poster="$cdn(poster)" controls ref="pcVideo">
           <source :src="link" type="video/mp4">
         </video>
-        <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="toggleModalVisible"></i>
+        <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="togglePlayStatus"></i>
       </div>
     </div>
   </div>
@@ -36,6 +29,10 @@
       link: {
         type: String,
         default: ''
+      },
+      posterVisible: {
+        type: Boolean,
+        default: true
       }
     },
     name: 'CustomVideo',
@@ -47,7 +44,7 @@
       }
     },
     methods: {
-      toggleModalVisible() {
+      togglePlayStatus() {
         const video = this.isMobile ? this.$refs.mobileVideo : this.$refs.pcVideo
         if (this.modalVisible) {
           this.playing = false
@@ -56,9 +53,46 @@
           this.playing = true
           video.controls = true
           video.play()
+          this.isMobile && this.toFullVideo(video)
         }
         this.modalVisible = !this.modalVisible
       },
+      toFullVideo(videoDom) {
+        if (videoDom.requestFullscreen) {
+          return videoDom.requestFullscreen()
+        } else if (videoDom.webkitRequestFullScreen) {
+          return videoDom.webkitRequestFullScreen()
+        } else if (videoDom.mozRequestFullScreen) {
+          return videoDom.mozRequestFullScreen()
+        } else if (videoDom.msRequestFullscreen) {
+          return videoDom.msRequestFullscreen()
+        } else
+          return false
+      },
+      isFullscreen() {
+        return document.fullscreenElement ||
+          document.msFullscreenElement ||
+          document.mozFullScreenElement ||
+          document.webkitFullscreenElement || false
+      },
+      stopMobileVideo(e) {
+        if (!this.isFullscreen() && this.isMobile) {
+          this.$refs.mobileVideo.pause()
+        }
+      }
+    },
+    mounted() {
+      document.addEventListener('fullscreenchange', this.stopMobileVideo)
+      document.addEventListener('mozfullscreenchange', this.stopMobileVideo)
+      document.addEventListener('webkitfullscreenchange', this.stopMobileVideo)
+      document.addEventListener('msfullscreenchange', this.stopMobileVideo)
+      this.$on('togglePlayStatus', this.togglePlayStatus)
+    },
+    beforeDestroy() {
+      document.removeEventListener('fullscreenchange', this.stopMobileVideo)
+      document.removeEventListener('mozfullscreenchange', this.stopMobileVideo)
+      document.removeEventListener('webkitfullscreenchange', this.stopMobileVideo)
+      document.removeEventListener('msfullscreenchange', this.stopMobileVideo)
     }
   }
 </script>
@@ -73,44 +107,14 @@
       max-width: 80vw;
       flex: 1;
       position: relative;
-      img.poster {
-        width: 100%;
-      }
-      div.center-icon-wrapper {
-        height: 64px;
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        cursor: pointer;
-        h3.text {
-          white-space: nowrap;
-          margin-top: 20px;
-        }
-        i.controller-button {
-          width: 64px;
-          font-size: 64px;
-          display: block;
-          &.playing {display: none}
-        }
-      }
-      a.get-description {
-        color: white;
-        text-align: center;
-        max-width: 8em;
-        position: absolute;
-        bottom: 40px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-      }
+    }
+    video.active {
+      display: block;
+    }
+    video.hide {
+      height: 0;
+      width: 0;
+      opacity: 0;
     }
     @media (max-width: 499px) {
       .video-background-wrapper {
@@ -142,7 +146,6 @@
       }
     }
   }
-
   .video-modal {
     > .video-mask {
       position: fixed;
@@ -167,7 +170,7 @@
       video {
         max-width: 80vw;
         max-height: 80vh;
-        outline:none;
+        outline: none;
       }
       .playing {
         opacity: 0;
@@ -178,7 +181,7 @@
         font-size: 64px;
         color: white;
         cursor: pointer;
-        filter: drop-shadow(0 0 4px #2f4672);
+        filter: drop-shadow(0 0 4px #2F4672);
         position: absolute;
         top: 0;
         bottom: 0;
