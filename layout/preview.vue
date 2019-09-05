@@ -23,48 +23,48 @@
         </div>
       </div>
     </div>
-    <a href="#">
-      <span class="appointment-button">预约试听</span>
-    </a>
+    <black-button class="button">预约试听</black-button>
   </div>
 </template>
 
 <script>
+  import BlackButton from '../components/BlackButton'
   export default {
-    name: 'preview'
+    name: 'preview',
+    components: {
+      BlackButton
+    }
   }
 </script>
 
 <style scoped lang="scss">
   @import '../css/vars';
   .preview-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .items-wrapper {
-      max-width: 60vw;
-      flex: 1;
-      .row {display: flex;}
-      .row > .item{
-        max-width: 50%;
-        padding: 0 5vw;
-        flex: 1;
-        word-break: break-word;
-        p {
-          margin-top: 1em;
-          min-height: 5em;
-          line-height: 120%;
-        }
-      }
-    }
-    a {
+    .button {
       margin-top: 40px;
-      .appointment-button {
-        padding: 10px;
-        font-size: 16px;
-        color: white;
-        background-color: $text_main;
+    }
+    .row > .item > p {
+      margin-top: 1em;
+      min-height: 5em;
+      line-height: 120%;
+    }
+  }
+  @media (min-width: 500px) {
+    .preview-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .items-wrapper {
+        max-width: 60vw;
+        flex: 1;
+        .row {display: flex;}
+        .row > .item {
+          max-width: 50%;
+          padding: 0 5vw;
+          flex: 1;
+          word-break: break-word;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from './lib/vue'
 import MyNavigator from './layout/navigator'
 import MyFooter from './layout/footer'
 import Preview from './layout/preview'

@@ -83,6 +83,30 @@ p {
   }
 }
 @media (max-width: 499px) {
+  h1 {
+    font-size: 36px;
+    line-height: 120%;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 112.5%;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 112.5%;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 150%;
+  }
+  h5 {
+    font-size: 16px;
+    line-height: 165.5%;
+  }
+  p {
+    font-size: 14px;
+    line-height: 180%;
+  }
   .md-wrapper{
     *{line-height: 25px;}
     color: #333;
@@ -149,4 +173,15 @@ p {
     text-align: center;
   }
   padding-bottom: 10vh;
+}
+
+@media (max-width: 499px) {
+  .section-margin {
+    padding: 10vh 30px 5vh;
+  }
+  .title-margin {
+    display: block;
+    p {text-align: left;}
+    padding-bottom: 30px;
+  }
 }

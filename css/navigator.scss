@@ -64,10 +64,13 @@ header {
     .icon-wrapper {
       position: relative;
       background-color: $black-navigator-bg-color;
-      padding: 10px;
+      padding: 12px;
       .hcsp-zhankai {
         position: relative;
         z-index: $navigator-z-index
+      }
+      .iconfont {
+        font-size: 16px;
       }
       .logo {
         position: absolute;
