@@ -57,14 +57,15 @@
     h3.text {
       white-space: nowrap;
       margin-top: 20px;
+      color: white;
     }
     i.controller-button {
       width: 64px;
       font-size: 64px;
       display: block;
-      &.playing {display: none}
     }
   }
+  .playing {display: none}
   a.get-description {
     color: white;
     text-align: center;

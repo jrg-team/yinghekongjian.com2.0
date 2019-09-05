@@ -205,6 +205,6 @@
       }
     }
   }
-  .modal-leave-active, .modal-enter-active {transition: opacity 0.5s ease-in-out;}
+  .modal-leave-active, .modal-enter-active {transition: opacity 0.3s ease-in-out;}
   .modal-enter, .modal-leave-to {opacity: 0;}
 </style>
