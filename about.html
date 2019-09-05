@@ -11,6 +11,7 @@
   <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="./css/about.scss">
+  <link rel="stylesheet" href="./css/base.scss">
 </head>
 
 <body>
@@ -29,31 +30,13 @@
       </swiper>
     </div>
     <div class="banner mobile" v-if="about.videos[0]">
-      <img :src="about.videos[0].image_phone_url" alt="">
+      <img :src="$cdn(about.videos[0].image_phone_url)" alt="">
+      <div class="text-wrapper">
+        <h4 class="name">{{about.videos[0].name}}</h4>
+        <i class="iconfont hcsp-bofang"></i>
+      </div>
     </div>
-    <h2 class="pc">关于公司</h2>
-    <h3 class="mobile">关于公司</h3>
-    <section class="pc companies">
-      <div :key="index" :class="{reverse: index % 2 === 0}" v-for="company,index in about.companies" class="row">
-        <div class="image" :style="{backgroundImage: `url(${$cdn(company.image_url)})`}" alt=""></div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(company.content)"></div>
-          <a v-if="company.link" :href="company.link">{{company.link_text}}</a>
-        </div>
-      </div>
-    </section>
-    <section class="mobile companies">
-      <div :key="index" v-for="company,index in about.companies" class="row">
-        <div class="imageWrapper">
-          <img :src="$cdn(company.image_url)" alt=""/>
-          <div class="imgCover"></div>
-        </div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(company.content)"></div>
-          <a v-if="company.link" :href="company.link">{{company.link_text}}</a>
-        </div>
-      </div>
-    </section>
+    <picture-text-list title="关于公司" :listdata="about.companies"></picture-text-list>
     <h2 class="pc">关于人员</h2>
     <h3 class="mobile">关于人员</h3>
     <section class="partners">
@@ -64,34 +47,18 @@
         <div class="description">{{partner.description}}</div>
       </div>
     </section>
-    <h2 class="pc">我们的产品</h2>
-    <h3 class="mobile">我们的产品</h3>
-    <section class="pc products">
-      <div :key="index" :class="{reverse: index % 2 === 0}" v-for="product,index in about.products" class="row">
-        <div class="image" :style="{backgroundImage: `url(${$cdn(product.image_url)})`}" alt=""></div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(product.content)"></div>
-          <a v-if="product.link" :href="product.link">{{product.link_text}}</a>
-        </div>
-      </div>
-    </section>
-    <section class="mobile products">
-      <div :key="index" v-for="product,index in about.products" class="row">
-        <div class="imageWrapper">
-          <img :src="$cdn(product.image_url)" alt=""/>
-          <div class="imgCover"></div>
-        </div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(product.content)"></div>
-          <a v-if="product.link" :href="product.link">{{product.link_text}}</a>
-        </div>
-      </div>
-    </section>
+    <picture-text-list title="我们的产品" :listdata="about.products"></picture-text-list>
     <h2 class="pc">我们的活动</h2>
     <h3 class="mobile">我们的活动</h3>
     <section class="activities">
       <div class="activity" :key="index" v-for="activity,index in about.activities">
-        <img :src="$cdn(activity.image_url)" alt=""/>
+        <div class="pc img-wrapper">
+          <img :src="$cdn(activity.image_url)" alt=""/>
+          <div class="button-wrapper">
+            <i class="iconfont hcsp-bofang"></i>
+          </div>
+        </div>
+        <img class="mobile" :src="$cdn(activity.image_url)" alt=""/>
         <div class="name">{{activity.name}}</div>
         <div class="introduction">{{activity.introduction}}</div>
         <div class="content">{{activity.content}}</div>

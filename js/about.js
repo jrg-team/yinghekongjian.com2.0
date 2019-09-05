@@ -1,10 +1,10 @@
 import Vue from '../lib/vue'
 import 'swiper/dist/css/swiper.css'
-import marked from 'marked'
 import axios from '../lib/axios'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
+import pictureTextList from '../layout/pictureTextList'
 
 const TYPE = 'yinghekongjian'
 
@@ -36,9 +36,7 @@ new Vue({
     swiper,
     swiperSlide,
     MyNavigator,
-    MyFooter
-  },
-  methods: {
-    marked
+    MyFooter,
+    pictureTextList
   }
 })
