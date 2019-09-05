@@ -85,8 +85,8 @@ p {
 }
 @media (max-width: 499px) {
   h1 {
-    font-size: 36px;
-    line-height: 120%;
+    font-size: 32px;
+    line-height: 150%;
   }
   h2 {
     font-size: 28px;
@@ -178,11 +178,16 @@ p {
 
 @media (max-width: 499px) {
   .section-margin {
-    padding: 10vh 30px 5vh;
+    padding: 10vh 20px 5vh;
   }
   .title-margin {
     display: block;
     p {text-align: left;}
     padding-bottom: 30px;
   }
+}
+
+.show-modal {
+  overflow: hidden;
+  height: 100vh;
 }

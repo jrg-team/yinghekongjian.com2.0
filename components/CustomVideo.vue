@@ -8,7 +8,7 @@
       </video>
     </div>
     <transition name="modal">
-      <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
+      <div class="video-modal pc" v-show="modalVisible">
         <div class="video-mask"></div>
         <div class="video-container">
           <video :poster="$cdn(poster)" controls ref="pcVideo">
@@ -95,6 +95,15 @@
       document.removeEventListener('mozfullscreenchange', this.stopMobileVideo)
       document.removeEventListener('webkitfullscreenchange', this.stopMobileVideo)
       document.removeEventListener('msfullscreenchange', this.stopMobileVideo)
+    },
+    watch: {
+      modalVisible: function (newVal, oldVal) {
+        if (newVal) {
+          document.body.classList.add('show-modal')
+        } else {
+          document.body.classList.remove('show-modal')
+        }
+      }
     }
   }
 </script>

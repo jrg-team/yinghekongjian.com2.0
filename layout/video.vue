@@ -5,9 +5,8 @@
   >
     <template slot-scope="slotProps">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <div class="center-icon-wrapper" :class="{playing: playing}">
-        <i class="iconfont hcsp-bofang controller-button"
-           @click="slotProps.togglePlayStatus"></i>
+      <div class="center-icon-wrapper" :class="{playing: playing}" @click="() => {playing = true; slotProps.togglePlayStatus()}">
+        <i class="iconfont hcsp-bofang controller-button"></i>
         <h3 class="text">播放影片</h3>
       </div>
       <a class="get-description" href="#" :class="{playing: playing}">
