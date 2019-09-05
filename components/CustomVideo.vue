@@ -2,7 +2,7 @@
   <div class="video-wrapper">
     <div class="video-background-wrapper">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <video :poster="poster" ref="mobileVideo" class="mobile mobile-video">
+      <video :poster="poster" ref="mobileVideo" class="mobile mobile-video" :class="{active: playing}">
         <source :src="link" type="video/mp4">
       </video>
       <div class="center-icon-wrapper" :class="{playing: playing}">
@@ -56,9 +56,45 @@
           this.playing = true
           video.controls = true
           video.play()
+          this.isMobile && this.toFullVideo(video)
         }
         this.modalVisible = !this.modalVisible
       },
+      toFullVideo(videoDom) {
+        if (videoDom.requestFullscreen) {
+          return videoDom.requestFullscreen()
+        } else if (videoDom.webkitRequestFullScreen) {
+          return videoDom.webkitRequestFullScreen()
+        } else if (videoDom.mozRequestFullScreen) {
+          return videoDom.mozRequestFullScreen()
+        } else if (videoDom.msRequestFullscreen) {
+          return videoDom.msRequestFullscreen()
+        } else
+          return false
+      },
+      isFullscreen() {
+        return document.fullscreenElement ||
+          document.msFullscreenElement ||
+          document.mozFullScreenElement ||
+          document.webkitFullscreenElement || false
+      },
+      stopMobileVideo(e) {
+        if (!this.isFullscreen() && this.isMobile) {
+          this.$refs.mobileVideo.pause()
+        }
+      }
+    },
+    mounted() {
+      document.addEventListener("fullscreenchange", this.stopMobileVideo);
+      document.addEventListener("mozfullscreenchange", this.stopMobileVideo);
+      document.addEventListener("webkitfullscreenchange", this.stopMobileVideo);
+      document.addEventListener("msfullscreenchange", this.stopMobileVideo);
+    },
+    beforeDestroy() {
+      document.removeEventListener("fullscreenchange", this.stopMobileVideo);
+      document.removeEventListener("mozfullscreenchange", this.stopMobileVideo);
+      document.removeEventListener("webkitfullscreenchange", this.stopMobileVideo);
+      document.removeEventListener("msfullscreenchange", this.stopMobileVideo);
     }
   }
 </script>
@@ -112,6 +148,9 @@
         margin: 0 auto;
       }
     }
+    video.active {
+      display: block;
+    }
     @media (max-width: 499px) {
       .video-background-wrapper {
         max-width: 90vw;
@@ -142,7 +181,6 @@
       }
     }
   }
-
   .video-modal {
     > .video-mask {
       position: fixed;
@@ -167,7 +205,7 @@
       video {
         max-width: 80vw;
         max-height: 80vh;
-        outline:none;
+        outline: none;
       }
       .playing {
         opacity: 0;
@@ -178,7 +216,7 @@
         font-size: 64px;
         color: white;
         cursor: pointer;
-        filter: drop-shadow(0 0 4px #2f4672);
+        filter: drop-shadow(0 0 4px #2F4672);
         position: absolute;
         top: 0;
         bottom: 0;
