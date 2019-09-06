@@ -42,6 +42,9 @@
   .preview-wrapper {
     .button {
       margin-top: 40px;
+      letter-spacing: 2px;
+      font-size: 14px;
+      color: white;
     }
     .row > .item > p {
       margin-top: 1em;
