@@ -95,15 +95,16 @@
         img{width: 100%;vertical-align: center;}
         .imgCover{
           position: absolute;
-          background: linear-gradient(360deg, #FFFFFF 0%, #FFFFFF 23.96%, rgba(255, 255, 255, 0) 100%);
           bottom: 0;left: 0;right: 0;top: 0;
         }
       }
       .content{
         position: relative;
-        margin-top: -120px;
-        padding: 0 10px;
+        padding: 0 20px;
         .md-wrapper{
+          p:first-child{
+            display: none;
+          }
           h1,h2,h3,h4,h5 {
             &:first-child {margin-top: 50px;}
           }
