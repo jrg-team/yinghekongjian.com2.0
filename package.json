@@ -6,7 +6,7 @@
   "author": "Zegendary <zxw1992513@qq.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build ./*.html --no-cache --no-source-maps --public-url '.'"
+    "build": "parcel build ./*.html --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.js"
