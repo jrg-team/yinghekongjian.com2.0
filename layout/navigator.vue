@@ -16,10 +16,10 @@
 				</a>
 				<div class="items">
 					<a href="#">介绍</a>
-					<a href="#">课程详情</a>
-					<a href="#">教学模式</a>
-					<a href="#">真实的故事</a>
-					<a href="#">关于我们</a>
+					<a href="../detail.html">课程详情</a>
+					<a href="../projects.html">教学模式</a>
+					<a href="../mode.html">真实的故事</a>
+					<a href="../about.html">关于我们</a>
 				</div>
 			</div>
 		</nav>

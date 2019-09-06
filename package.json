@@ -5,6 +5,9 @@
   "repository": "git@github.com:jrg-team/yinghekongjian.com2.0.git",
   "author": "Zegendary <zxw1992513@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "parcel build ./*.html --no-cache --no-source-maps --public-url '.'"
+  },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.js"
   },
