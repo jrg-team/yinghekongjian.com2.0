@@ -35,6 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "../css/vars";
   img.poster {
     width: 100%;
   }
@@ -52,7 +53,7 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1;
+    z-index: $play-button-z-index;
     h3.text {
       white-space: nowrap;
       margin-top: 20px;
