@@ -4,6 +4,7 @@ import axios from '../lib/axios'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
+import CustomVideo from '../components/CustomVideo'
 import pictureTextList from '../layout/pictureTextList'
 
 const TYPE = 'yinghekongjian'
@@ -24,7 +25,8 @@ new Vue({
       about: {
         videos: [],
         companies: []
-      }
+      },
+      videoUrl: ''
     }
   },
   created(){
@@ -32,11 +34,20 @@ new Vue({
       this.about = response.data.resource.items[TYPE]
     })
   },
+  methods:{
+    playVideo(videoUrl){
+      this.videoUrl = videoUrl
+      this.$refs.aboutVideo.$refs.mobileVideo.src = videoUrl
+      this.$refs.aboutVideo.$refs.pcVideo.src = videoUrl
+      this.$refs.aboutVideo.togglePlayStatus()
+    }
+  },
   components: {
     swiper,
     swiperSlide,
     MyNavigator,
     MyFooter,
-    pictureTextList
+    pictureTextList,
+    CustomVideo
   }
 })

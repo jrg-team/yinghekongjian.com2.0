@@ -21,7 +21,7 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide :key="index" v-for="video,index in about.videos">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(video.image_url)})`}">
-            <div class="name"><span>{{video.name}}</span><i class="iconfont hcsp-bofang"></i></div>
+            <div @click="playVideo(video.url)" class="name"><span>{{video.name}}</span><i class="iconfont hcsp-bofang"></i></div>
           </div>
         </swiper-slide>
 
@@ -31,7 +31,7 @@
     </div>
     <div class="banner mobile" v-if="about.videos[0]">
       <img :src="$cdn(about.videos[0].image_phone_url)" alt="">
-      <div class="text-wrapper">
+      <div class="text-wrapper" @click="playVideo(about.videos[0].url)">
         <h4 class="name">{{about.videos[0].name}}</h4>
         <i class="iconfont hcsp-bofang"></i>
       </div>
@@ -54,7 +54,7 @@
       <div class="activity" :key="index" v-for="activity,index in about.activities">
         <div class="pc img-wrapper">
           <img :src="$cdn(activity.image_url)" alt=""/>
-          <div class="button-wrapper">
+          <div class="button-wrapper" @click="playVideo(activity.video_url)">
             <i class="iconfont hcsp-bofang"></i>
           </div>
         </div>
@@ -64,6 +64,11 @@
         <div class="content">{{activity.content}}</div>
       </div>
     </section>
+    <custom-video
+      :poster-visible="false"
+      :link="videoUrl"
+      ref="aboutVideo"
+    ></custom-video>
     <my-footer></my-footer>
   </div>
 
