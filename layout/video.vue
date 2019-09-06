@@ -5,9 +5,8 @@
   >
     <template slot-scope="slotProps">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <div class="center-icon-wrapper" :class="{playing: playing}">
-        <i class="iconfont hcsp-bofang controller-button"
-           @click="slotProps.togglePlayStatus"></i>
+      <div class="center-icon-wrapper" :class="{playing: playing}" @click="() => {playing = true; slotProps.togglePlayStatus()}">
+        <i class="iconfont hcsp-bofang controller-button"></i>
         <h3 class="text">播放影片</h3>
       </div>
       <a class="get-description" href="#" :class="{playing: playing}">
@@ -36,6 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "../css/vars";
   img.poster {
     width: 100%;
   }
@@ -53,18 +53,19 @@
     align-items: center;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1;
+    z-index: $play-button-z-index;
     h3.text {
       white-space: nowrap;
       margin-top: 20px;
+      color: white;
     }
     i.controller-button {
       width: 64px;
       font-size: 64px;
       display: block;
-      &.playing {display: none}
     }
   }
+  .playing {display: none}
   a.get-description {
     color: white;
     text-align: center;

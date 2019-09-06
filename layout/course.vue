@@ -98,7 +98,7 @@
   .description-enter-active {transition: opacity 0.5s ease 0.3s;}
   .description-leave-active {transition: opacity 0.5s ease;}
   .description-enter, .description-leave-to {opacity: 0;}
-  .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease;}
+  .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease 0.3s;}
   .mask-enter, .mask-leave-to {opacity: 0;}
   .course-wrapper {
     background-color: #F2F2F2;
@@ -110,45 +110,46 @@
       }
     }
     .image-wrapper {
-			@media (max-width: 499px) {
+      @media (max-width: 499px) {
         .section-wrapper {
           margin-bottom: 20px;
           position: relative;
           div.text {
             top: 20px;
             left: 30px;
-            color: white;
+            p, h5 {color: white;}
           }
           img.image {
             height: auto;
           }
         }
-			}
-			.image {
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;
-				height: 360px;
-				width: 100%;
-				vertical-align: middle;
-			}
-			div.text {
-				position: absolute;
-				z-index: $mask-z-index;
-				top: 40px;
-				left: 60px;
-				> p {
-					margin-bottom: 10px;
-					max-width: 80%;
-					&:first-child {
-						white-space: nowrap;
-					}
-				}
-				> h5 {
-					margin-bottom: 30px;
-					white-space: nowrap;
-				}
-			}
+      }
+      .image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 360px;
+        width: 100%;
+        vertical-align: middle;
+      }
+      div.text {
+        position: absolute;
+        z-index: $mask-z-index;
+        top: 40px;
+        left: 60px;
+        p, h5 {color: white;}
+        > p {
+          margin-bottom: 10px;
+          max-width: 80%;
+          &:first-child {
+            white-space: nowrap;
+          }
+        }
+        > h5 {
+          margin-bottom: 30px;
+          white-space: nowrap;
+        }
+      }
       max-width: 900px;
       position: relative;
       left: 0;

@@ -8,7 +8,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore molestiae, molestias
             mollitia
             nesciunt numquam pariatur quam qui reiciendis tenetur?</p>
-          <a href="#">查看幻灯片<i class="iconfont hcsp-right"></i></a>
+          <a href="#">查看详情<i class="iconfont hcsp-right"></i></a>
         </div>
         <div class="image-wrapper col">
           <img src="../assets/experience.png" alt="前端转行经历"/>
@@ -24,20 +24,20 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore molestiae, molestias
             mollitia
             nesciunt numquam pariatur quam qui reiciendis tenetur?</p>
-          <black-button class="black-button">查看幻灯片</black-button>
+          <black-button class="black-button">查看详情</black-button>
         </div>
       </text-with-pic>
       <div class="row cards-wrapper">
         <section class="card col">
           <h6>闯关式任务</h6>
-          <h4>什么在激励着我们？</h4>
+          <h5>什么在激励着我们？</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dignissimos ipsa iusto labore
             nihil qui, repellat reprehenderit sit vel?</p>
           <a href="#">进一步了解 <i class="iconfont hcsp-right"></i></a>
         </section>
         <section class="card col">
           <h6>闯关式任务</h6>
-          <h4>什么在激励着我们？</h4>
+          <h5>什么在激励着我们？</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dignissimos ipsa iusto labore
             nihil qui, repellat reprehenderit sit vel?</p>
           <a href="#">进一步了解 <i class="iconfont hcsp-right"></i></a>
@@ -113,7 +113,7 @@
       color: $blue;
       font-size: 16px;
     }
-    h4 {padding: 14px 0 30px;}
+    h5 {padding: 14px 0 30px;}
     p {min-height: 108px;}
     & + & {margin-left: 40px;}
     > a {font-size: 14px;}

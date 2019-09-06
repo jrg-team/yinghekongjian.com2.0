@@ -71,7 +71,6 @@
     background-color: #F2F2F2;
     @media (min-width: 500px) {
       background-color: #F0FBF9;
-      padding-top: 0;
       padding-bottom: 0;
     }
     .row {

@@ -7,15 +7,17 @@
         <source :src="link" type="video/mp4">
       </video>
     </div>
-    <div class="video-modal pc" v-show="modalVisible" @touchmove.prevent>
-      <div class="video-mask"></div>
-      <div class="video-container">
-        <video :poster="$cdn(poster)" controls ref="pcVideo">
-          <source :src="link" type="video/mp4">
-        </video>
-        <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="togglePlayStatus"></i>
+    <transition name="modal">
+      <div class="video-modal pc" v-show="modalVisible">
+        <div class="video-mask"></div>
+        <div class="video-container">
+          <video :poster="$cdn(poster)" controls ref="pcVideo">
+            <source :src="link" type="video/mp4">
+          </video>
+          <i id="hide-modal-button" class="iconfont hcsp-wentixuanzhong" @click="togglePlayStatus"></i>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 
 </template>
@@ -93,6 +95,15 @@
       document.removeEventListener('mozfullscreenchange', this.stopMobileVideo)
       document.removeEventListener('webkitfullscreenchange', this.stopMobileVideo)
       document.removeEventListener('msfullscreenchange', this.stopMobileVideo)
+    },
+    watch: {
+      modalVisible: function (newVal, oldVal) {
+        if (newVal) {
+          document.body.classList.add('show-modal')
+        } else {
+          document.body.classList.remove('show-modal')
+        }
+      }
     }
   }
 </script>
@@ -203,5 +214,6 @@
       }
     }
   }
-
+  .modal-leave-active, .modal-enter-active {transition: opacity 0.3s ease-in-out;}
+  .modal-enter, .modal-leave-to {opacity: 0;}
 </style>
