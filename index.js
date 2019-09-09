@@ -8,6 +8,9 @@ import Project from './layout/project'
 import Learning from './layout/learningAndJob'
 import Experience from './layout/experience'
 import Teacher from './layout/teacher'
+import VTooltip from 'v-tooltip'
+
+Vue.use(VTooltip)
 
 new Vue({
 	el: '#app',
