@@ -2,13 +2,13 @@
   <section class="project-wrapper section-margin">
     <div class="title title-margin">
       <h3>全面、深度、紧贴实战</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi debitis facilis impedit inventore laudantium maiores minus neque omnis repellendus repudiandae.</p>
+      <p>通过对Java的全面学习，充分利用时间紧密学习，精通每个知识点，加以实战项目将知识点融会贯通，学以致用，直接上手工作</p>
     </div>
     <div class="row pc">
       <div class="col vertical-center">
         <div class="text">
-          <h4>体系课涵盖20个阶段，初、中、高级Java核心知识</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolor ea est fugit illum nam nisi, nobis quas reiciendis ullam.</p>
+          <h4>体系课程涵盖40个阶段，初、中、高级Java核心知识</h4>
+          <p>我们希望同学在学习过程中可以同时获得快乐与知识，因此我们加入了很多有趣的环节，让学习变得不那么枯燥。通过各位大牛老师的精心打造，你可以很流畅地从入门开始学习，全面了解后端基础知识、Java语言入门及应用、基本数据结构和算法知识、Java Web开发、框架使用、前后端协作、发布与部署的基础知识、面试技巧等，直到找到心仪的工作。我们一起来让Java学习变得轻松愉悦。</p>
           <a href="#">查看完整课程大纲 <i class="iconfont hcsp-right"></i> </a>
         </div>
       </div>
@@ -26,7 +26,7 @@
         <div class="text">
           <p>实战项目</p>
           <h4>三大实战项目，让你轻松应对日常工作与面试</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eligendi eveniet excepturi iusto, nam nulla praesentium tenetur ut veritatis voluptas!</p>
+          <p>全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。</p>
           <a href="#">进一步了解课程详情 <i class="iconfont hcsp-right"></i> </a>
         </div>
       </div>

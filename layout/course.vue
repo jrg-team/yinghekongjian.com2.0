@@ -2,7 +2,7 @@
   <section class="course-wrapper section-margin">
     <div class="title title-margin">
       <h3>课程如何开展</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, sint?</p>
+      <p>我们对每个教学环节进行评估，经众多富有Java经验的老师反复推敲后，制定高效Java学习模式</p>
     </div>
     <div class="image-wrapper pc">
       <div class="row" v-for="(row, rowIndex) in items">
@@ -16,8 +16,8 @@
                 <div class="mask" v-if="showDescription(rowIndex,colIndex)"></div>
               </transition>
               <div class="text">
-                <p>{{col.title}}</p>
-                <h5>{{col.content}}</h5>
+                <h5>{{col.title}}</h5>
+                <p>{{col.content}}</p>
                 <transition name="description">
                   <p v-if="showDescription(rowIndex,colIndex)">{{col.description}}</p>
                 </transition>
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+  import {debounce} from 'lodash'
   export default {
     name: 'course',
     data() {
@@ -49,22 +50,29 @@
         items: [
           [{
             image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
-            title: '闯关式任务',
-            content: '是什么在激励我们？',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae commodi deserunt ducimus fugit iusto laboriosam quas reiciendis, reprehenderit. Corporis repellat similique veniam? Aut dolore non optio placeat quam voluptates?',
+            title: '任务闯关课',
+            content: '夯实基础、进度可控、海量实战、code review',
+            description: '张博老师亲自制作全套通关任务\n' +
+              '视频、文档、博客、代码、实操、项目、架构\n' +
+              'Github提交、CI机器人判题、review所有代码\n' +
+              '每一份作业进行老师批改+同学互评\n',
             visible: true
           }, {
             image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-4-24-18-1-22.png',
-            title: '实战项目',
-            content: '找到你所热爱的事业。',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae commodi deserunt ducimus fugit iusto laboriosam quas reiciendis, reprehenderit. Corporis repellat similique veniam? Aut dolore non optio placeat quam voluptates?',
+            title: '拓展直播课',
+            content: '突破瓶颈、开阔眼界、深入学习、实时互动',
+            description: '2晚/周、持续半年\n' +
+              '高级知识点、课程答疑、模拟面试、就业指导\n' +
+              '直播弹幕实时互动，课后录播无限期回放\n',
             visible: true
           }],
           [{
             image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
-            title: '拓展直播',
-            content: '打造不凡体验。',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae commodi deserunt ducimus fugit iusto laboriosam quas reiciendis, reprehenderit. Corporis repellat similique veniam? Aut dolore non optio placeat quam voluptates?',
+            title: '阶段性联考',
+            content: '实时考核、查漏补缺、效果监测、班级排名',
+            description: '独家考试系统，班级定期联考\n' +
+              '测试真实水平，做到心中有数\n' +
+              '查缺补漏，老师针对性补课\n',
             visible: true
           }, {
             image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
@@ -76,15 +84,19 @@
       }
     },
     methods: {
-      imageMouseEnter(rowIndex, colIndex) {
+      _imageMouseEnter(rowIndex, colIndex) {
         this.items[rowIndex][1 ^ colIndex].visible = false
       },
-      imageMouseLeave(rowIndex, colIndex) {
+      _imageMouseLeave(rowIndex, colIndex) {
         this.items[rowIndex][1 ^ colIndex].visible = true
       },
       showDescription(rowIndex, colIndex) {
         return this.items[rowIndex][1 ^ colIndex].visible === false
       }
+    },
+    created() {
+      this.imageMouseEnter = debounce(this._imageMouseEnter, 500)
+      this.imageMouseLeave = debounce(this._imageMouseLeave, 500)
     }
   }
 
@@ -92,13 +104,13 @@
 
 <style scoped lang="scss">
   @import '../css/vars';
-  .col-enter-active {max-width: 50%;transition: all .5s ease 0.3s;}
-  .col-leave-active {max-width: 50%;transition: all .5s ease;}
+  .col-enter-active {max-width: 50%;transition: all .5s ease 0.3s; transform: scale(1)}
+  .col-leave-active {max-width: 50%;transition: all .5s ease; transform: scale(1)}
   .col-leave-to, .col-enter {max-width: 0;}
-  .description-enter-active {transition: opacity 0.5s ease 0.3s;}
-  .description-leave-active {transition: opacity 0.5s ease;}
+  .description-enter-active {transition: opacity 0.5s ease 0.3s; transform: scale(1)}
+  .description-leave-active {transition: opacity 0.5s ease; transform: scale(1)}
   .description-enter, .description-leave-to {opacity: 0;}
-  .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease 0.3s;}
+  .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease 0.3s; transform: scale(1)}
   .mask-enter, .mask-leave-to {opacity: 0;}
   .course-wrapper {
     background-color: #F2F2F2;
@@ -139,14 +151,14 @@
         left: 60px;
         p, h5 {color: white;}
         > p {
-          margin-bottom: 10px;
+          margin-bottom: 30px;
           max-width: 80%;
           &:first-child {
             white-space: nowrap;
           }
         }
         > h5 {
-          margin-bottom: 30px;
+          margin-bottom: 10px;
           white-space: nowrap;
         }
       }
