@@ -39,9 +39,9 @@
         swiperSlides: [{
           name: '张博',
           introduction: `<h3>张博</h3><h6>上海</h6>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi, cupiditate earum enim explicabo facere incidunt, iusto magnam nesciunt, nostrum odio praesentium qui reiciendis repellendus sed similique tempora velit.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem consequuntur et fugiat illum in molestiae nostrum nulla, omnis possimus reprehenderit sint soluta voluptatibus. Beatae inventore iure numquam pariatur veniam?</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet dicta distinctio exercitationem hic ipsa itaque nam officia soluta tempora.</p>`,
+<p>前阿里巴巴资深工程师，现任Gradle核心团队成员，日常工作就是写开源代码。过去一年有逾5000个GitHub contribution，给包括JDK/Maven在内的众多开源项目贡献过代码。</p>
+<p>擅长阅读源码解决疑难问题。拥有专利一项，出版译著一部，曾受邀于硅谷进行演讲。</p>
+<p>GitHub主页：<a href="https://github.com/blindpirate">@blindpirate</a></p>`,
           image: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-11-16-30.png',
           mobileImage: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-11-16-30.png'
         }, {
