@@ -2,23 +2,29 @@
   <section class="learning-wrapper section-margin">
     <div class="title title-margin">
       <h3>学习与就业保障</h3>
-      <p>我们提供尽可能好的教学服务，让学生轻松、真实的环境下学习。保障学习效果，保障就业</p>
+      <p>尽我们所能，想学生之所想，让学生在轻松真实的环境下开展学习，同时保障学习的效果，学生个人权益，承诺服务至就业</p>
     </div>
     <div class="text-wrapper">
       <div class="row">
         <div class="col">
           <h5>课程服务</h5>
           <ul>
-            <li>任务制的学习模式，把课程拆解为一个个的任务，完成任务批改通过才可进行下一关卡，把大目标分解为一个个小目标。</li>
-            <li>学习更有阶段成就感，学习效果更扎实</li>
+            <li>任课老师无时差答疑，有问题随时call老师</li>
+            <li>大量学习资料，视频主导、文章辅助、作业练习，实时更新</li>
+            <li>课程1V1作业批改指导，查漏补缺</li>
             <a href="#" class="pc">进一步了解 <i class="iconfont hcsp-right"></i></a>
           </ul>
         </div>
         <div class="col">
           <h5>班级服务</h5>
           <ul>
-            <li>分班管理，老师每天12小时在线随时答疑；课程平台自动记录班级学生学习进度曲线；班主任定期检查进度，关注每位学生的学习动态。</li>
-            <li>结伴小组、3天班长制、吃鸡赢大奖、每周对赌计划</li>
+            <li>班主任定期检查进度，关注每位学生的学习</li>
+            <li>班级活动，堪比线下的超活跃学习氛围</li>
+            <li class="tips">
+              <span v-tooltip="'寻找谷内学习进度相近的小伙伴一起学习，每天进步一点点！或是寻找毕业的学长学姐带领学习，老司机带带我！'">结伴小组</span>、
+              <span v-tooltip="'班级群内成员轮流当小班长，带领同学们一起学习，活跃班级氛围，分享学习重点、分享生活经验！'">3天班长制</span>、
+              <span v-tooltip="'活动参与者需要每2天完成一个任务，每天奖金池中增加5元现金，未完成任务者淘汰！直至剩下最后一位同学吃鸡赢得奖金池内所有奖金！'">吃鸡赢大奖</span>、
+              <span v-tooltip="'周一定下本周目标与未完成需发红包金额，下周一检查目标完成情况，未完成者需发定下的红包金额！'">每周对赌计划</span></li>
             <a href="#" class="pc">进一步了解 <i class="iconfont hcsp-right"></i></a>
           </ul>
         </div>
@@ -87,6 +93,10 @@
         list-style: disc outside none;
         font-size: 14px;
         line-height: 200%;
+        &.tips > span {
+            text-decoration: underline;
+            cursor: pointer;
+          }
       }
       a {
         display: block;
