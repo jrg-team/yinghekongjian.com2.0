@@ -87,7 +87,7 @@
       .text {
         display: block;
         max-width: 70%;
-        h4, p {margin-bottom: 10px;}
+        h4, p {margin-bottom: 20px;}
         a {color: $blue}
       }
       img {

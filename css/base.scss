@@ -196,3 +196,9 @@ p {
   overflow: hidden;
   height: 100vh;
 }
+
+.one-line {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
