@@ -68,6 +68,8 @@
       list-style: disc inside none;
       li {
         line-height: 180%;
+        margin-left: 20px;
+        text-indent: -20px;
       }
     }
   }
