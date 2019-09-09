@@ -11,15 +11,15 @@
 		</nav>
 		<nav class="white-navigator pc">
 			<div class="content">
-				<a href="#">
+				<a href="index">
 					<h5>硬核空间</h5>
 				</a>
 				<div class="items">
-					<a href="#">介绍</a>
-					<a href="#">课程详情</a>
-					<a href="#">教学模式</a>
-					<a href="#">真实的故事</a>
-					<a href="#">关于我们</a>
+					<a href="index">首页</a>
+					<a href="detail">课程详情</a>
+					<a href="mode">教学模式</a>
+					<a href="projects">课程项目</a>
+					<a href="about">关于我们</a>
 				</div>
 			</div>
 		</nav>
