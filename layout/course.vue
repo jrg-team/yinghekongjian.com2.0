@@ -9,12 +9,11 @@
         <transition-group name="col" tag="div">
           <div class="col" v-for="(col, colIndex) in row" v-if="col.visible" :key="colIndex">
             <div class="image" :style="{backgroundImage: `url(${col.image})`}"
+                 :class="{active: showDescription(rowIndex,colIndex)}"
                  @mouseenter="imageMouseEnter(rowIndex, colIndex)"
                  @mouseleave="imageMouseLeave(rowIndex, colIndex)"
             >
-              <transition name="mask">
-                <div class="mask" v-if="showDescription(rowIndex,colIndex)"></div>
-              </transition>
+                <div class="mask"></div>
               <div class="text">
                 <h5>{{col.title}}</h5>
                 <p class="one-line">{{col.content}}</p>
@@ -52,7 +51,7 @@
       return {
         items: [
           [{
-            image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
+            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-16-3.png',
             title: '任务闯关课',
             content: '夯实基础、进度可控、海量实战、code review',
             description:
@@ -63,7 +62,7 @@
               ],
             visible: true
           }, {
-            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-4-24-18-1-22.png',
+            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-54.png',
             title: '拓展直播课',
             content: '突破瓶颈、开阔眼界、深入学习、实时互动',
             description:
@@ -73,7 +72,7 @@
             visible: true
           }],
           [{
-            image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
+            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-49.png',
             title: '阶段性联考',
             content: '实时考核、查漏补缺、效果监测、班级排名',
             description:
@@ -82,7 +81,7 @@
                 '查缺补漏，老师针对性补课'],
             visible: true
           }, {
-            image: 'https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg',
+            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-58.png',
             title: '线下训练营',
             content: '大牛指导、分组协作、真实开发',
             description: [
@@ -118,8 +117,8 @@
   .col-enter-active {max-width: 50%;transition: all .3s ease .3s; transform: scale(1)}
   .col-leave-active {max-width: 50%;transition: all .3s ease; transform: scale(1)}
   .col-leave-to, .col-enter {max-width: 0; width: 0; margin: 0 !important;}
-  .description-enter-active {transition: opacity 0.5s ease 0.3s; transform: scale(1)}
-  .description-leave-active {transition: opacity 0.5s ease; transform: scale(1)}
+  .description-enter-active {transition: opacity 0.3s ease 0.3s; transform: scale(1)}
+  .description-leave-active {transition: opacity 0.3s ease; transform: scale(1)}
   .description-enter, .description-leave-to {opacity: 0;}
   .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease 0.3s; transform: scale(1)}
   .mask-enter, .mask-leave-to {opacity: 0;}
@@ -154,6 +153,22 @@
         height: 360px;
         width: 100%;
         vertical-align: middle;
+        &:after{
+          content: "";
+          width:100%;
+          height:100%;
+          position: absolute;
+          left:0;
+          top:0;
+          background: inherit;
+          opacity: 0;
+          filter: blur(3px);
+          z-index: 1;
+          transition: opacity .3s ease;
+        }
+        &.active:after {
+          opacity: 1;
+        }
       }
       div.text {
         position: absolute;
@@ -196,6 +211,7 @@
           color: white;
           margin: 5px;
           flex: 1;
+          overflow: hidden;
           position: relative;
           div.mask {
             position: absolute;
