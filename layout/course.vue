@@ -13,9 +13,7 @@
                  @mouseenter="imageMouseEnter(rowIndex, colIndex)"
                  @mouseleave="imageMouseLeave(rowIndex, colIndex)"
             >
-              <transition name="mask">
                 <div class="mask"></div>
-              </transition>
               <div class="text">
                 <h5>{{col.title}}</h5>
                 <p class="one-line">{{col.content}}</p>
