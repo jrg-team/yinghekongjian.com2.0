@@ -11,11 +11,11 @@
           <a href="#">查看详情<i class="iconfont hcsp-right"></i></a>
         </div>
         <div class="image-wrapper col">
-          <img src="../assets/experience.png" alt="前端转行经历"/>
+          <img :src="$cdn(pictureSrc)" alt="前端转行经历"/>
         </div>
       </div>
       <text-with-pic
-        image-src="https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-4-11-16-30.png"
+        :image-src="pictureSrc"
         class="mobile text-with-pic-wrapper"
       >
         <div class="title col">
@@ -71,7 +71,12 @@
 
   export default {
     name: 'experience',
-    components: {TextWithPic, BlackButton}
+    components: {TextWithPic, BlackButton},
+    data() {
+      return {
+        pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-2-11.png'
+      }
+    }
   }
 </script>
 
