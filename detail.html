@@ -21,7 +21,7 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_url)})`}">
-            <h1 class="name">{{item.name}}</h1>
+            <div class="title name">{{item.name}}</div>
             <h2 class="name">{{item.sub_name}}</h2>
           </div>
         </swiper-slide>
@@ -34,7 +34,7 @@
       <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_phone_url)})`}">
-            <h1 class="name">{{item.name}}</h1>
+            <div class="title name">{{item.name}}</div>
             <h3 class="name">{{item.sub_name}}</h3>
             <div class="cover"></div>
           </div>
