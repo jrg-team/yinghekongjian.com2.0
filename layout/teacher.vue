@@ -42,7 +42,7 @@
 <p>前阿里巴巴资深工程师，现任Gradle核心团队成员，日常工作就是写开源代码。过去一年有逾5000个GitHub contribution，给包括JDK/Maven在内的众多开源项目贡献过代码。</p>
 <p>擅长阅读源码解决疑难问题。拥有专利一项，出版译著一部，曾受邀于硅谷进行演讲。</p>
 <p>GitHub主页：<a href="https://github.com/blindpirate">@blindpirate</a></p>`,
-          image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-10-42.png',
+          image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-11-9-46-7.png',
           mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-10-42.png'
         }, {
           name: '无隅',
