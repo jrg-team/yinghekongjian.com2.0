@@ -53,7 +53,8 @@ p {
   h4{
     color: #111;
     font-size: 20px;
-    margin: 24px 0;
+    margin: 60px 0 24px;
+    text-align: center;
   }
   img{
     width: 100%;
@@ -86,6 +87,11 @@ p {
       background: #EEEEEE;
       text-align: left;
       border: none;
+    }
+    tbody {
+      tr:first-child {
+        td {width: 300px}
+      }
     }
   }
 }
@@ -143,7 +149,7 @@ p {
     table{
       border-collapse: collapse;
       border: 1px solid #D6D6D6;
-      margin: 12px 0;
+      margin: 24px 0;
       width: 100%;
       font-size: 12px;
       text-align: center;
@@ -153,6 +159,11 @@ p {
       thead{
         background: #EEEEEE;
         border: none;
+      }
+      tbody {
+        tr:first-child {
+          td {width: 150px}
+        }
       }
     }
   }
