@@ -90,7 +90,7 @@ p {
     }
     tbody {
       td:first-of-type {width: 300px;}
-      td:last-of-type {min-width: 5em;}
+      td:last-of-type {min-width: calc(60px + 6em);}
     }
   }
 }
