@@ -89,9 +89,8 @@ p {
       border: none;
     }
     tbody {
-      tr:first-child {
-        td {width: 300px}
-      }
+      td:first-of-type {width: 300px;}
+      td:last-of-type {min-width: 5em;}
     }
   }
 }
@@ -161,9 +160,8 @@ p {
         border: none;
       }
       tbody {
-        tr:first-child {
-          td {width: 150px}
-        }
+        td:first-of-type {width: 150px;}
+        td:last-of-type {min-width: 3em;}
       }
     }
   }
