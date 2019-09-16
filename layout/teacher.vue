@@ -38,10 +38,13 @@
       return {
         swiperSlides: [{
           name: '张博',
-          introduction: `<h3>张博</h3><h6>上海</h6>
-<p>前阿里巴巴资深工程师，现任Gradle核心团队成员，日常工作就是写开源代码。过去一年有逾5000个GitHub contribution，给包括JDK/Maven在内的众多开源项目贡献过代码。</p>
-<p>擅长阅读源码解决疑难问题。拥有专利一项，出版译著一部，曾受邀于硅谷进行演讲。</p>
-<p>GitHub主页：<a href="https://github.com/blindpirate">@blindpirate</a></p>`,
+          introduction: `<h3>张博</h3><h6>种一棵树最好的时间是十年前，其次是现在</h6>
+<p>你好，我叫张博，前阿里巴巴资深工程师，现任Gradle核心团队成员，日常工作就是写开源代码。我给包括JDK/Maven在内的众多开源项目都贡献过代码，如果你是写Java的，那么你多半在用我写的代码。</p>
+<p>很多人会问我如何学习——如何学习编程，学习Java，学习英语，我总是回答他们，其实只有两个字：坚持。这个世界上有谁一生下来就是什么都会的呢？</p>
+<p>没有。每个人的知识都是一点一滴积攒起来的。无他，唯手熟尔。你要做的，就只是坚持不懈而已。</p>
+<p>下定决心之后，接下来要做的，就是寻找一个努力的方向。这就是我存在的意义，我指给你正确的方向，并且在你最无力的时候推你一把。</p>
+<p>在硬核空间，你有非常清晰、方向明确的学习路径，有海量的真实代码练手，有业界最顶尖的专家辅导。你还在等什么呢？</p>
+<p>我的GitHub主页是<a href="https://github.com/blindpirate">@blindpirate</a>，欢迎follow我！</p>`,
           image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-11-9-46-7.png',
           mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-10-42.png'
         }, {
