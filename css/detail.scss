@@ -83,11 +83,6 @@
       font-size: 20px;
       line-height: 44px;
     }
-    .cover{
-      position: absolute;
-      top: 0;bottom:0;left:0;right: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 57.81%, rgba(255, 255, 255, 0.6) 80.21%, #FFFFFF 100%)
-    }
   }
   .swiper-button-disabled{
     display: none;
@@ -121,7 +116,7 @@ section.container{
 
 @media (max-width: 499px) {
   .pc {
-    display: none;
+    display: none !important;
   }
   .mobile {
     display: block;
