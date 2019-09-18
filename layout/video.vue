@@ -1,13 +1,13 @@
 <template>
   <custom-video
-    poster="https://static.xiedaimala.com/hcsp-video-poster.jpg"
-    link="https://static.xiedaimala.com/hcsp-spread.mp4"
+    :poster="poster"
+    :link="link"
   >
     <template slot-scope="slotProps">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
       <div class="center-icon-wrapper" :class="{playing: playing}" @click="() => {playing = true; slotProps.togglePlayStatus()}">
         <i class="iconfont hcsp-bofang controller-button"></i>
-        <h3 class="text">播放影片</h3>
+        <h5 class="text">播放影片</h5>
       </div>
       <a class="get-description" href="#" :class="{playing: playing}">
         获取文字描述 <i class="iconfont hcsp-right"></i>
@@ -25,7 +25,7 @@
     components: {CustomVideo},
     data() {
       return {
-        poster: 'https://static.xiedaimala.com/hcsp-video-poster.jpg',
+        poster: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-18-18-0-57.png',
         link: 'https://static.xiedaimala.com/hcsp-spread.mp4',
         playing: false,
       }
@@ -54,7 +54,7 @@
     flex-direction: column;
     cursor: pointer;
     z-index: $play-button-z-index;
-    h3.text {
+    h5.text {
       white-space: nowrap;
       margin-top: 20px;
       color: white;

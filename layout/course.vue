@@ -105,8 +105,8 @@
       }
     },
     created() {
-      this.imageMouseEnter = debounce(this._imageMouseEnter, 500)
-      this.imageMouseLeave = debounce(this._imageMouseLeave, 500)
+      this.imageMouseEnter = debounce(this._imageMouseEnter, 200)
+      this.imageMouseLeave = debounce(this._imageMouseLeave, 200)
     }
   }
 
