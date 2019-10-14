@@ -5,7 +5,7 @@ import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
 import pictureTextList from '../layout/pictureTextList'
 
-const TYPE = 'yinghekongjian'
+const TYPE = process.env.BUILD_FLAG
 
 new Vue({
   el: '#app',

@@ -6,7 +6,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
 
-const TYPE = 'yinghekongjian'
+const TYPE = process.env.BUILD_FLAG
 
 new Vue({
   el: '#app',

@@ -5,27 +5,29 @@
   "repository": "git@github.com:jrg-team/yinghekongjian.com2.0.git",
   "author": "Zegendary <zxw1992513@qq.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "parcel build ./*.html --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist"
-  },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.js"
   },
+  "scripts": {
+    "build:java": "cross-env BUILD_FLAG=yinghekongjian && parcel build ./*.html --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist/java --out-dir dist/java",
+    "build:jirengu": "cross-env BUILD_FLAG=jirengu && parcel build ./*.html --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist/jirengu --out-dir dist/jirengu"
+  },
   "dependencies": {
     "axios": "^0.19.0",
+    "cross-env": "^6.0.3",
     "layout": "^2.2.0",
     "marked": "^0.7.0",
     "swiper": "^4.5.0",
-    "vue": "^2.6.10",
     "v-tooltip": "^2.0.2",
+    "vue": "^2.6.10",
     "vue-awesome-swiper": "^3.1.3",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.0.0",
     "cssnano": "^4.1.10",
-    "node-sass": "^4.12.0",
     "lodash": "^4.17.15",
+    "node-sass": "^4.12.0",
     "sass": "^1.22.10",
     "vue-template-compiler": "^2.6.10"
   }
