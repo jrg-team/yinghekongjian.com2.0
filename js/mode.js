@@ -1,3 +1,4 @@
+import '../lib/init'
 import Vue from '../lib/vue'
 import marked from 'marked'
 import axios from '../lib/axios'
