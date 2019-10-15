@@ -1,5 +1,5 @@
 <template>
-  <a :href="linkTo">
+  <a :href="linkTo" target="_blank">
     <div class="black-button">
       <slot>
         进一步了解

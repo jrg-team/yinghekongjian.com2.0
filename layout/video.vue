@@ -9,7 +9,7 @@
         <i class="iconfont hcsp-bofang controller-button"></i>
         <h5 class="text">播放影片</h5>
       </div>
-      <a class="get-description" href="#" :class="{playing: playing}">
+      <a class="get-description" :href="descriptionUrl" target="_blank">
         获取文字描述 <i class="iconfont hcsp-right"></i>
       </a>
     </template>
@@ -19,14 +19,14 @@
 
 <script>
   import CustomVideo from '../components/CustomVideo'
+  import {videoConfig} from '../lib/config'
 
   export default {
     name: 'myVideo',
     components: {CustomVideo},
     data() {
       return {
-        poster: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-18-18-0-57.png',
-        link: 'https://static.xiedaimala.com/hcsp-spread.mp4',
+        ...videoConfig[process.env.BUILD_FLAG],
         playing: false,
       }
     }

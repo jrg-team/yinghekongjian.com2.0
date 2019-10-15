@@ -2,7 +2,7 @@
   <section class="course-wrapper section-margin">
     <div class="title title-margin">
       <h3>课程如何开展</h3>
-      <p>我们对每个教学环节进行评估，经众多富有Java经验的老师反复推敲后，制定高效Java学习模式</p>
+      <p v-html="description"></p>
     </div>
     <div class="image-wrapper pc">
       <div class="row" v-for="(row, rowIndex) in items">
@@ -44,54 +44,12 @@
 
 <script>
   import {debounce} from 'lodash'
+  import { courseConfig } from "../lib/config";
 
   export default {
     name: 'course',
     data() {
-      return {
-        items: [
-          [{
-            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-16-3.png',
-            title: '任务闯关课',
-            content: '夯实基础、进度可控、海量实战、code review',
-            description:
-              ['张博老师亲自制作全套通关任务',
-                '视频、文档、博客、代码、实操、项目、架构',
-                'Github提交、CI机器人判题、review所有代码',
-                '每一份作业进行老师批改+同学互评'
-              ],
-            visible: true
-          }, {
-            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-54.png',
-            title: '拓展直播课',
-            content: '突破瓶颈、开阔眼界、深入学习、实时互动',
-            description:
-              ['2晚/周、持续半年',
-                '高级知识点、课程答疑、模拟面试、就业指导',
-                '直播弹幕实时互动，课后录播无限期回放'],
-            visible: true
-          }],
-          [{
-            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-49.png',
-            title: '阶段性联考',
-            content: '实时考核、查漏补缺、效果监测、班级排名',
-            description:
-              ['独家考试系统，班级定期联考',
-                '测试真实水平，做到心中有数',
-                '查缺补漏，老师针对性补课'],
-            visible: true
-          }, {
-            image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-58.png',
-            title: '线下训练营',
-            content: '大牛指导、分组协作、真实开发',
-            description: [
-              '线下编程马拉松，真实团队协同开发',
-              '老师面对面指导，现场code review',
-              '项目评选，荣誉证书'
-            ],
-            visible: true
-          }]]
-      }
+      return courseConfig[process.env.BUILD_FLAG];
     },
     methods: {
       _imageMouseEnter(rowIndex, colIndex) {

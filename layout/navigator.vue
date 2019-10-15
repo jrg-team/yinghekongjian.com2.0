@@ -1,13 +1,13 @@
 <template>
   <header>
     <nav class="black-navigator pc">
-      <div class="content">
-        <i class="iconfont hcsp-icon-white"></i>
-        <a href="https://yinghekongjian.com">
-          <span :class="{active: buildType === 'yinghekongjian'}">硬核空间</span>
-        </a>
-        <a href="https://jirengu.com">
+      <div class="content" id="link-wrapper">
+        <i class="iconfont" id="black-navigator-icon"></i>
+        <a href="https://jirengu.com" id="jirengu-nav-item">
           <span :class="{active: buildType === 'jirengu'}">饥人谷</span>
+        </a>
+        <a href="https://yinghekongjian.com" id="yinghekongjian-nav-item">
+          <span :class="{active: buildType === 'yinghekongjian'}">硬核空间</span>
         </a>
         <a href="https://xiedaimala.com">
           <span>写代码啦</span>
@@ -20,7 +20,8 @@
     <nav class="white-navigator pc">
       <div class="content">
         <a href="index">
-          <h5>硬核空间</h5>
+          <h5 v-if="buildType === 'yinghekongjian'">硬核空间</h5>
+		  <h5 v-else>饥人谷</h5>
         </a>
         <div class="items">
           <a href="index">首页</a>
@@ -63,56 +64,14 @@
   </header>
 </template>
 <script>
-import buildFlag from '../lib/buildType'
+import {navigatorConfig} from '../lib/config'
 export default {
   name: "MyNavigator",
   data() {
     return {
-	  modalVisible: false,
-	  buildType: buildFlag,
-      node: [
-        {
-          title: "硬核空间",
-          expanded: true,
-          children: [
-            {
-              title: "介绍",
-              link: "#"
-            },
-            {
-              title: "课程详情",
-              link: "#"
-            },
-            {
-              title: "教学模式",
-              link: "#"
-            },
-            {
-              title: "真实的故事",
-              link: "#"
-            },
-            {
-              title: "关于我们",
-              link: "#"
-            }
-          ]
-        },
-        {
-          title: "饥人谷",
-          expanded: false,
-          children: []
-        },
-        {
-          title: "写代码啦",
-          expanded: false,
-          link: "https://xiedaimala.com"
-        },
-        {
-          title: "河马社区",
-          expanded: false,
-          link: "https://xiedaimala.com/bbs"
-        }
-      ]
+      modalVisible: false,
+	  buildType: process.env.BUILD_FLAG,
+      node: navigatorConfig[process.env.BUILD_FLAG].node
     };
   },
   methods: {
@@ -123,6 +82,15 @@ export default {
       if (this.node[index].children && this.node[index].children.length > 0) {
         this.node[index].expanded = !this.node[index].expanded;
       }
+    }
+  },
+  mounted() {
+	document.getElementById('black-navigator-icon').classList.add(navigatorConfig[process.env.BUILD_FLAG].icon)
+    if (process.env.BUILD_FLAG === "yinghekongjian") {
+      let changeNode = document.getElementById("yinghekongjian-nav-item");
+      let existingnode = document.getElementById("jirengu-nav-item");
+      let p = document.getElementById("link-wrapper");
+      p.insertBefore(changeNode, existingnode);
     }
   }
 };
