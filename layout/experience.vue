@@ -68,14 +68,13 @@
 <script>
   import TextWithPic from '../components/TextWithPic'
   import BlackButton from '../components/BlackButton'
+  import { experienceConfig } from "../lib/config";
 
   export default {
     name: 'experience',
     components: {TextWithPic, BlackButton},
     data() {
-      return {
-        pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-2-11.png'
-      }
+      return experienceConfig[process.env.BUILD_FLAG]
     }
   }
 </script>
