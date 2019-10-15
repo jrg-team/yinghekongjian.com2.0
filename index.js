@@ -1,3 +1,4 @@
+import './lib/init.js'
 import Vue from './lib/vue'
 import MyNavigator from './layout/navigator'
 import MyFooter from './layout/footer'

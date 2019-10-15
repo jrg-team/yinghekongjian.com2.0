@@ -1,3 +1,4 @@
+import '../lib/init'
 import Vue from '../lib/vue'
 import 'swiper/dist/css/swiper.css'
 import axios from '../lib/axios'
