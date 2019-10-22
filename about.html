@@ -41,7 +41,7 @@
     <h3 class="mobile">关于人员</h3>
     <section class="partners">
       <div class="partner" :key="index" v-for="partner,index in about.partners">
-        <img :src="$cdn(partner.image_url)" alt=""/>
+        <div class="avatar" :style="{backgroundImage: $cdn(partner.image_url)}"></div>
         <div class="name">{{partner.name}}</div>
         <div class="position">{{partner.position}}</div>
         <div class="description">{{partner.description}}</div>
