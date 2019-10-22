@@ -215,4 +215,8 @@ p {
 
 .tooltip-inner {
   > div > p {color: #f2f2f2;}
+  div.pdf-link {
+      margin: 10px 4px;
+      border-radius: 4px;
+  }
 }

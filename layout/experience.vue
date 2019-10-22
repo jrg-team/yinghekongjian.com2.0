@@ -57,8 +57,14 @@
         <div class="text-wrapper">
           <i class="iconfont hcsp-article"></i>
           <h6>下载课程大纲</h6>
-          <p>下载 PDF 格式的课程大纲</p>
-          <a href="#">进一步了解<i class="iconfont hcsp-right"></i></a>
+          <v-popover>
+            <span class="download">下载 PDF 格式的课程大纲 <i class="iconfont hcsp-right"/></span>
+            <template slot="popover">
+              <div v-for="(pdf, index) in pdfLinks" :key="index" class="pdf-link">
+                <a :href="pdf.link" target="_blank">{{pdf.title}}</a>
+              </div>
+            </template>
+          </v-popover>
         </div>
       </div>
     </section>
@@ -177,6 +183,13 @@
           font-size: 36px;
         }
       }
+    }
+  }
+  .v-popover {
+    span.download {
+      cursor: pointer;
+      color: $blue;
+      font-size: 14px;
     }
   }
 </style>
