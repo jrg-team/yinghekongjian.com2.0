@@ -46,6 +46,9 @@ export default {
     }
     h3 {
       margin: 60px 0 20px;
+      @media (max-width: 499px) {
+        margin: 40px 0 10px;
+      }
     }
     h6 + h3 {
       margin-top: 20px;
