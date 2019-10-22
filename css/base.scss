@@ -212,3 +212,7 @@ p {
   text-overflow:ellipsis;
   white-space: nowrap;
 }
+
+.tooltip-inner {
+  > div > p {color: #f2f2f2;}
+}
