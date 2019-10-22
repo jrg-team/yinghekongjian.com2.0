@@ -1,6 +1,6 @@
 <template>
   <div class="preview-wrapper section-margin">
-    <h3 class="title title-margin">国内顶级Java教学水平</h3>
+    <h3 class="title title-margin">{{title}}</h3>
     <div class="items-wrapper">
       <div class="row">
         <div class="item" v-for="node in content.slice(0, this.content.length/2)">
