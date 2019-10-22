@@ -113,7 +113,7 @@
             {
               title: '关于 饥人谷',
               children: [
-                {text: 'aaa', link: '#'}
+                {text: '关于我们', link: 'about'}
               ]
             }
           ]

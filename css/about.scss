@@ -106,9 +106,13 @@ h2,h3,h4{
   .partner{
     width: 220px;
     margin: 0 20px 40px 20px;
-    >img{
+    >div.avatar{
       width: 220px;
+      height: 220px;
       border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     .name,.position{
       margin: 10px 0;

@@ -158,6 +158,10 @@
         h6, p {
           margin-top: 30px;
         }
+        ul {
+          text-indent: 1em;
+          li {line-height: 200%;}
+        }
         h6 {font-weight: $font-bold}
         a {display: inline-block; color: #6699CC}
         padding: 30px 0;
