@@ -33,7 +33,7 @@
     </div>
     <TextWithPic
       class="mobile"
-      image-src="https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg"
+      :image-src="courseListImg"
       :title="courseTitle"
       :content="courseDescription"
       :link-to="{link: courseLink, text: '查看完整课程大纲'}"

@@ -41,6 +41,7 @@ footer> .content {
       margin-bottom: 8px;
       span {
         color: $blue;
+        cursor: pointer;
       }
       border-bottom: $light-border;
     }
@@ -60,6 +61,16 @@ footer> .content {
       }
       >a:last-child {border: none;}
     }
+  }
+  .v-popover.wechat {
+    display: inline-block;
+  }
+}
+.tooltip-inner {
+  max-width: 30vw !important;
+  img {
+    width: 200px;
+    border-radius: 8px;
   }
 }
 

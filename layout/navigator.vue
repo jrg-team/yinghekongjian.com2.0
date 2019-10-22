@@ -13,7 +13,7 @@
           <span>写代码啦</span>
         </a>
         <a href="https://xiedaimala.com/bbs">
-          <span>河马社区</span>
+          <span>河码社区</span>
         </a>
       </div>
     </nav>
@@ -36,7 +36,7 @@
       <div class="icon-wrapper">
         <i class="iconfont hcsp-zhankai" @click="toggleModalVisible"></i>
         <div class="logo">
-          <i class="iconfont hcsp-icon-white"></i>
+          <i class="iconfont" :class="icon"></i>
         </div>
       </div>
       <transition name="menu">
@@ -70,8 +70,8 @@ export default {
   data() {
     return {
       modalVisible: false,
-	  buildType: process.env.BUILD_FLAG,
-      node: navigatorConfig[process.env.BUILD_FLAG].node
+	    buildType: process.env.BUILD_FLAG,
+      ...navigatorConfig[process.env.BUILD_FLAG]
     };
   },
   methods: {

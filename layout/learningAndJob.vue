@@ -25,10 +25,7 @@
             <li>班级活动，堪比线下的超活跃学习氛围</li>
             <li class="tips">
               <v-popover v-for="(tooltip,index) in tooltips" :key="index">
-                <span
-                  @click="() => tooltip.enabled = !tooltip.enabled"
-                  class="text"
-                >{{tooltip.text}}</span>
+                <span class="text">{{tooltip.text}}</span>
                 <span v-if="index < (tooltips.length -1)">，</span>
                 <template slot="popover">
                   <p>{{ tooltip.tip }}</p>

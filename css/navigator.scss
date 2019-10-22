@@ -61,6 +61,11 @@ header {
     }
   }
   .navigator.mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $navigator-z-index;
     .icon-wrapper {
       position: relative;
       background-color: $black-navigator-bg-color;
@@ -83,6 +88,7 @@ header {
         align-items: center;
         justify-content: center;
         .hcsp-icon-white {margin-right: 0}
+        > i {font-size: 20px;}
       }
       z-index: $navigator-z-index;
       &.black {background-color: black;}
