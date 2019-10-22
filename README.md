@@ -21,8 +21,9 @@
 ```
 
 预览链接：
-  - 硬核空间：https://jrg-team.github.io/yinghekongjian.com2.0/dist/java/
-  - 饥人谷： https://jrg-team.github.io/yinghekongjian.com2.0/dist/jirengu
+
+- 硬核空间：https://jrg-team.github.io/yinghekongjian.com2.0/dist/java
+- 饥人谷： https://jrg-team.github.io/yinghekongjian.com2.0/dist/jirengu
 
 ## TodoList
 
@@ -39,10 +40,10 @@
 - [ ] 饥人谷
   - [ ] 视频
   - [ ] 确定获取文字描述的链接
-  - [-] 方方老师和若愚老师的移动端头像
-  - [-] 若愚老师的个人介绍
-  - [-] 方方老师的个人介绍
-  - [ ] 实战内容的体系课程配图需要确定
+  - [x] 方方老师和若愚老师的移动端头像
+  - [x] 若愚老师的个人介绍
+  - [x] 方方老师的个人介绍
+  - [x] 实战内容的体系课程配图需要确定
   - [ ] 实战内容的实战图片动效
   - [ ] 真实经历文案
   - [ ] 两个闯关式部分需要修改
@@ -54,6 +55,6 @@
   - [ ] 确定隐私政策、使用条款、销售政策、法律信息、网站地图内容
   - [ ] 移动端导航 icon
   - [ ] 移动端导航链接跳转
-  - [ ] v-tooltip移动端适配
-  - [-] 关于我们的每个人头像高度不一致
+  - [x] v-tooltip移动端适配
+  - [x] 关于我们的每个人头像高度不一致
   - [ ] 部署上线

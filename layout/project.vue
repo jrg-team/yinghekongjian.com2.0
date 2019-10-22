@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="col">
-        <img src="../assets/course-list.png" alt="pic"/>
+        <img :src="courseListImg" alt="pic"/>
       </div>
     </div>
     <div class="row wide pc">
