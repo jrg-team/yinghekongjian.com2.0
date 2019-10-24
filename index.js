@@ -9,10 +9,7 @@ import Project from './layout/project'
 import Learning from './layout/learningAndJob'
 import Experience from './layout/experience'
 import Teacher from './layout/teacher'
-import VTooltip from 'v-tooltip'
 import {titleConfig} from './lib/config'
-
-Vue.use(VTooltip)
 
 new Vue({
   el: '#app',

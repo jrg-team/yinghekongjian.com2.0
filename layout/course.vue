@@ -2,10 +2,10 @@
   <section class="course-wrapper section-margin">
     <div class="title title-margin">
       <h3>课程如何开展</h3>
-      <p v-html="description"></p>
+      <p v-html="description" class="long"></p>
     </div>
     <div class="image-wrapper pc">
-      <div class="row" v-for="(row, rowIndex) in items">
+      <div class="row" v-for="(row, rowIndex) in items" :key="rowIndex">
         <transition-group name="col" tag="div">
           <div class="col" v-for="(col, colIndex) in row" v-if="col.visible" :key="colIndex">
             <div class="image" :style="{backgroundImage: `url(${col.image})`}"
@@ -63,8 +63,8 @@
       }
     },
     created() {
-      this.imageMouseEnter = debounce(this._imageMouseEnter, 200)
-      this.imageMouseLeave = debounce(this._imageMouseLeave, 200)
+      this.imageMouseEnter = debounce(this._imageMouseEnter, 100)
+      this.imageMouseLeave = debounce(this._imageMouseLeave, 100)
     }
   }
 
@@ -72,13 +72,13 @@
 
 <style scoped lang="scss">
   @import '../css/vars';
-  .col-enter-active {max-width: 50%;transition: all .3s ease .3s; transform: scale(1)}
-  .col-leave-active {max-width: 50%;transition: all .3s ease; transform: scale(1)}
+  .col-enter-active {max-width: 50%;transition: all .2s ease .2s; transform: scale(1)}
+  .col-leave-active {max-width: 50%;transition: all .2s ease; transform: scale(1)}
   .col-leave-to, .col-enter {max-width: 0; width: 0; margin: 0 !important;}
-  .description-enter-active {transition: opacity 0.3s ease 0.3s; transform: scale(1)}
-  .description-leave-active {transition: opacity 0.3s ease; transform: scale(1)}
+  .description-enter-active {transition: opacity 0.2s ease 0.2s; transform: scale(1)}
+  .description-leave-active {transition: opacity 0.2s ease; transform: scale(1)}
   .description-enter, .description-leave-to {opacity: 0;}
-  .mask-leave-active, .mask-enter-active {transition: opacity 0.5s ease 0.3s; transform: scale(1)}
+  .mask-leave-active, .mask-enter-active {transition: opacity 0.4s ease 0.2s; transform: scale(1)}
   .mask-enter, .mask-leave-to {opacity: 0;}
   .course-wrapper {
     background-color: #F2F2F2;

@@ -188,6 +188,9 @@ p {
     word-break: break-word;
     text-align: center;
   }
+  p.long {
+    max-width: 50em;
+  }
   padding-bottom: 10vh;
 }
 
@@ -219,4 +222,8 @@ p {
       margin: 10px 4px;
       border-radius: 4px;
   }
+}
+
+.iconfont.hcsp-right {
+  font-size: 13px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <section class="experience-wrapper section-margin">
+    <section class="experience-wrapper section-margin" v-if="enable">
       <div class="row pc">
         <div class="title col">
           <h6>真实故事</h6>
