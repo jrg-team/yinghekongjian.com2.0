@@ -119,7 +119,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"lib/init.js":[function(require,module,exports) {
 window.onload = function () {
-  var buildFlag = undefined;
+  var buildFlag = "jirengu";
   var src = 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-11-1-41.f61896f6.png';
 
   if (buildFlag === 'yinghekongjian') {
@@ -12109,15 +12109,274 @@ _vue.default.use({
 
 var _default = _vue.default;
 exports.default = _default;
-},{"vue":"node_modules/vue/dist/vue.js"}],"lib/buildType.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.js"}],"lib/config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.buildType = void 0;
-var buildType = undefined;
-exports.buildType = buildType;
+exports.projectConfig = exports.experienceConfig = exports.courseConfig = exports.teacherConfig = exports.previewConfig = exports.videoConfig = exports.navigatorConfig = exports.titleConfig = void 0;
+var titleConfig = {
+  yinghekongjian: "<h1>\u771F\u6B63\u7684\u786C\u6838<br/>\u662F\u7528\u6280\u672F\u5F00\u521B\u81EA\u5DF1\u7684\u4E16\u754C</h1>",
+  jirengu: "<h1>2020\u7248\u524D\u7AEF\u5168\u65B0\u4F53\u7CFB\u8BFE\u7A0B<br/>\u57F9\u517B\u6709\u7075\u9B42\u7684\u524D\u7AEF\u5DE5\u7A0B\u5E08</h1>"
+};
+exports.titleConfig = titleConfig;
+var navigatorConfig = {
+  yinghekongjian: {
+    node: [{
+      title: "硬核空间",
+      expanded: true,
+      children: [{
+        title: "介绍",
+        link: "#"
+      }, {
+        title: "课程详情",
+        link: "detail"
+      }, {
+        title: "教学模式",
+        link: "mode"
+      }, {
+        title: "课程项目",
+        link: "projects"
+      }, {
+        title: "关于我们",
+        link: "about"
+      }]
+    }, {
+      title: "饥人谷",
+      expanded: false,
+      link: "https://jirengu.com"
+    }, {
+      title: "写代码啦",
+      expanded: false,
+      link: "https://xiedaimala.com"
+    }, {
+      title: "河码社区",
+      expanded: false,
+      link: "https://xiedaimala.com/bbs"
+    }],
+    icon: 'hcsp-icon-white'
+  },
+  jirengu: {
+    node: [{
+      title: "饥人谷",
+      expanded: true,
+      children: [{
+        title: "介绍",
+        link: "#"
+      }, {
+        title: "课程详情",
+        link: "detail"
+      }, {
+        title: "教学模式",
+        link: "mode"
+      }, {
+        title: "课程项目",
+        link: "projects"
+      }, {
+        title: "关于我们",
+        link: "about"
+      }]
+    }, {
+      title: "硬核空间",
+      expanded: false,
+      link: "https://yinghekongjian.com"
+    }, {
+      title: "写代码啦",
+      expanded: false,
+      link: "https://xiedaimala.com"
+    }, {
+      title: "河码社区",
+      expanded: false,
+      link: "https://xiedaimala.com/bbs"
+    }],
+    icon: 'hcsp-jrg-logo-white'
+  }
+};
+exports.navigatorConfig = navigatorConfig;
+var videoConfig = {
+  yinghekongjian: {
+    poster: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-18-18-0-57.png',
+    link: 'https://static.xiedaimala.com/hcsp-spread.mp4',
+    descriptionUrl: "https://mp.weixin.qq.com/s/GktAwEIvrtaOh6aDzZSGug"
+  },
+  jirengu: {
+    poster: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png',
+    link: 'https://static.xiedaimala.com/hcsp-spread.mp4',
+    descriptionUrl: "https://mp.weixin.qq.com/s/q_-KdTfGz7xowSTWcL2A3Q"
+  }
+};
+exports.videoConfig = videoConfig;
+var previewConfig = {
+  yinghekongjian: {
+    title: "国内顶级Java教学水平",
+    content: [{
+      title: '先进教学的倡导者',
+      items: ['CI机器人review代码', '所有作业严格按照真实开发流程操作']
+    }, {
+      title: 'Java领域的先驱者',
+      items: ['资深从业人员', '丰富处理复杂bug的经验']
+    }, {
+      title: '不忘初衷的教育者',
+      items: ['全程陪伴学生学习Java', '服务到就业、自我提升']
+    }, {
+      title: '真材实料的开发者',
+      items: ['全程真实项目', '开发协作打磨技能']
+    }],
+    apponitmentUrl: 'http://jirengu01.mikecrm.com/EjCdM7H'
+  },
+  jirengu: {
+    title: "国内顶级前端教学水平",
+    content: [{
+      title: '先进教学的倡导者',
+      items: ['主讲人是阿里资深前端', '创业公司技术负责人']
+    }, {
+      title: '丰富经验的教学者',
+      items: ['有 BAT 工作经验是我们讲师的最低标准']
+    }, {
+      title: '不忘初衷的教育者',
+      items: ['全程陪伴学生学习前端', '服务到就业、自我提升']
+    }, {
+      title: '真材实料的开发者',
+      items: ['全程真实项目', '开发协作打磨技能']
+    }],
+    apponitmentUrl: 'http://jirengu01.mikecrm.com/aJiF27K'
+  }
+};
+exports.previewConfig = previewConfig;
+var teacherConfig = {
+  yinghekongjian: {
+    teacherList: [{
+      name: '彰德',
+      introduction: "<h3>\u5F70\u5FB7</h3><h6>\u79CD\u4E00\u68F5\u6811\u6700\u597D\u7684\u65F6\u95F4\u662F\u5341\u5E74\u524D\uFF0C\u5176\u6B21\u662F\u73B0\u5728</h6>\n  <p>\u4F60\u597D\uFF0C\u6211\u53EB\u5F70\u5FB7\uFF0C\u524D\u963F\u91CC\u8D44\u6DF1Java\u5F00\u53D1\u3001\u5F00\u6E90\u754C\u5927\u725B\uFF0C\u65E5\u5E38\u5DE5\u4F5C\u5C31\u662F\u5199\u5F00\u6E90\u4EE3\u7801\u3002\u6211\u7ED9\u5305\u62ECJDK/Maven\u5728\u5185\u7684\u4F17\u591A\u5F00\u6E90\u9879\u76EE\u90FD\u8D21\u732E\u8FC7\u4EE3\u7801\uFF0C\u5982\u679C\u4F60\u662F\u5199Java\u7684\uFF0C\u90A3\u4E48\u4F60\u591A\u534A\u5728\u7528\u6211\u5199\u7684\u4EE3\u7801\u3002</p>\n  <p>\u5F88\u591A\u4EBA\u4F1A\u95EE\u6211\u5982\u4F55\u5B66\u4E60\u2014\u2014\u5982\u4F55\u5B66\u4E60\u7F16\u7A0B\uFF0C\u5B66\u4E60Java\uFF0C\u5B66\u4E60\u82F1\u8BED\uFF0C\u6211\u603B\u662F\u56DE\u7B54\u4ED6\u4EEC\uFF0C\u5176\u5B9E\u53EA\u6709\u4E24\u4E2A\u5B57\uFF1A\u575A\u6301\u3002\u8FD9\u4E2A\u4E16\u754C\u4E0A\u6709\u8C01\u4E00\u751F\u4E0B\u6765\u5C31\u662F\u4EC0\u4E48\u90FD\u4F1A\u7684\u5462\uFF1F</p>\n  <p>\u6CA1\u6709\u3002\u6BCF\u4E2A\u4EBA\u7684\u77E5\u8BC6\u90FD\u662F\u4E00\u70B9\u4E00\u6EF4\u79EF\u6512\u8D77\u6765\u7684\u3002\u65E0\u4ED6\uFF0C\u552F\u624B\u719F\u5C14\u3002\u4F60\u8981\u505A\u7684\uFF0C\u5C31\u53EA\u662F\u575A\u6301\u4E0D\u61C8\u800C\u5DF2\u3002</p>\n  <p>\u4E0B\u5B9A\u51B3\u5FC3\u4E4B\u540E\uFF0C\u63A5\u4E0B\u6765\u8981\u505A\u7684\uFF0C\u5C31\u662F\u5BFB\u627E\u4E00\u4E2A\u52AA\u529B\u7684\u65B9\u5411\u3002\u8FD9\u5C31\u662F\u6211\u5B58\u5728\u7684\u610F\u4E49\uFF0C\u6211\u6307\u7ED9\u4F60\u6B63\u786E\u7684\u65B9\u5411\uFF0C\u5E76\u4E14\u5728\u4F60\u6700\u65E0\u529B\u7684\u65F6\u5019\u63A8\u4F60\u4E00\u628A\u3002</p>\n  <p>\u5728\u786C\u6838\u7A7A\u95F4\uFF0C\u4F60\u6709\u975E\u5E38\u6E05\u6670\u3001\u65B9\u5411\u660E\u786E\u7684\u5B66\u4E60\u8DEF\u5F84\uFF0C\u6709\u6D77\u91CF\u7684\u771F\u5B9E\u4EE3\u7801\u7EC3\u624B\uFF0C\u6709\u4E1A\u754C\u6700\u9876\u5C16\u7684\u4E13\u5BB6\u8F85\u5BFC\u3002\u4F60\u8FD8\u5728\u7B49\u4EC0\u4E48\u5462\uFF1F</p>\n  <p>\u6211\u7684GitHub\u4E3B\u9875\u662F<a href=\"https://github.com/blindpirate\">@blindpirate</a>\uFF0C\u6B22\u8FCEfollow\u6211\uFF01</p>",
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-11-9-46-7.png',
+      mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-11-28-35.png'
+    }, {
+      name: '无隅',
+      introduction: "<h3>\u65E0\u9685</h3><h6>\u4ECE\u8FD9\u91CC\u5F00\u59CB \u5E26\u4F60\u5F00\u542F\u4E00\u7EBF\u5927\u5382\u5DE5\u7A0B\u5E08\u4E4B\u8DEF</h6>\n  <p>\u4F60\u597D\uFF0C\u6211\u662F\u65E0\u9685\uFF0C\u6B22\u8FCE\u52A0\u5165\u786C\u6838\u7A7A\u95F4\u3002\u5728\u63A5\u4E0B\u6765\u7684\u51E0\u4E2A\u6708\uFF0C\u6211\u4F1A\u4E0E\u4F60\u4E00\u9053\uFF0C\u4E00\u8D77\u63A2\u7D22Java\u4E0E\u7CFB\u7EDF\u67B6\u6784\u8BBE\u8BA1\u7684\u4E16\u754C\u3002</p>\n  <p>\u6211\u76EE\u524D\u5728Amazon\u62C5\u4EFB\u8F6F\u4EF6\u5DE5\u7A0B\u5E08\u3002\u56E2\u961F\u6240\u4ECE\u4E8B\u7684\u662F\u516C\u53F8\u6838\u5FC3\u4E1A\u52A1\uFF0C\u5BF9\u4E8E\u5927\u89C4\u6A21\u7684\u5206\u5E03\u5F0F\u7CFB\u7EDF\uFF0C\u5982\u4F55\u66F4\u5FEB\u66F4\u7A33\u5B9A\u5C3D\u91CF\u4E0D\u51FA\u9519\u6C38\u8FDC\u662F\u6280\u672F\u5B5C\u5B5C\u4E0D\u5026\u4E50\u6B64\u4E0D\u75B2\u8FFD\u6C42\u7684\u76EE\u6807\u3002\u6211\u4EEC\u4E0D\u9700\u8981\u201C\u5DEE\u4E0D\u591A\u201D\u6216\u201C\u8FD8\u884C\u201D\u7684\u4EE3\u7801\uFF0C\u800C\u662F\u9700\u8981\u8FBE\u5230\u9AD8\u8D28\u91CF\u8BBE\u8BA1\u4E0E\u5B9E\u73B0\u7684\u6C34\u51C6\u3002</p>\n  <p>\u4E00\u7EBF\u5927\u5382\u662F\u5F88\u591A\u540C\u5B66\u68A6\u5BD0\u4EE5\u6C42\u7684\u5C97\u4F4D\uFF0C\u5927\u5BB6\u7F3A\u4E4F\u7684\u5E76\u4E0D\u662F\u673A\u4F1A\uFF0C\u800C\u662F\u901A\u8FC7\u9762\u8BD5\u7684\u7ECF\u9A8C\u4E0E\u4FE1\u5FC3\u3002\u6240\u4EE5\u6211\u5E0C\u671B\u80FD\u591F\u5C06\u4E00\u7EBF\u7814\u53D1\u7684\u7ECF\u9A8C\u89C4\u8303\u548C\u9700\u8981\u638C\u63E1\u7684\u77E5\u8BC6\u4F53\u7CFB\u5728\u5927\u5BB6\u521D\u5165\u540E\u7AEF\u4E16\u754C\u7684\u65F6\u5019\u5C31\u5E26\u7ED9\u5927\u5BB6\uFF0C\u8BA9\u8FD9\u4E9B\u7ECF\u9A8C\u4E0E\u7406\u5FF5\u6DF1\u5165\u5230\u4F60\u7684\u8111\u6D77\u91CC\uFF0C\u6709\u4E2A\u826F\u597D\u7684\u5F00\u7AEF\u3002</p>\n  <p>\u6700\u540E\u6211\u60F3\u7ED9\u5927\u5BB6\u8BF4\u7684\u662F\uFF0C\u5B66\u4E60\u662F\u4E00\u4EF6\u6F2B\u957F\u7684\u4E8B\u60C5\u3002\u81EA\u7136\u754C\u7684\u4E00\u9879\u6839\u672C\u6CD5\u5219\u5C31\u662F\u4E3A\u4E86\u8D62\u5F97\u529B\u91CF\uFF0C\u5FC5\u987B\u52AA\u529B\u7A81\u7834\u6781\u9650\uFF0C\u800C\u8FD9\u662F\u75DB\u82E6\u7684\u3002\u6211\u4EEC\u53EF\u4EE5\u9009\u62E9\u5065\u5EB7\u5E76\u75DB\u82E6\u7684\u4E8B\u5B9E\uFF0C\u4E5F\u53EF\u4EE5\u9009\u62E9\u4E0D\u5065\u5EB7\u4F46\u8212\u9002\u7684\u5E7B\u89C9\u3002\u6BB5\u65F6\u95F4\u5E76\u4E0D\u80FD\u611F\u89C9\u5230\u5DEE\u522B\uFF0C\u5F53\u4F60\u653E\u5230\u5F88\u957F\u65F6\u95F4\u7EF4\u5EA6\u91CC\u9762\uFF0C\u575A\u6301\u4E00\u5E74\u4E24\u5E74\uFF0C\u4E94\u5E74\u5341\u5E74.....\u6700\u540E\u7684\u6210\u5C31\u7EDD\u5BF9\u662F\u6307\u6570\u7EA7\u7684\u5DEE\u8DDD\u3002\u6240\u4EE5\u6211\u5E0C\u671B\u4F60\u80FD\u548C\u6211\u575A\u6301\u4E0B\u6765\uFF0C\u5171\u540C\u6210\u957F\u3002\u9047\u5230\u95EE\u9898\u9009\u62E9\u7684\u4E0D\u662F\u9003\u907F\uFF0C\u800C\u662F\u52AA\u529B\u63A2\u5BFB\u7B54\u6848\u4E0E\u89E3\u51B3\u65B9\u6CD5\u3002\u8FD9\u4E00\u6B21\uFF0C\u5C31\u8BA9\u6211\u4EEC\u4E00\u8D77\u6765\u63A2\u7D22\u540E\u7AEF\u4E16\u754C\u7684\u5965\u79D8\uFF0C\u4E00\u8D77\u5F00\u542F\u4E00\u7EBF\u5927\u5382\u5DE5\u7A0B\u5E08\u4E4B\u8DEF\uFF01</p>\n  <p>\u6211\u5728\u786C\u6838\u7A7A\u95F4\u4F1A\u5F00\u8BBE\u5982\u4E0B\u7684\u4E00\u4E9B\u8BFE\u7A0B\uFF0C\u901A\u8FC7\u8FD9\u4E9B\u6A21\u5757\u5316\u7684\u8BFE\u7A0B\uFF0C\u5E0C\u671B\u80FD\u5E2E\u52A9\u5927\u5BB6\u7CFB\u7EDF\u4E14\u6709\u4F53\u7CFB\u5730\u638C\u63E1\u6838\u5FC3\u77E5\u8BC6\uFF1A\n    <a href=\"https://xiedaimala.com/courses/118b5d4e-c080-4ed7-ab55-9e7b8d175d2f\" target=\"_blank\">\u300A\u7A0B\u5E8F\u5458\u7684\u7B97\u6CD5\u8BFE\u300B</a>\u3001\n    <a href=\"https://xiedaimala.com/courses/82f9fd03-2528-4e68-ba42-f3fd7820535d\" target=\"_blank\">\u300A\u4ECE\u96F6\u5F00\u59CB\u8BBE\u8BA1\u6A21\u5F0F\u300B</a>\u3001\n    <a href=\"https://xiedaimala.com/courses/730db4a0-6927-467d-b725-589017848952\" target=\"_blank\">\u300A\u5FAE\u670D\u52A1\u67B6\u6784\u5B9E\u6218\u300B</a>\u3001\n    <a href=\"https://xiedaimala.com/courses/297dd624-50a3-435a-9e0c-5fa8f79042fd\" target=\"_blank\">\u300AJava 8\u7279\u6027\u5B9E\u6218\u300B</a> \n    \u672A\u5B8C\u5F85\u7EED...</p>\n  ",
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-16-21-34-20.png',
+      mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-11-28-40.png'
+    }]
+  },
+  jirengu: {
+    teacherList: [{
+      name: '方方老师',
+      introduction: "<h3>\u65B9\u65B9</h3><h6>\u65B9\u65B9\u8001\u5E08\uFF0C\u8D44\u6DF1\u524D\u7AEF\u5F00\u53D1\u3001\u9965\u4EBA\u8C37\u8D44\u6DF1\u524D\u7AEF\u8BB2\u5E08\u3002\u534E\u4E2D\u79D1\u6280\u5927\u5B66\u6BD5\u4E1A\uFF0C\u6BD5\u4E1A\u540E\u5148\u540E\u5728\u817E\u8BAF\u3001\u963F\u91CC\u5DF4\u5DF4\u548C\u5F69\u7A0B\u4EFB\u804C</h6>\n            <p>\u4F60\u597D\uFF0C\u6211\u53EB\u65B9\u5E94\u676D\uFF0C\u5927\u5BB6\u4E00\u822C\u53EB\u6211\u65B9\u65B9\u3002\u6211\u505A\u524D\u7AEF\u5F00\u53D1\u5DF2\u7ECF\u4E03\u5E74\u6709\u4F59\u4E86\uFF0C Vue / React / Angular.js / Angular\xA0\u7B49\u4EC0\u4E48\u90FD\u7528\u8FC7\uFF0C\u6700\u7EC8\u6211\u53D1\u73B0\uFF0C\u5B83\u4EEC\u90FD\u662F\u7C7B\u4F3C\u7684\u3002</p>\n            <p>\u4F46\u4EE4\u6211\u60CA\u8BB6\u7684\u662F\uFF0C\u65B0\u7684\u524D\u7AEF\u65B0\u4EBA\u4F3C\u4E4E\u89C9\u5F97\u8FD9\u4E9B\u524D\u7AEF\u6846\u67B6\u6C34\u706B\u4E0D\u5BB9\u3001\u975E\u6B64\u5373\u5F7C\u3002\u4E8E\u662F\u6211\u5C1D\u8BD5\u53BB\u4E86\u89E3\u524D\u7AEF\u65B0\u4EBA\u7684\u5B66\u4E60\u65B9\u6CD5\u548C\u8DEF\u5F84\uFF0C\u5E76\u9010\u6E10\u7406\u89E3\u4E86\u4ED6/\u5979\u4EEC\u4E3A\u4EC0\u4E48\u8BA4\u4E3A\u8FD9\u4E9B\u6846\u67B6\u5DEE\u5F02\u5F88\u5927\uFF0C\u5E76\u4E3A\u6B64\u5F00\u53D1\u4E86\u524D\u7AEF\u4F53\u7CFB\u8BFE\uFF0C\u5E2E\u52A9\u4E86\u5F88\u591A\u81EA\u5B66\u8005\u3002</p>\n            <p>\u8BB2\u8BFE\u4E09\u5E74\uFF0C\u6211\u9010\u6E10\u53D1\u73B0\u300C\u81EA\u5DF1\u4F1A\u5199\u4EE3\u7801\u300D\u548C\u300C\u6559\u4F1A\u522B\u4EBA\u5199\u4EE3\u7801\u300D\u662F\u4E24\u4E2A\u5B8C\u5168\u4E0D\u540C\u7684\u4E8B\u60C5\u3002\u81EA\u5DF1\u5199\u4EE3\u7801\u7684\u65F6\u5019\u53EA\u8981\u8BA9\u81EA\u5DF1\u7406\u89E3\u539F\u7406\u5373\u53EF\uFF0C\u800C\u6559\u4F1A\u522B\u4EBA\u5199\u4EE3\u7801\u7684\u8981\u52A1\u5219\u662F\u7AD9\u5728\u5B66\u751F\u7684\u89D2\u5EA6\uFF0C\u4E86\u89E3\u4ED6\u662F\u5982\u4F55\u601D\u8003\u95EE\u9898\u7684\uFF0C\u5E76\u6307\u51FA\u4ED6\u7684\u95EE\u9898\u3002\u5E76\u4E14\u6211\u8FD8\u9010\u6E10\u53D1\u73B0\uFF0C\u6709\u7684\u65F6\u5019\u65B0\u4EBA\u5B66\u4E0D\u4F1A\u4E00\u4E2A\u77E5\u8BC6\uFF0C\u4E0D\u662F\u56E0\u4E3A\u65B0\u4EBA\u7684\u667A\u5546\u592A\u4F4E\uFF0C\u800C\u662F\u56E0\u4E3A\u6559\u6750\u8BF4\u5F97\u4E0D\u591F\u6E05\u6670\uFF0C\u8001\u5E08\u8BB2\u5F97\u4E0D\u591F\u6DF1\u523B\u3002</p>\n            <p>\u6211\u8FD8\u53D1\u73B0\uFF0C\u5B66\u4E60\u7684\u91CD\u70B9\u4E4B\u4E00\u662F\u4E60\u60EF\u7684\u517B\u6210\uFF0C\u5F88\u591A\u5728\u804C\u7A0B\u5E8F\u5458\u6CA1\u6709\u5199\u535A\u5BA2\u3001\u505A\u603B\u7ED3\u7684\u4E60\u60EF\uFF0C\u5BFC\u81F4\u4ED6\u4EEC\u5DE5\u4F5C\u4E24\u4E09\u5E74\u540E\u6C34\u5E73\u505C\u6EDE\u4E0D\u524D\uFF0C\u6700\u7EC8\u5DE5\u8D44\u88AB\u5012\u6302\uFF0C\u751A\u81F3\u65E0\u529B\u8DF3\u69FD\uFF0C\u8FD9\u5176\u4E2D\u6709\u4E00\u4E2A\u91CD\u8981\u7684\u539F\u56E0\u5C31\u662F\u4ED6\u4EEC\u5728\u5165\u95E8\u7684\u65F6\u5019\u6CA1\u6709\u517B\u6210\u826F\u597D\u7684\u5B66\u4E60\u4E60\u60EF\uFF0C\u6BD4\u5982\u770B\u4E66\u5FC5\u987B\u8BB0\u7B14\u8BB0\uFF0C\u6709\u4E86\u611F\u609F\u6700\u597D\u5199\u535A\u5BA2\u8BB0\u5F55\u4E00\u4E0B\uFF0C\u53D1\u73B0\u77E5\u8BC6\u76F2\u533A\u4E00\u5B9A\u8981\u53BB\u641C\u7D22\u6743\u5A01\u6587\u6863\u800C\u4E0D\u662F\u542C\u4FE1\u4E8C\u624B\u77E5\u8BC6\u7B49\u7B49\u3002</p>\n            <p>\u8FD9\u4E9B\u4E60\u60EF\u6211\u4E00\u76F4\u90FD\u6709\uFF0C\u5E76\u4E14\u53D7\u76CA\u826F\u591A\u3002\u6211\u89C9\u5F97\u6BCF\u4E2A\u7A0B\u5E8F\u5458\u90FD\u5E94\u8BE5\u6709\u8FD9\u4E9B\u597D\u4E60\u60EF\uFF0C\u56E0\u6B64\u6211\u5728\u8BFE\u7A0B\u4E2D\u7528\u5404\u79CD\u529E\u6CD5\u57F9\u517B\u5B66\u751F\u517B\u6210\u8FD9\u4E9B\u4E60\u60EF\u3002</p>\n            <p>\u6240\u4EE5\uFF0C\u5982\u679C\u4F60\u5E0C\u671B\u80FD\u591F\u5728\u7F16\u7A0B\uFF08\u4E0D\u53EA\u662F\u524D\u7AEF\uFF09\u7684\u8DEF\u4E0A\u4FDD\u6301\u524D\u884C\uFF0C\u4E5F\u8BB8\u6211\u7684\u8BFE\u7A0B\u53EF\u4EE5\u5E2E\u4F60\u3002</p>",
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-16-38-41.png',
+      mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-16-38-36.png'
+    }, {
+      name: '若愚老师',
+      introduction: "<h3>\u82E5\u611A</h3><h6>\u524D\u767E\u5EA6\u3001\u963F\u91CC\u5DF4\u5DF4\u5DE5\u7A0B\u5E08\uFF0C\u9965\u4EBA\u8C37\u6700\u53D7\u6B22\u8FCE\u7684\u8BB2\u5E08\u4E4B\u4E00\uFF0C\u64C5\u957F Node.js\u3001Vue.js\u6280\u672F\u6808 \uFF0C\u5584\u4E8E\u628A\u590D\u6742\u7684\u95EE\u9898\u7B80\u5355\u5316</h6>\n            <p>\u6211\u662F\u82E5\u611A\uFF0C\u505A\u5F00\u53D1\u5DF2\u63A5\u8FD18\u5E74\uFF0C\u7855\u58EB\u6BD5\u4E1A\u540E\u5728\u767E\u5EA6\u505A\u524D\u7AEF\u5F00\u53D1\uFF0C\u540E\u79BB\u5F00\u5317\u4EAC\u5230\u4E86\u676D\u5DDE\u7684\u963F\u91CC\uFF0C\u4E4B\u540E\u79BB\u804C\u521B\u4E1A\u6210\u7ACB\u9965\u4EBA\u8C37\u3002</p>\n            <p>\u201C\u5E08\u8005\uFF0C\u4F20\u9053\u6388\u4E1A\u89E3\u60D1\u4E5F\u201D\u3002\u4F5C\u4E3A\u8001\u5E08\uFF0C\u6700\u4F4E\u8981\u6C42\u662F\u201C\u89E3\u60D1\u201D\uFF0C\u80FD\u8BA4\u771F\u3001\u8010\u5FC3\u3001\u8D1F\u8D23\u7684\u89E3\u7B54\u5B66\u751F\u7684\u6BCF\u4E00\u4E2A\u95EE\u9898\uFF0C\u5305\u62EC\u6280\u672F\u95EE\u9898\u3001\u5B66\u4E60\u65B9\u6CD5\u95EE\u9898\u3001\u6C42\u804C\u95EE\u9898\u3001\u804C\u4E1A\u53D1\u5C55\u95EE\u9898\u3002\u66F4\u9AD8\u7684\u5C42\u7EA7\u662F\u201C\u6388\u4E1A\u201D\uFF0C\u80FD\u591F\u4F20\u627F\u8863\u94B5\uFF0C\u8BA9\u5B66\u751F\u771F\u6B63\u638C\u63E1\u5403\u996D\u7684\u6280\u80FD\uFF0C\u5E76\u4E14\u80FD\u8BA9\u5176\u987A\u5229\u5165\u884C\u3002\u6700\u9AD8\u5C42\u7EA7\u662F\u201C\u4F20\u9053\u201D\uFF0C\u6211\u7406\u89E3\u7684\u201C\u4F20\u9053\u201D\u4E5F\u5C31\u662F\u9965\u4EBA\u8C37\u7684\u4F7F\u547D\u2014\u2014<strong>\u57F9\u517B\u6709\u7075\u9B42\u7684\u524D\u7AEF\u5DE5\u7A0B\u5E08\u3002</strong></p>\n            <p>\u4F55\u4E3A\u5DE5\u7A0B\u5E08\u7684\u201C\u7075\u9B42\u201D\uFF1F</p>\n            <ul>\n                <li>1. \u771F\u5B9E\uFF0C\u675C\u7EDD\u5F04\u865A\u4F5C\u5047</li>\n                <li>2. \u5584\u4E8E\u5B66\u4E60\u3001\u52E4\u4E8E\u601D\u8003\u3001\u4E50\u4E8E\u52A8\u624B</li>\n                <li>3. \u5BF9\u6781\u81F4\u7684\u5411\u5F80\uFF0C\u5BF9\u7F8E\u7684\u8FFD\u6C42</li>\n                <li>4. \u4E50\u89C2\u81EA\u4FE1\u4E0D\u76F2\u4ECE\u3001\u5584\u4E8E\u8868\u8FBE\u4F1A\u6C9F\u901A</li>\n            </ul>\n            <p>5\u5E74\u6765\u4EB2\u624B\u9001\u5230\u5DE5\u4F5C\u5C97\u4F4D\u7684\u5DE5\u7A0B\u5E08\u63A5\u8FD1\u4E24\u5343\u4EBA\uFF0C\u904D\u5E03\u5404\u5927\u4E92\u8054\u7F51\u4F01\u4E1A\u5305\u62EC\u963F\u91CC\u3001\u767E\u5EA6\u3001\u817E\u8BAF\u3001\u5B57\u8282\u8DF3\u52A8\u3001\u4EAC\u4E1C\u3001\u7F8E\u56E2\u3001\u534E\u4E3A\u3001\u62FC\u591A\u591A\u3001\u7F51\u6613\u3001\u6709\u8D5E\u3001\u6EF4\u6EF4\u3001360\u3001facebook\u7B49\u3002</p>\n            <p>\u5343\u4EBA\u5343\u9762\uFF0C\u4F46\u81F3\u5C11\u6709\u4E00\u9762\u662F\u76F8\u4F3C\u7684\uFF0C\u5C31\u662F\u5DE5\u7A0B\u5E08\u7684\u201C\u7075\u9B42\u201D\u3002</p>",
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-15-57-5.png',
+      mobileImage: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-11-31-59.jpg'
+    }]
+  }
+};
+exports.teacherConfig = teacherConfig;
+var courseConfig = {
+  jirengu: {
+    description: "\u6211\u4EEC\u5BF9\u6BCF\u4E2A\u6559\u5B66\u73AF\u8282\u8FDB\u884C\u8BC4\u4F30\uFF0C\u7ECF\u4F17\u591A\u5BCC\u6709\u524D\u7AEF\u7ECF\u9A8C\u7684\u8001\u5E08\u53CD\u590D\u63A8\u6572\u540E\uFF0C\u5236\u5B9A\u9AD8\u6548\u524D\u7AEF\u5B66\u4E60\u6A21\u5F0F\n        <br/>\u8BFE\u7A0B\u6A21\u5F0F\uFF1A\u901A\u5173\u4EFB\u52A1\uFF0B\u62D3\u5C55\u76F4\u64AD\uFF0B\u5B9E\u8DF5\u9879\u76EE\uFF0B\u5C31\u4E1A\u8F85\u5BFC\u5168\u65B9\u4F4D\u6307\u5BFC",
+    items: [[{
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-20-36.png',
+      title: '通关任务（120H+）',
+      content: '夯实基础、进度可控、海量实战、code review',
+      description: ['包含知识总结任务、代码实现任务、架构设计任务、贯穿课程的项目任务等', '每章节配套课后作业，由专门老师批改点评以及学生互评', '学习期间有疑问任课老师无时差答疑'],
+      visible: true
+    }, {
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-26-6.png',
+      title: '拓展课程（6个月）',
+      content: '突破瓶颈、开阔眼界、深入学习、实时互动',
+      description: ['每周2次直播课，每次直播2课时(小时)', '直播内容包含进阶提高知识点、课程答疑、模拟面试、就业指导等', '每周2次集中答疑，提前收集同学课程疑问，线上统一解答疑问，手把手教学', '直播弹幕实时互动，课后录播无限期回放'],
+      visible: true
+    }], [{
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-26-13.png',
+      title: '实践项目（20+）',
+      content: '主流框架、大型项目、对接企业',
+      description: ['单独项目群，老师手把手指导，直到项目上线', 'N多项目选择，新颖原创不撞车，弥补经验缺失', '项目与企业对接，工作可直接上手'],
+      visible: true
+    }, {
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-26-20.png',
+      title: '阶段性联考',
+      content: '大牛指导、分组协作、真实开发',
+      description: ['独家考试系统，班级定期联考', '测试真实水平，做到心中有数', '查缺补漏，老师针对性补课'],
+      visible: true
+    }]]
+  },
+  yinghekongjian: {
+    description: '我们对每个教学环节进行评估，经众多富有Java经验的老师反复推敲后，制定高效Java学习模式',
+    items: [[{
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-16-3.png',
+      title: '任务闯关课',
+      content: '夯实基础、进度可控、海量实战、code review',
+      description: ['彰德老师亲自制作全套通关任务', '视频、文档、博客、代码、实操、项目、架构', 'Github提交、CI机器人判题、review所有代码', '每一份作业进行老师批改+同学互评'],
+      visible: true
+    }, {
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-54.png',
+      title: '拓展直播课',
+      content: '突破瓶颈、开阔眼界、深入学习、实时互动',
+      description: ['2晚/周、持续半年', '高级知识点、课程答疑、模拟面试、就业指导', '直播弹幕实时互动，课后录播无限期回放'],
+      visible: true
+    }], [{
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-49.png',
+      title: '阶段性联考',
+      content: '实时考核、查漏补缺、效果监测、班级排名',
+      description: ['独家考试系统，班级定期联考', '测试真实水平，做到心中有数', '查缺补漏，老师针对性补课'],
+      visible: true
+    }, {
+      image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-58.png',
+      title: '线下训练营',
+      content: '大牛指导、分组协作、真实开发',
+      description: ['线下编程马拉松，真实团队协同开发', '老师面对面指导，现场code review', '项目评选，荣誉证书'],
+      visible: true
+    }]]
+  }
+};
+exports.courseConfig = courseConfig;
+var projectConfig = {
+  yinghekongjian: {
+    title: '全面、深度、紧贴实战',
+    subTitle: '通过对Java的全面学习，充分利用时间紧密学习，精通每个知识点，加以实战项目将知识点融会贯通，学以致用，直接上手工作',
+    courseTitle: '体系课程涵盖40个阶段，初、中、高级Java核心知识',
+    courseDescription: '我们希望同学在学习过程中可以同时获得快乐与知识，因此我们加入了很多有趣的环节，让学习变得不那么枯燥。通过各位大牛老师的精心打造，你可以很流畅地从入门开始学习，全面了解后端基础知识、Java语言入门及应用、基本数据结构和算法知识、Java Web开发、框架使用、前后端协作、发布与部署的基础知识、面试技巧等，直到找到心仪的工作。我们一起来让Java学习变得轻松愉悦。',
+    courseLink: 'detail',
+    courseListImg: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-14-33-55.png',
+    projectTitle: '三大实战项目，让你轻松应对日常工作与面试',
+    projectDescription: '全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。',
+    projectLink: 'mode'
+  },
+  jirengu: {
+    title: '全面、深度、紧贴实战',
+    subTitle: '通过对前端的全面学习，充分利用时间紧密学习，精通每个知识点，加以实战项目将知识点融会贯通，学以致用，直接上手工作',
+    courseTitle: '体系课程涵盖40个阶段，初、中、高级前端核心知识',
+    courseDescription: '本课程为前端系统就业班课程，适合零基础同学和有前端开发经验需要系统提升的同学(待遇在15k以下的同学)。课程循序渐进讲解和实践前端开发技术栈及大量实战项目，如HTML5、CSS3、ES6、JavaScript 核心知识、JavaScritp 高级知识、工程化、模块化、Node.js、Webpack、Vue.js、React.js 等。课程在教学过程中，渗透开发协作、调试、服务器部署、搜索等软技能的训练，带领学生成为一名合格甚至是优秀的前端程序员。',
+    courseLink: 'detail',
+    courseListImg: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-14-34-2.png',
+    projectTitle: '十大实战项目，让你轻松应对日常工作与面试',
+    projectDescription: '全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。',
+    projectLink: 'mode'
+  }
+};
+exports.projectConfig = projectConfig;
+var experienceConfig = {
+  yinghekongjian: {
+    pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-2-11.png',
+    pdfLinks: [{
+      title: '硬核空间2020版 Java课程大纲.pdf',
+      link: 'https://static.xiedaimala.com/course/%E7%A1%AC%E6%A0%B8%E7%A9%BA%E9%97%B42020%E7%89%88%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2.pdf'
+    }]
+  },
+  jirengu: {
+    pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-41-52.png',
+    pdfLinks: [{
+      title: '饥人谷2020版前端课程大纲（方方版）.pdf',
+      link: 'https://static.xiedaimala.com/course/%E9%A5%A5%E4%BA%BA%E8%B0%B72020%E7%89%88%E5%89%8D%E7%AB%AF%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2%EF%BC%88%E6%96%B9%E6%96%B9%E7%89%88%EF%BC%89.pdf'
+    }, {
+      title: '饥人谷2020版前端课程大纲（若愚版）.pdf',
+      link: 'https://static.xiedaimala.com/course/%E9%A5%A5%E4%BA%BA%E8%B0%B72020%E7%89%88%E5%89%8D%E7%AB%AF%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2%EF%BC%88%E8%8B%A5%E6%84%9A%E7%89%88%EF%BC%89.pdf'
+    }]
+  }
+};
+exports.experienceConfig = experienceConfig;
 },{}],"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -12466,114 +12725,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _buildType = _interopRequireDefault(require("../lib/buildType"));
+var _config = require("../lib/config");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-console.log(undefined);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _default = {
   name: "MyNavigator",
   data: function data() {
-    return {
+    return _objectSpread({
       modalVisible: false,
-      buildType: _buildType.default,
-      node: [{
-        title: "硬核空间",
-        expanded: true,
-        children: [{
-          title: "介绍",
-          link: "#"
-        }, {
-          title: "课程详情",
-          link: "#"
-        }, {
-          title: "教学模式",
-          link: "#"
-        }, {
-          title: "真实的故事",
-          link: "#"
-        }, {
-          title: "关于我们",
-          link: "#"
-        }]
-      }, {
-        title: "饥人谷",
-        expanded: false,
-        children: []
-      }, {
-        title: "写代码啦",
-        expanded: false,
-        link: "https://xiedaimala.com"
-      }, {
-        title: "河马社区",
-        expanded: false,
-        link: "https://xiedaimala.com/bbs"
-      }]
-    };
+      buildType: "jirengu"
+    }, _config.navigatorConfig["jirengu"]);
   },
   methods: {
     toggleModalVisible: function toggleModalVisible() {
@@ -12583,6 +12749,16 @@ var _default = {
       if (this.node[index].children && this.node[index].children.length > 0) {
         this.node[index].expanded = !this.node[index].expanded;
       }
+    }
+  },
+  mounted: function mounted() {
+    document.getElementById('black-navigator-icon').classList.add(_config.navigatorConfig["jirengu"].icon);
+
+    if ("jirengu" === "yinghekongjian") {
+      var changeNode = document.getElementById("yinghekongjian-nav-item");
+      var existingnode = document.getElementById("jirengu-nav-item");
+      var p = document.getElementById("link-wrapper");
+      p.insertBefore(changeNode, existingnode);
     }
   }
 };
@@ -12601,22 +12777,38 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("header", [
     _c("nav", { staticClass: "black-navigator pc" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("i", { staticClass: "iconfont hcsp-icon-white" }),
+      _c("div", { staticClass: "content", attrs: { id: "link-wrapper" } }, [
+        _c("i", {
+          staticClass: "iconfont",
+          attrs: { id: "black-navigator-icon" }
+        }),
         _vm._v(" "),
-        _c("a", { attrs: { href: "https://yinghekongjian.com" } }, [
-          _c(
-            "span",
-            { class: { active: _vm.buildType === "yinghekongjian" } },
-            [_vm._v("硬核空间")]
-          )
-        ]),
+        _c(
+          "a",
+          { attrs: { href: "https://jirengu.com", id: "jirengu-nav-item" } },
+          [
+            _c("span", { class: { active: _vm.buildType === "jirengu" } }, [
+              _vm._v("饥人谷")
+            ])
+          ]
+        ),
         _vm._v(" "),
-        _c("a", { attrs: { href: "https://jirengu.com" } }, [
-          _c("span", { class: { active: _vm.buildType === "jirengu" } }, [
-            _vm._v("饥人谷")
-          ])
-        ]),
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "https://yinghekongjian.com",
+              id: "yinghekongjian-nav-item"
+            }
+          },
+          [
+            _c(
+              "span",
+              { class: { active: _vm.buildType === "yinghekongjian" } },
+              [_vm._v("硬核空间")]
+            )
+          ]
+        ),
         _vm._v(" "),
         _vm._m(0),
         _vm._v(" "),
@@ -12624,7 +12816,17 @@ exports.default = _default;
       ])
     ]),
     _vm._v(" "),
-    _vm._m(2),
+    _c("nav", { staticClass: "white-navigator pc" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("a", { attrs: { href: "index" } }, [
+          _vm.buildType === "yinghekongjian"
+            ? _c("h5", [_vm._v("硬核空间")])
+            : _c("h5", [_vm._v("饥人谷")])
+        ]),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "nav",
@@ -12643,7 +12845,9 @@ exports.default = _default;
             on: { click: _vm.toggleModalVisible }
           }),
           _vm._v(" "),
-          _vm._m(3)
+          _c("div", { staticClass: "logo" }, [
+            _c("i", { staticClass: "iconfont", class: _vm.icon })
+          ])
         ]),
         _vm._v(" "),
         _c("transition", { attrs: { name: "menu" } }, [
@@ -12728,37 +12932,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "https://xiedaimala.com/bbs" } }, [
-      _c("span", [_vm._v("河马社区")])
+      _c("span", [_vm._v("河码社区")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "white-navigator pc" }, [
-      _c("div", { staticClass: "content" }, [
-        _c("a", { attrs: { href: "index" } }, [_c("h5", [_vm._v("硬核空间")])]),
-        _vm._v(" "),
-        _c("div", { staticClass: "items" }, [
-          _c("a", { attrs: { href: "index" } }, [_vm._v("首页")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "detail" } }, [_vm._v("课程详情")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "mode" } }, [_vm._v("教学模式")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "projects" } }, [_vm._v("课程项目")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "about" } }, [_vm._v("关于我们")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "logo" }, [
-      _c("i", { staticClass: "iconfont hcsp-icon-white" })
+    return _c("div", { staticClass: "items" }, [
+      _c("a", { attrs: { href: "index" } }, [_vm._v("首页")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "detail" } }, [_vm._v("课程详情")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "mode" } }, [_vm._v("教学模式")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "projects" } }, [_vm._v("课程项目")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "about" } }, [_vm._v("关于我们")])
     ])
   }
 ]
@@ -12794,7 +12984,7 @@ render._withStripped = true
       
       }
     })();
-},{"../lib/buildType":"lib/buildType.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/footer.vue":[function(require,module,exports) {
+},{"../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/footer.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12856,99 +13046,104 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 var _default = {
-  name: 'MyFooter',
+  name: "MyFooter",
   data: function data() {
     return {
       pcItems: [[{
-        title: '前端系统课',
+        title: "前端系统课",
         children: [{
-          text: '从入门到工作',
-          link: '#'
+          text: "从入门到工作",
+          link: "#"
         }, {
-          text: '前端精进',
-          link: '#'
+          text: "前端精进",
+          link: "#"
         }, {
-          text: '全栈课',
-          link: '#'
+          text: "全栈课",
+          link: "#"
         }]
       }, {
-        title: 'Java系统课',
+        title: "Java系统课",
         children: [{
-          text: '从入门到工作',
-          link: '#'
+          text: "从入门到工作",
+          link: "#"
         }]
       }], [{
-        title: '前端专题课',
+        title: "前端专题课",
         children: [{
-          text: 'JavaScript系列',
-          link: '#'
+          text: "JavaScript系列",
+          link: "#"
         }, {
-          text: 'CSS系列',
-          link: '#'
+          text: "CSS系列",
+          link: "#"
         }, {
-          text: 'TypeScript系列',
-          link: '#'
+          text: "TypeScript系列",
+          link: "#"
         }, {
-          text: 'Http',
-          link: '#'
+          text: "Http",
+          link: "#"
         }, {
-          text: 'Vue',
-          link: '#'
+          text: "Vue",
+          link: "#"
         }, {
-          text: 'React',
-          link: '#'
+          text: "React",
+          link: "#"
         }, {
-          text: '移动端系列',
-          link: '#'
+          text: "移动端系列",
+          link: "#"
         }, {
-          text: '设计模式系列',
-          link: '#'
+          text: "设计模式系列",
+          link: "#"
         }, {
-          text: '算法系列',
-          link: '#'
+          text: "算法系列",
+          link: "#"
         }]
       }], [{
-        title: 'Java专题课',
+        title: "Java专题课",
         children: [{
-          text: '算法系列',
-          link: '#'
+          text: "算法系列",
+          link: "#"
         }, {
-          text: '微服务',
-          link: '#'
+          text: "微服务",
+          link: "#"
         }, {
-          text: 'Java8',
-          link: '#'
+          text: "Java8",
+          link: "#"
         }]
       }], [{
-        title: '旗下产品',
+        title: "旗下产品",
         children: [{
-          text: '硬核空间',
-          link: '#'
+          text: "硬核空间",
+          link: "#"
         }, {
-          text: '饥人谷',
-          link: '#'
+          text: "饥人谷",
+          link: "#"
         }, {
-          text: '写代码啦',
-          link: '#'
+          text: "写代码啦",
+          link: "#"
         }, {
-          text: 'Hunger Works',
-          link: '#'
+          text: "Hunger Works",
+          link: "#"
         }]
       }, {
-        title: '合作伙伴',
+        title: "合作伙伴",
         children: [{
-          text: 'leanote',
-          link: '#'
+          text: "leanote",
+          link: "https://leanote.com/"
         }]
       }], [{
-        title: '关于 饥人谷',
+        title: "关于 饥人谷",
         children: [{
-          text: 'aaa',
-          link: '#'
+          text: "关于我们",
+          link: "about"
         }]
       }]],
-      mobileItems: []
+      mobileItems: [],
+      showWechat: false
     };
   },
   methods: {
@@ -12958,6 +13153,9 @@ var _default = {
           expanded: !this.mobileItems[colIndex].expanded
         }));
       }
+    },
+    onPhoneClick: function onPhoneClick() {
+      window.location.href = "tel:400-618-3005";
     }
   },
   mounted: function mounted() {
@@ -13003,11 +13201,7 @@ exports.default = _default;
                   _vm._l(block.children, function(item) {
                     return _c("li", [
                       _c("a", { attrs: { href: item.link } }, [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(item.text) +
-                            "\n              "
-                        )
+                        _vm._v(_vm._s(item.text))
                       ])
                     ])
                   }),
@@ -13027,7 +13221,7 @@ exports.default = _default;
         _vm._l(_vm.mobileItems, function(col, colIndex) {
           return _c(
             "div",
-            { staticClass: "col" },
+            { key: colIndex, staticClass: "col" },
             [
               _c(
                 "h6",
@@ -13046,14 +13240,10 @@ exports.default = _default;
                 col.expanded
                   ? _c(
                       "ul",
-                      _vm._l(col.children, function(item) {
-                        return _c("li", [
+                      _vm._l(col.children, function(item, itemIndex) {
+                        return _c("li", { key: itemIndex }, [
                           _c("a", { attrs: { href: item.link } }, [
-                            _vm._v(
-                              "\n                " +
-                                _vm._s(item.text) +
-                                "\n              "
-                            )
+                            _vm._v(_vm._s(item.text))
                           ])
                         ])
                       }),
@@ -13068,7 +13258,59 @@ exports.default = _default;
         0
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c("section", { staticClass: "tip-wrapper" }, [
+        _c(
+          "div",
+          { staticClass: "contact" },
+          [
+            _vm._v("\n        任何问题请致电\n        "),
+            _c(
+              "span",
+              { staticClass: "phone", on: { click: _vm.onPhoneClick } },
+              [_vm._v("400-618-3005")]
+            ),
+            _vm._v(" ,\n        "),
+            _c("br", { staticClass: "mobile" }),
+            _vm._v("或者添加客服微信:\n        "),
+            _c(
+              "v-popover",
+              {
+                staticClass: "wechat",
+                attrs: { trigger: "manual", open: _vm.showWechat }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    on: {
+                      mouseover: function() {
+                        _vm.showWechat = true
+                      },
+                      mouseout: function() {
+                        _vm.showWechat = false
+                      }
+                    }
+                  },
+                  [_vm._v("hungervalley")]
+                ),
+                _vm._v(" "),
+                _c("template", { slot: "popover" }, [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "http://static.xiedaimala.com/xdml/image/f40ceb64-df08-4420-9226-7f76dbff15d5/2018-12-5-13-40-23.png"
+                    }
+                  })
+                ])
+              ],
+              2
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm._m(0)
+      ])
     ])
   ])
 }
@@ -13077,32 +13319,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "tip-wrapper" }, [
-      _c("div", { staticClass: "contact" }, [
-        _vm._v("\n        任何问题请致电 "),
-        _c("span", [_vm._v("400-618-3005")]),
-        _vm._v(" , "),
-        _c("br", { staticClass: "mobile" }),
-        _vm._v("或者添加客服微信: "),
-        _c("span", [_vm._v("hungervalley")])
-      ]),
+    return _c("div", { staticClass: "copyright" }, [
+      _vm._v(
+        "\n        Copyright © 2019 Hungervalley Inc. 保留所有权利。\n        "
+      ),
+      _c("br", { staticClass: "mobile" }),
       _vm._v(" "),
-      _c("div", { staticClass: "copyright" }, [
-        _vm._v(
-          "\n        Copyright © 2019 Hungervalley Inc. 保留所有权利。\n        "
-        ),
-        _c("br", { staticClass: "mobile" }),
-        _vm._v(" "),
-        _c("a", [_vm._v("隐私政策")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("使用条款")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("销售政策")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("法律信息")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("网站地图")])
-      ])
+      _c("a", [_vm._v("隐私政策")]),
+      _vm._v(" "),
+      _c("a", [_vm._v("使用条款")]),
+      _vm._v(" "),
+      _c("a", [_vm._v("销售政策")]),
+      _vm._v(" "),
+      _c("a", [_vm._v("法律信息")]),
+      _vm._v(" "),
+      _c("a", [_vm._v("网站地图")])
     ])
   }
 ]
@@ -13177,7 +13408,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("a", { attrs: { href: _vm.linkTo } }, [
+  return _c("a", { attrs: { href: _vm.linkTo, target: "_blank" } }, [
     _c(
       "div",
       { staticClass: "black-button" },
@@ -13229,6 +13460,8 @@ exports.default = void 0;
 
 var _BlackButton = _interopRequireDefault(require("../components/BlackButton"));
 
+var _config = require("../lib/config");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //
@@ -13256,26 +13489,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
-  name: 'preview',
+  name: "preview",
   components: {
     BlackButton: _BlackButton.default
+  },
+  data: function data() {
+    return _config.previewConfig["jirengu"];
   }
 };
 exports.default = _default;
@@ -13296,68 +13516,65 @@ exports.default = _default;
     { staticClass: "preview-wrapper section-margin" },
     [
       _c("h3", { staticClass: "title title-margin" }, [
-        _vm._v("国内顶级Java教学水平")
+        _vm._v(_vm._s(_vm.title))
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "items-wrapper" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.content.slice(0, this.content.length / 2), function(node) {
+            return _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v(_vm._s(node.title))]),
+              _vm._v(" "),
+              _c(
+                "ul",
+                _vm._l(node.items, function(item) {
+                  return _c("li", [_vm._v(_vm._s(item))])
+                }),
+                0
+              )
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(
+            _vm.content.slice(this.content.length / 2, this.content.length),
+            function(node) {
+              return _c("div", { staticClass: "item" }, [
+                _c("h4", [_vm._v(_vm._s(node.title))]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  _vm._l(node.items, function(item) {
+                    return _c("li", [_vm._v(_vm._s(item))])
+                  }),
+                  0
+                )
+              ])
+            }
+          ),
+          0
+        )
+      ]),
       _vm._v(" "),
-      _c("black-button", { staticClass: "button" }, [_vm._v("预约试听")])
+      _c(
+        "black-button",
+        {
+          staticClass: "button",
+          attrs: { linkTo: "http://jirengu01.mikecrm.com/aJiF27K" }
+        },
+        [_vm._v("预约试听")]
+      )
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "items-wrapper" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "item" }, [
-          _c("h4", [_vm._v("先进教学的倡导者")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("CI机器人review代码")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("所有作业严格按照真实开发流程操作")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "item" }, [
-          _c("h4", [_vm._v("Java领域的先驱者")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("Gradle开发团队核心成员")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("丰富处理复杂bug的经验")])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "item" }, [
-          _c("h4", [_vm._v("不忘初衷的教育者")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("全程陪伴学生学习Java")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("服务到就业、自我提升")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "item" }, [
-          _c("h4", [_vm._v("真材实料的开发者")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("全程真实项目")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("开发协作打磨技能")])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -13390,7 +13607,7 @@ render._withStripped = true
       
       }
     })();
-},{"../components/BlackButton":"components/BlackButton.vue","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"components/CustomVideo.vue":[function(require,module,exports) {
+},{"../components/BlackButton":"components/BlackButton.vue","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"components/CustomVideo.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13625,38 +13842,25 @@ exports.default = void 0;
 
 var _CustomVideo = _interopRequireDefault(require("../components/CustomVideo"));
 
+var _config = require("../lib/config");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _default = {
   name: 'myVideo',
   components: {
     CustomVideo: _CustomVideo.default
   },
   data: function data() {
-    return {
-      poster: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-18-18-0-57.png',
-      link: 'https://static.xiedaimala.com/hcsp-spread.mp4',
+    return _objectSpread({}, _config.videoConfig["jirengu"], {
       playing: false
-    };
+    });
   }
 };
 exports.default = _default;
@@ -13709,8 +13913,7 @@ exports.default = _default;
               "a",
               {
                 staticClass: "get-description",
-                class: { playing: _vm.playing },
-                attrs: { href: "#" }
+                attrs: { href: _vm.descriptionUrl, target: "_blank" }
               },
               [
                 _vm._v("\n      获取文字描述 "),
@@ -13756,7 +13959,7 @@ render._withStripped = true
       
       }
     })();
-},{"../components/CustomVideo":"components/CustomVideo.vue","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{"../components/CustomVideo":"components/CustomVideo.vue","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -32923,6 +33126,8 @@ exports.default = void 0;
 
 var _lodash = require("lodash");
 
+var _config = require("../lib/config");
+
 //
 //
 //
@@ -32970,33 +33175,7 @@ var _lodash = require("lodash");
 var _default = {
   name: 'course',
   data: function data() {
-    return {
-      items: [[{
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-16-3.png',
-        title: '任务闯关课',
-        content: '夯实基础、进度可控、海量实战、code review',
-        description: ['张博老师亲自制作全套通关任务', '视频、文档、博客、代码、实操、项目、架构', 'Github提交、CI机器人判题、review所有代码', '每一份作业进行老师批改+同学互评'],
-        visible: true
-      }, {
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-54.png',
-        title: '拓展直播课',
-        content: '突破瓶颈、开阔眼界、深入学习、实时互动',
-        description: ['2晚/周、持续半年', '高级知识点、课程答疑、模拟面试、就业指导', '直播弹幕实时互动，课后录播无限期回放'],
-        visible: true
-      }], [{
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-49.png',
-        title: '阶段性联考',
-        content: '实时考核、查漏补缺、效果监测、班级排名',
-        description: ['独家考试系统，班级定期联考', '测试真实水平，做到心中有数', '查缺补漏，老师针对性补课'],
-        visible: true
-      }, {
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-15-58.png',
-        title: '线下训练营',
-        content: '大牛指导、分组协作、真实开发',
-        description: ['线下编程马拉松，真实团队协同开发', '老师面对面指导，现场code review', '项目评选，荣誉证书'],
-        visible: true
-      }]]
-    };
+    return _config.courseConfig["jirengu"];
   },
   methods: {
     _imageMouseEnter: function _imageMouseEnter(rowIndex, colIndex) {
@@ -33028,7 +33207,11 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "course-wrapper section-margin" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "title title-margin" }, [
+      _c("h3", [_vm._v("课程如何开展")]),
+      _vm._v(" "),
+      _c("p", { domProps: { innerHTML: _vm._s(_vm.description) } })
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -33138,22 +33321,7 @@ exports.default = _default;
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title title-margin" }, [
-      _c("h3", [_vm._v("课程如何开展")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "我们对每个教学环节进行评估，经众多富有Java经验的老师反复推敲后，制定高效Java学习模式"
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -33186,7 +33354,7 @@ render._withStripped = true
       
       }
     })();
-},{"lodash":"node_modules/lodash/lodash.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"components/TextWithPic.vue":[function(require,module,exports) {
+},{"lodash":"node_modules/lodash/lodash.js","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"components/TextWithPic.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33307,6 +33475,8 @@ exports.default = void 0;
 
 var _TextWithPic = _interopRequireDefault(require("../components/TextWithPic"));
 
+var _config = require("../lib/config");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //
@@ -33370,6 +33540,9 @@ var _default = {
   name: 'project',
   components: {
     TextWithPic: _TextWithPic.default
+  },
+  data: function data() {
+    return _config.projectConfig["jirengu"];
   }
 };
 exports.default = _default;
@@ -33389,9 +33562,30 @@ exports.default = _default;
     "section",
     { staticClass: "project-wrapper section-margin" },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "title title-margin" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.title))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.subTitle))])
+      ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "row pc" }, [
+        _c("div", { staticClass: "col vertical-center" }, [
+          _c("div", { staticClass: "text" }, [
+            _c("h4", [_vm._v(_vm._s(_vm.courseTitle))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.courseDescription))]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: _vm.courseLink } }, [
+              _vm._v("查看完整课程大纲 "),
+              _c("i", { staticClass: "iconfont hcsp-right" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("img", { attrs: { src: _vm.courseListImg, alt: "pic" } })
+        ])
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "row wide pc" }, [
         _c("div", { staticClass: "image-wrapper" }, [
@@ -33423,31 +33617,38 @@ exports.default = _default;
           })
         ]),
         _vm._v(" "),
-        _vm._m(2)
+        _c("div", { staticClass: "col vertical-center text-wrapper" }, [
+          _c("div", { staticClass: "text" }, [
+            _c("p", [_vm._v("实战项目")]),
+            _vm._v(" "),
+            _c("h4", [_vm._v(_vm._s(_vm.projectTitle))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.projectDescription))]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: _vm.projectLink } }, [
+              _vm._v("进一步了解课程详情 "),
+              _c("i", { staticClass: "iconfont hcsp-right" })
+            ])
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("TextWithPic", {
         staticClass: "mobile",
         attrs: {
-          "image-src":
-            "https://www.apple.com/v/education/home/a/images/overview/technology_large.jpg",
-          title: "体系课涵盖20个阶段，初、中、高级Java核心知识",
-          content:
-            "我们希望同学在学习过程中可以同时获得快乐与知识，因此我们加入了很多有趣的环节，让学习变得不那么枯燥。通过各位大牛老师的精心打造，你可以很流畅地从入门开始学习，全面了解后端基础知识、Java语言入门及应用、基本数据结构和算法知识、Java Web开发、框架使用、前后端协作、发布与部署的基础知识、面试技巧等，直到找到心仪的工作。我们一起来让Java学习变得轻松愉悦。",
-          "link-to": { link: "detail", text: "查看完整课程大纲" }
+          "image-src": _vm.courseListImg,
+          title: _vm.courseTitle,
+          content: _vm.courseDescription,
+          "link-to": { link: _vm.courseLink, text: "查看完整课程大纲" }
         }
       }),
       _vm._v(" "),
       _c("TextWithPic", {
         staticClass: "mobile",
         attrs: {
-          title: "三大实战项目，让你轻松应对日常工作与面试",
-          content:
-            "全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。",
-          "link-to": {
-            link: "detail#java实战项目1---多线程网络爬虫",
-            text: "进一步了解详细课程"
-          }
+          title: _vm.projectTitle,
+          content: _vm.projectDescription,
+          "link-to": { link: _vm.projectLink, text: "进一步了解详细课程" }
         },
         scopedSlots: _vm._u([
           {
@@ -33492,74 +33693,7 @@ exports.default = _default;
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title title-margin" }, [
-      _c("h3", [_vm._v("全面、深度、紧贴实战")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "通过对Java的全面学习，充分利用时间紧密学习，精通每个知识点，加以实战项目将知识点融会贯通，学以致用，直接上手工作"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row pc" }, [
-      _c("div", { staticClass: "col vertical-center" }, [
-        _c("div", { staticClass: "text" }, [
-          _c("h4", [_vm._v("体系课程涵盖40个阶段，初、中、高级Java核心知识")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "我们希望同学在学习过程中可以同时获得快乐与知识，因此我们加入了很多有趣的环节，让学习变得不那么枯燥。通过各位大牛老师的精心打造，你可以很流畅地从入门开始学习，全面了解后端基础知识、Java语言入门及应用、基本数据结构和算法知识、Java Web开发、框架使用、前后端协作、发布与部署的基础知识、面试技巧等，直到找到心仪的工作。我们一起来让Java学习变得轻松愉悦。"
-            )
-          ]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "detail" } }, [
-            _vm._v("查看完整课程大纲 "),
-            _c("i", { staticClass: "iconfont hcsp-right" })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _c("img", {
-          attrs: { src: "/course-list.214129ca.png", alt: "pic" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col vertical-center text-wrapper" }, [
-      _c("div", { staticClass: "text" }, [
-        _c("p", [_vm._v("实战项目")]),
-        _vm._v(" "),
-        _c("h4", [_vm._v("三大实战项目，让你轻松应对日常工作与面试")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。"
-          )
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "detail#java实战项目1---多线程网络爬虫" } }, [
-          _vm._v("进一步了解课程详情 "),
-          _c("i", { staticClass: "iconfont hcsp-right" })
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -33592,7 +33726,7 @@ render._withStripped = true
       
       }
     })();
-},{"../components/TextWithPic":"components/TextWithPic.vue","./../assets/course-list.png":[["course-list.214129ca.png","assets/course-list.png"],"assets/course-list.png"],"_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/learningAndJob.vue":[function(require,module,exports) {
+},{"../components/TextWithPic":"components/TextWithPic.vue","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/learningAndJob.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33604,6 +33738,22 @@ var _BlackButton = _interopRequireDefault(require("../components/BlackButton"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -33661,9 +33811,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 var _default = {
-  name: 'learningAndJob',
+  name: "learningAndJob",
   components: {
     BlackButton: _BlackButton.default
+  },
+  data: function data() {
+    return {
+      tooltips: [{
+        text: "结伴小组",
+        tip: "寻找谷内学习进度相近的小伙伴一起学习，每天进步一点点！或是寻找毕业的学长学姐带领学习，老司机带带我！"
+      }, {
+        text: "3天班长制",
+        tip: "班级群内成员轮流当小班长，带领同学们一起学习，活跃班级氛围，分享学习重点、分享生活经验！"
+      }, {
+        text: "吃鸡赢大奖",
+        tip: "活动参与者需要每2天完成一个任务，每天奖金池中增加5元现金，未完成任务者淘汰！直至剩下最后一位同学吃鸡赢得奖金池内所有奖金！"
+      }, {
+        text: "每周对赌计划",
+        tip: "周一定下本周目标与未完成需发红包金额，下周一检查目标完成情况，未完成者需发定下的红包金额！"
+      }]
+    };
   }
 };
 exports.default = _default;
@@ -33697,75 +33864,31 @@ exports.default = _default;
               _vm._v(" "),
               _c("li", [_vm._v("班级活动，堪比线下的超活跃学习氛围")]),
               _vm._v(" "),
-              _c("li", { staticClass: "tips" }, [
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value:
-                          "寻找谷内学习进度相近的小伙伴一起学习，每天进步一点点！或是寻找毕业的学长学姐带领学习，老司机带带我！",
-                        expression:
-                          "'寻找谷内学习进度相近的小伙伴一起学习，每天进步一点点！或是寻找毕业的学长学姐带领学习，老司机带带我！'"
-                      }
-                    ]
-                  },
-                  [_vm._v("结伴小组")]
-                ),
-                _vm._v("、\n            "),
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value:
-                          "班级群内成员轮流当小班长，带领同学们一起学习，活跃班级氛围，分享学习重点、分享生活经验！",
-                        expression:
-                          "'班级群内成员轮流当小班长，带领同学们一起学习，活跃班级氛围，分享学习重点、分享生活经验！'"
-                      }
-                    ]
-                  },
-                  [_vm._v("3天班长制")]
-                ),
-                _vm._v("、\n            "),
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value:
-                          "活动参与者需要每2天完成一个任务，每天奖金池中增加5元现金，未完成任务者淘汰！直至剩下最后一位同学吃鸡赢得奖金池内所有奖金！",
-                        expression:
-                          "'活动参与者需要每2天完成一个任务，每天奖金池中增加5元现金，未完成任务者淘汰！直至剩下最后一位同学吃鸡赢得奖金池内所有奖金！'"
-                      }
-                    ]
-                  },
-                  [_vm._v("吃鸡赢大奖")]
-                ),
-                _vm._v("、\n            "),
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "tooltip",
-                        rawName: "v-tooltip",
-                        value:
-                          "周一定下本周目标与未完成需发红包金额，下周一检查目标完成情况，未完成者需发定下的红包金额！",
-                        expression:
-                          "'周一定下本周目标与未完成需发红包金额，下周一检查目标完成情况，未完成者需发定下的红包金额！'"
-                      }
-                    ]
-                  },
-                  [_vm._v("每周对赌计划")]
-                )
-              ]),
+              _c(
+                "li",
+                { staticClass: "tips" },
+                _vm._l(_vm.tooltips, function(tooltip, index) {
+                  return _c(
+                    "v-popover",
+                    { key: index },
+                    [
+                      _c("span", { staticClass: "text" }, [
+                        _vm._v(_vm._s(tooltip.text))
+                      ]),
+                      _vm._v(" "),
+                      index < _vm.tooltips.length - 1
+                        ? _c("span", [_vm._v("，")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("template", { slot: "popover" }, [
+                        _c("p", [_vm._v(_vm._s(tooltip.tip))])
+                      ])
+                    ],
+                    2
+                  )
+                }),
+                1
+              ),
               _vm._v(" "),
               _vm._m(2)
             ])
@@ -33812,7 +33935,7 @@ var staticRenderFns = [
         _c("li", [_vm._v("课程1V1作业批改指导，查漏补缺")]),
         _vm._v(" "),
         _c("a", { staticClass: "pc", attrs: { href: "#" } }, [
-          _vm._v("进一步了解 "),
+          _vm._v("\n            进一步了解\n            "),
           _c("i", { staticClass: "iconfont hcsp-right" })
         ])
       ])
@@ -33823,7 +33946,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "pc", attrs: { href: "#" } }, [
-      _vm._v("进一步了解 "),
+      _vm._v("\n            进一步了解\n            "),
       _c("i", { staticClass: "iconfont hcsp-right" })
     ])
   },
@@ -33845,7 +33968,7 @@ var staticRenderFns = [
           _c("li", [_vm._v("面试押题，涵盖大多数企业面试题，提前准备")]),
           _vm._v(" "),
           _c("a", { staticClass: "pc", attrs: { href: "#" } }, [
-            _vm._v("进一步了解 "),
+            _vm._v("\n            进一步了解\n            "),
             _c("i", { staticClass: "iconfont hcsp-right" })
           ])
         ])
@@ -33864,7 +33987,7 @@ var staticRenderFns = [
           _c("li", [_vm._v("退费条款写入合同，具有法律效应，真实保障")]),
           _vm._v(" "),
           _c("a", { staticClass: "pc", attrs: { href: "#" } }, [
-            _vm._v("进一步了解 "),
+            _vm._v("\n            进一步了解\n            "),
             _c("i", { staticClass: "iconfont hcsp-right" })
           ])
         ])
@@ -33916,8 +34039,16 @@ var _TextWithPic = _interopRequireDefault(require("../components/TextWithPic"));
 
 var _BlackButton = _interopRequireDefault(require("../components/BlackButton"));
 
+var _config = require("../lib/config");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -33992,9 +34123,7 @@ var _default = {
     BlackButton: _BlackButton.default
   },
   data: function data() {
-    return {
-      pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-2-11.png'
-    };
+    return _config.experienceConfig["jirengu"];
   }
 };
 exports.default = _default;
@@ -34060,7 +34189,46 @@ exports.default = _default;
       1
     ),
     _vm._v(" "),
-    _vm._m(2)
+    _c("section", { staticClass: "contact-download-wrapper" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _c(
+          "div",
+          { staticClass: "text-wrapper" },
+          [
+            _c("i", { staticClass: "iconfont hcsp-article" }),
+            _vm._v(" "),
+            _c("h6", [_vm._v("下载课程大纲")]),
+            _vm._v(" "),
+            _c(
+              "v-popover",
+              [
+                _c("span", { staticClass: "download" }, [
+                  _vm._v("下载 PDF 格式的课程大纲 "),
+                  _c("i", { staticClass: "iconfont hcsp-right" })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "template",
+                  { slot: "popover" },
+                  _vm._l(_vm.pdfLinks, function(pdf, index) {
+                    return _c("div", { key: index, staticClass: "pdf-link" }, [
+                      _c("a", { attrs: { href: pdf.link, target: "_blank" } }, [
+                        _vm._v(_vm._s(pdf.title))
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ],
+              2
+            )
+          ],
+          1
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -34129,34 +34297,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "contact-download-wrapper" }, [
-      _c("div", { staticClass: "col" }, [
-        _c("div", { staticClass: "text-wrapper" }, [
-          _c("i", { staticClass: "iconfont hcsp-comment" }),
-          _vm._v(" "),
-          _c("h6", [_vm._v("联系我们")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("可通过电话、微信或在线交流方式咨询。")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
-            _vm._v("进一步了解"),
-            _c("i", { staticClass: "iconfont hcsp-right" })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _c("div", { staticClass: "text-wrapper" }, [
-          _c("i", { staticClass: "iconfont hcsp-article" }),
-          _vm._v(" "),
-          _c("h6", [_vm._v("下载课程大纲")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("下载 PDF 格式的课程大纲")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "#" } }, [
-            _vm._v("进一步了解"),
-            _c("i", { staticClass: "iconfont hcsp-right" })
-          ])
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "text-wrapper" }, [
+        _c("i", { staticClass: "iconfont hcsp-comment" }),
+        _vm._v(" "),
+        _c("h6", [_vm._v("联系我们")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("可通过电话、微信或在线交流方式咨询。")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "#" } }, [
+          _vm._v("进一步了解"),
+          _c("i", { staticClass: "iconfont hcsp-right" })
         ])
       ])
     ])
@@ -34194,7 +34345,7 @@ render._withStripped = true
       
       }
     })();
-},{"../components/TextWithPic":"components/TextWithPic.vue","../components/BlackButton":"components/BlackButton.vue","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"node_modules/swiper/dist/js/swiper.js":[function(require,module,exports) {
+},{"../components/TextWithPic":"components/TextWithPic.vue","../components/BlackButton":"components/BlackButton.vue","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"node_modules/swiper/dist/js/swiper.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /**
@@ -44134,6 +44285,8 @@ var _vueAwesomeSwiper = require("vue-awesome-swiper");
 
 require("swiper/dist/css/swiper.css");
 
+var _config = require("../lib/config");
+
 //
 //
 //
@@ -44170,17 +44323,7 @@ var _default = {
     var _this = this;
 
     return {
-      swiperSlides: [{
-        name: '张博',
-        introduction: "<h3>\u5F20\u535A</h3><h6>\u79CD\u4E00\u68F5\u6811\u6700\u597D\u7684\u65F6\u95F4\u662F\u5341\u5E74\u524D\uFF0C\u5176\u6B21\u662F\u73B0\u5728</h6>\n<p>\u4F60\u597D\uFF0C\u6211\u53EB\u5F20\u535A\uFF0C\u524D\u963F\u91CC\u5DF4\u5DF4\u8D44\u6DF1\u5DE5\u7A0B\u5E08\uFF0C\u73B0\u4EFBGradle\u6838\u5FC3\u56E2\u961F\u6210\u5458\uFF0C\u65E5\u5E38\u5DE5\u4F5C\u5C31\u662F\u5199\u5F00\u6E90\u4EE3\u7801\u3002\u6211\u7ED9\u5305\u62ECJDK/Maven\u5728\u5185\u7684\u4F17\u591A\u5F00\u6E90\u9879\u76EE\u90FD\u8D21\u732E\u8FC7\u4EE3\u7801\uFF0C\u5982\u679C\u4F60\u662F\u5199Java\u7684\uFF0C\u90A3\u4E48\u4F60\u591A\u534A\u5728\u7528\u6211\u5199\u7684\u4EE3\u7801\u3002</p>\n<p>\u5F88\u591A\u4EBA\u4F1A\u95EE\u6211\u5982\u4F55\u5B66\u4E60\u2014\u2014\u5982\u4F55\u5B66\u4E60\u7F16\u7A0B\uFF0C\u5B66\u4E60Java\uFF0C\u5B66\u4E60\u82F1\u8BED\uFF0C\u6211\u603B\u662F\u56DE\u7B54\u4ED6\u4EEC\uFF0C\u5176\u5B9E\u53EA\u6709\u4E24\u4E2A\u5B57\uFF1A\u575A\u6301\u3002\u8FD9\u4E2A\u4E16\u754C\u4E0A\u6709\u8C01\u4E00\u751F\u4E0B\u6765\u5C31\u662F\u4EC0\u4E48\u90FD\u4F1A\u7684\u5462\uFF1F</p>\n<p>\u6CA1\u6709\u3002\u6BCF\u4E2A\u4EBA\u7684\u77E5\u8BC6\u90FD\u662F\u4E00\u70B9\u4E00\u6EF4\u79EF\u6512\u8D77\u6765\u7684\u3002\u65E0\u4ED6\uFF0C\u552F\u624B\u719F\u5C14\u3002\u4F60\u8981\u505A\u7684\uFF0C\u5C31\u53EA\u662F\u575A\u6301\u4E0D\u61C8\u800C\u5DF2\u3002</p>\n<p>\u4E0B\u5B9A\u51B3\u5FC3\u4E4B\u540E\uFF0C\u63A5\u4E0B\u6765\u8981\u505A\u7684\uFF0C\u5C31\u662F\u5BFB\u627E\u4E00\u4E2A\u52AA\u529B\u7684\u65B9\u5411\u3002\u8FD9\u5C31\u662F\u6211\u5B58\u5728\u7684\u610F\u4E49\uFF0C\u6211\u6307\u7ED9\u4F60\u6B63\u786E\u7684\u65B9\u5411\uFF0C\u5E76\u4E14\u5728\u4F60\u6700\u65E0\u529B\u7684\u65F6\u5019\u63A8\u4F60\u4E00\u628A\u3002</p>\n<p>\u5728\u786C\u6838\u7A7A\u95F4\uFF0C\u4F60\u6709\u975E\u5E38\u6E05\u6670\u3001\u65B9\u5411\u660E\u786E\u7684\u5B66\u4E60\u8DEF\u5F84\uFF0C\u6709\u6D77\u91CF\u7684\u771F\u5B9E\u4EE3\u7801\u7EC3\u624B\uFF0C\u6709\u4E1A\u754C\u6700\u9876\u5C16\u7684\u4E13\u5BB6\u8F85\u5BFC\u3002\u4F60\u8FD8\u5728\u7B49\u4EC0\u4E48\u5462\uFF1F</p>\n<p>\u6211\u7684GitHub\u4E3B\u9875\u662F<a href=\"https://github.com/blindpirate\">@blindpirate</a>\uFF0C\u6B22\u8FCEfollow\u6211\uFF01</p>",
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-11-9-46-7.png',
-        mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-10-42.png'
-      }, {
-        name: '无隅',
-        introduction: "<h3>\u65E0\u9685</h3><h6>\u4ECE\u8FD9\u91CC\u5F00\u59CB \u5E26\u4F60\u5F00\u542F\u4E00\u7EBF\u5927\u5382\u5DE5\u7A0B\u5E08\u4E4B\u8DEF</h6>\n<p>\u4F60\u597D\uFF0C\u6211\u662F\u65E0\u9685\uFF0C\u6B22\u8FCE\u52A0\u5165\u786C\u6838\u7A7A\u95F4\u3002\u5728\u63A5\u4E0B\u6765\u7684\u51E0\u4E2A\u6708\uFF0C\u6211\u4F1A\u4E0E\u4F60\u4E00\u9053\uFF0C\u4E00\u8D77\u63A2\u7D22Java\u4E0E\u7CFB\u7EDF\u67B6\u6784\u8BBE\u8BA1\u7684\u4E16\u754C\u3002</p>\n<p>\u6211\u76EE\u524D\u5728Amazon\u62C5\u4EFB\u8F6F\u4EF6\u5DE5\u7A0B\u5E08\u3002\u56E2\u961F\u6240\u4ECE\u4E8B\u7684\u662F\u516C\u53F8\u6838\u5FC3\u4E1A\u52A1\uFF0C\u5BF9\u4E8E\u5927\u89C4\u6A21\u7684\u5206\u5E03\u5F0F\u7CFB\u7EDF\uFF0C\u5982\u4F55\u66F4\u5FEB\u66F4\u7A33\u5B9A\u5C3D\u91CF\u4E0D\u51FA\u9519\u6C38\u8FDC\u662F\u6280\u672F\u5B5C\u5B5C\u4E0D\u5026\u4E50\u6B64\u4E0D\u75B2\u8FFD\u6C42\u7684\u76EE\u6807\u3002\u6211\u4EEC\u4E0D\u9700\u8981\u201C\u5DEE\u4E0D\u591A\u201D\u6216\u201C\u8FD8\u884C\u201D\u7684\u4EE3\u7801\uFF0C\u800C\u662F\u9700\u8981\u8FBE\u5230\u9AD8\u8D28\u91CF\u8BBE\u8BA1\u4E0E\u5B9E\u73B0\u7684\u6C34\u51C6\u3002</p>\n<p>\u4E00\u7EBF\u5927\u5382\u662F\u5F88\u591A\u540C\u5B66\u68A6\u5BD0\u4EE5\u6C42\u7684\u5C97\u4F4D\uFF0C\u5927\u5BB6\u7F3A\u4E4F\u7684\u5E76\u4E0D\u662F\u673A\u4F1A\uFF0C\u800C\u662F\u901A\u8FC7\u9762\u8BD5\u7684\u7ECF\u9A8C\u4E0E\u4FE1\u5FC3\u3002\u6240\u4EE5\u6211\u5E0C\u671B\u80FD\u591F\u5C06\u4E00\u7EBF\u7814\u53D1\u7684\u7ECF\u9A8C\u89C4\u8303\u548C\u9700\u8981\u638C\u63E1\u7684\u77E5\u8BC6\u4F53\u7CFB\u5728\u5927\u5BB6\u521D\u5165\u540E\u7AEF\u4E16\u754C\u7684\u65F6\u5019\u5C31\u5E26\u7ED9\u5927\u5BB6\uFF0C\u8BA9\u8FD9\u4E9B\u7ECF\u9A8C\u4E0E\u7406\u5FF5\u6DF1\u5165\u5230\u4F60\u7684\u8111\u6D77\u91CC\uFF0C\u6709\u4E2A\u826F\u597D\u7684\u5F00\u7AEF\u3002</p>\n<p>\u6700\u540E\u6211\u60F3\u7ED9\u5927\u5BB6\u8BF4\u7684\u662F\uFF0C\u5B66\u4E60\u662F\u4E00\u4EF6\u6F2B\u957F\u7684\u4E8B\u60C5\u3002\u81EA\u7136\u754C\u7684\u4E00\u9879\u6839\u672C\u6CD5\u5219\u5C31\u662F\u4E3A\u4E86\u8D62\u5F97\u529B\u91CF\uFF0C\u5FC5\u987B\u52AA\u529B\u7A81\u7834\u6781\u9650\uFF0C\u800C\u8FD9\u662F\u75DB\u82E6\u7684\u3002\u6211\u4EEC\u53EF\u4EE5\u9009\u62E9\u5065\u5EB7\u5E76\u75DB\u82E6\u7684\u4E8B\u5B9E\uFF0C\u4E5F\u53EF\u4EE5\u9009\u62E9\u4E0D\u5065\u5EB7\u4F46\u8212\u9002\u7684\u5E7B\u89C9\u3002\u6BB5\u65F6\u95F4\u5E76\u4E0D\u80FD\u611F\u89C9\u5230\u5DEE\u522B\uFF0C\u5F53\u4F60\u653E\u5230\u5F88\u957F\u65F6\u95F4\u7EF4\u5EA6\u91CC\u9762\uFF0C\u575A\u6301\u4E00\u5E74\u4E24\u5E74\uFF0C\u4E94\u5E74\u5341\u5E74.....\u6700\u540E\u7684\u6210\u5C31\u7EDD\u5BF9\u662F\u6307\u6570\u7EA7\u7684\u5DEE\u8DDD\u3002\u6240\u4EE5\u6211\u5E0C\u671B\u4F60\u80FD\u548C\u6211\u575A\u6301\u4E0B\u6765\uFF0C\u5171\u540C\u6210\u957F\u3002\u9047\u5230\u95EE\u9898\u9009\u62E9\u7684\u4E0D\u662F\u9003\u907F\uFF0C\u800C\u662F\u52AA\u529B\u63A2\u5BFB\u7B54\u6848\u4E0E\u89E3\u51B3\u65B9\u6CD5\u3002\u8FD9\u4E00\u6B21\uFF0C\u5C31\u8BA9\u6211\u4EEC\u4E00\u8D77\u6765\u63A2\u7D22\u540E\u7AEF\u4E16\u754C\u7684\u5965\u79D8\uFF0C\u4E00\u8D77\u5F00\u542F\u4E00\u7EBF\u5927\u5382\u5DE5\u7A0B\u5E08\u4E4B\u8DEF\uFF01</p>\n<p>\u6211\u5728\u786C\u6838\u7A7A\u95F4\u4F1A\u5F00\u8BBE\u5982\u4E0B\u7684\u4E00\u4E9B\u8BFE\u7A0B\uFF0C\u901A\u8FC7\u8FD9\u4E9B\u6A21\u5757\u5316\u7684\u8BFE\u7A0B\uFF0C\u5E0C\u671B\u80FD\u5E2E\u52A9\u5927\u5BB6\u7CFB\u7EDF\u4E14\u6709\u4F53\u7CFB\u5730\u638C\u63E1\u6838\u5FC3\u77E5\u8BC6\uFF1A\n  <a href=\"https://xiedaimala.com/courses/118b5d4e-c080-4ed7-ab55-9e7b8d175d2f\" target=\"_blank\">\u300A\u7A0B\u5E8F\u5458\u7684\u7B97\u6CD5\u8BFE\u300B</a>\u3001\n  <a href=\"https://xiedaimala.com/courses/82f9fd03-2528-4e68-ba42-f3fd7820535d\" target=\"_blank\">\u300A\u4ECE\u96F6\u5F00\u59CB\u8BBE\u8BA1\u6A21\u5F0F\u300B</a>\u3001\n  <a href=\"https://xiedaimala.com/courses/730db4a0-6927-467d-b725-589017848952\" target=\"_blank\">\u300A\u5FAE\u670D\u52A1\u67B6\u6784\u5B9E\u6218\u300B</a>\u3001\n  <a href=\"https://xiedaimala.com/courses/297dd624-50a3-435a-9e0c-5fa8f79042fd\" target=\"_blank\">\u300AJava 8\u7279\u6027\u5B9E\u6218\u300B</a> \n  \u672A\u5B8C\u5F85\u7EED...</p>\n",
-        image: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-16-21-34-20.png',
-        mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-18-18-10-14.png'
-      }],
+      swiperSlides: _config.teacherConfig["jirengu"].teacherList,
       activeIndex: 0,
       teacherSwiperOption: {},
       tabsSwiperOption: {
@@ -44335,7 +44478,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-awesome-swiper":"node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js","swiper/dist/css/swiper.css":"node_modules/swiper/dist/css/swiper.css","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"node_modules/popper.js/dist/esm/popper.js":[function(require,module,exports) {
+},{"vue-awesome-swiper":"node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js","swiper/dist/css/swiper.css":"node_modules/swiper/dist/css/swiper.css","../lib/config":"lib/config.js","_css_loader":"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"node_modules/popper.js/dist/esm/popper.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -51529,6 +51672,8 @@ var _teacher = _interopRequireDefault(require("./layout/teacher"));
 
 var _vTooltip = _interopRequireDefault(require("v-tooltip"));
 
+var _config = require("./lib/config");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue.default.use(_vTooltip.default);
@@ -51545,9 +51690,14 @@ new _vue.default({
     Learning: _learningAndJob.default,
     Experience: _experience.default,
     Teacher: _teacher.default
+  },
+  data: function data() {
+    return {
+      titleContent: _config.titleConfig["jirengu"]
+    };
   }
 });
-},{"./lib/init.js":"lib/init.js","./lib/vue":"lib/vue.js","./layout/navigator":"layout/navigator.vue","./layout/footer":"layout/footer.vue","./layout/preview":"layout/preview.vue","./layout/video":"layout/video.vue","./layout/course":"layout/course.vue","./layout/project":"layout/project.vue","./layout/learningAndJob":"layout/learningAndJob.vue","./layout/experience":"layout/experience.vue","./layout/teacher":"layout/teacher.vue","v-tooltip":"node_modules/v-tooltip/dist/v-tooltip.esm.js"}],"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./lib/init.js":"lib/init.js","./lib/vue":"lib/vue.js","./layout/navigator":"layout/navigator.vue","./layout/footer":"layout/footer.vue","./layout/preview":"layout/preview.vue","./layout/video":"layout/video.vue","./layout/course":"layout/course.vue","./layout/project":"layout/project.vue","./layout/learningAndJob":"layout/learningAndJob.vue","./layout/experience":"layout/experience.vue","./layout/teacher":"layout/teacher.vue","v-tooltip":"node_modules/v-tooltip/dist/v-tooltip.esm.js","./lib/config":"lib/config.js"}],"../../../../home/cjy/.nvm/versions/node/v8.16.0/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -51575,7 +51725,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4442" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62565" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -51606,8 +51756,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 

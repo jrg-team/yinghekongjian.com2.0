@@ -1,5 +1,5 @@
-@import url("https://at.alicdn.com/t/font_1376020_80zljjg7j05.css");
-@import url("https://at.alicdn.com/t/font_1376020_80zljjg7j05.css");
+@import url("https://at.alicdn.com/t/font_1376020_4zfqr42pf2l.css");
+@import url("https://at.alicdn.com/t/font_1376020_4zfqr42pf2l.css");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -226,6 +226,13 @@ p {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+.tooltip-inner > div > p {
+  color: #f2f2f2; }
+
+.tooltip-inner div.pdf-link {
+  margin: 10px 4px;
+  border-radius: 4px; }
+
 h1 {
   font-size: 64px;
   line-height: 150%; }
@@ -411,6 +418,13 @@ p {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+.tooltip-inner > div > p {
+  color: #f2f2f2; }
+
+.tooltip-inner div.pdf-link {
+  margin: 10px 4px;
+  border-radius: 4px; }
+
 header .content {
   margin: 0 auto;
   max-width: 980px;
@@ -460,74 +474,75 @@ header .white-navigator {
     height: 1px;
     z-index: 1; }
 
-header .navigator.mobile .icon-wrapper {
-  position: relative;
-  background-color: rgba(45, 45, 45, 0.98);
-  padding: 12px;
+header .navigator.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 3; }
-  header .navigator.mobile .icon-wrapper .hcsp-zhankai {
+  header .navigator.mobile .icon-wrapper {
     position: relative;
+    background-color: rgba(45, 45, 45, 0.98);
+    padding: 12px;
     z-index: 3; }
-  header .navigator.mobile .icon-wrapper .iconfont {
-    font-size: 16px; }
-  header .navigator.mobile .icon-wrapper .logo {
-    position: absolute;
+    header .navigator.mobile .icon-wrapper .hcsp-zhankai {
+      position: relative;
+      z-index: 3; }
+    header .navigator.mobile .icon-wrapper .iconfont {
+      font-size: 16px; }
+    header .navigator.mobile .icon-wrapper .logo {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      header .navigator.mobile .icon-wrapper .logo .hcsp-icon-white {
+        margin-right: 0; }
+      header .navigator.mobile .icon-wrapper .logo > i {
+        font-size: 20px; }
+    header .navigator.mobile .icon-wrapper.black {
+      background-color: black; }
+  header .navigator.mobile .black-modal {
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    header .navigator.mobile .icon-wrapper .logo .hcsp-icon-white {
-      margin-right: 0; }
-  header .navigator.mobile .icon-wrapper.black {
-    background-color: black; }
-
-header .navigator.mobile .black-modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  z-index: 2; }
-  header .navigator.mobile .black-modal .items-wrapper {
-    padding: 45px 40px 8px;
-    color: white; }
-    header .navigator.mobile .black-modal .items-wrapper li {
-      padding: 10px 0;
-      border-bottom: 1px solid #282828; }
-      header .navigator.mobile .black-modal .items-wrapper li > ul {
+    background-color: black;
+    z-index: 2; }
+    header .navigator.mobile .black-modal .items-wrapper {
+      padding: 45px 40px 8px;
+      color: white; }
+      header .navigator.mobile .black-modal .items-wrapper li {
+        padding: 10px 0;
+        border-bottom: 1px solid #282828; }
+        header .navigator.mobile .black-modal .items-wrapper li > ul {
+          color: #A5A5A5;
+          display: block;
+          margin-left: 1em; }
+      header .navigator.mobile .black-modal .items-wrapper li:last-child, header .navigator.mobile .black-modal .items-wrapper li.active {
+        border: none; }
+      header .navigator.mobile .black-modal .items-wrapper li.active {
         color: #A5A5A5;
-        display: block;
-        margin-left: 1em; }
-    header .navigator.mobile .black-modal .items-wrapper li:last-child, header .navigator.mobile .black-modal .items-wrapper li.active {
-      border: none; }
-    header .navigator.mobile .black-modal .items-wrapper li.active {
-      color: #A5A5A5;
-      margin-bottom: 0; }
-
-header .navigator.mobile .menu-enter-active, header .navigator.mobile .menu-leave-active {
-  transition: opacity .5s; }
-
-header .navigator.mobile .menu-enter, header .navigator.mobile .menu-leave-to {
-  opacity: 0; }
-
-header .navigator.mobile .submenu-enter-active {
-  transition: opacity .5s; }
-
-header .navigator.mobile .submenu-enter {
-  opacity: 0; }
-
-header .navigator.mobile .submenu-leave-active {
-  overflow: hidden;
-  height: 5em;
-  transition: height .3s ease-out; }
-
-header .navigator.mobile .submenu-leave-to {
-  height: 0; }
+        margin-bottom: 0; }
+  header .navigator.mobile .menu-enter-active, header .navigator.mobile .menu-leave-active {
+    transition: opacity .5s; }
+  header .navigator.mobile .menu-enter, header .navigator.mobile .menu-leave-to {
+    opacity: 0; }
+  header .navigator.mobile .submenu-enter-active {
+    transition: opacity .5s; }
+  header .navigator.mobile .submenu-enter {
+    opacity: 0; }
+  header .navigator.mobile .submenu-leave-active {
+    overflow: hidden;
+    height: 5em;
+    transition: height .3s ease-out; }
+  header .navigator.mobile .submenu-leave-to {
+    height: 0; }
 
 footer {
   background-color: #EAE9E9; }
@@ -571,7 +586,8 @@ footer > .content {
       margin-bottom: 8px;
       border-bottom: 1px solid #d6d6d6; }
       footer > .content .tip-wrapper .contact span {
-        color: #3475C6; }
+        color: #3475C6;
+        cursor: pointer; }
     footer > .content .tip-wrapper .copyright, footer > .content .tip-wrapper .contact {
       color: #888; }
     footer > .content .tip-wrapper .copyright > a:first-child {
@@ -585,6 +601,14 @@ footer > .content {
         cursor: pointer; }
     footer > .content .tip-wrapper .copyright > a:last-child {
       border: none; }
+  footer > .content .v-popover.wechat {
+    display: inline-block; }
+
+.tooltip-inner {
+  max-width: 30vw !important; }
+  .tooltip-inner img {
+    width: 200px;
+    border-radius: 8px; }
 
 @media (max-width: 499px) {
   footer > .content > section.tip-wrapper {
