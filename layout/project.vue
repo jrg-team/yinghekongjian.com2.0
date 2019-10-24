@@ -108,7 +108,7 @@ export default {
       let imageCounts = this.projectImages.length;
       let rowStep = document.documentElement.clientWidth * (this.isMobile ? 0.05 : 0.025);
       let colStep = document.documentElement.clientWidth * (this.isMobile ? 0.2: 0.1) * 3 / imageCounts;
-      let floatUp = hover && index !== (imageCounts - 1)
+      let floatUp = hover && index !== (imageCounts - 1) && this.projectImageFloatUp
       if (imagesExpand) {
         let offset = Math.floor(imageCounts / 2);
         if (imageCounts % 2 === 1) {
