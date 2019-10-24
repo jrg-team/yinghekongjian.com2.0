@@ -9,25 +9,38 @@
         <div class="text">
           <h4>{{courseTitle}}</h4>
           <p>{{courseDescription}}</p>
-          <a :href="courseLink">查看完整课程大纲 <i class="iconfont hcsp-right"></i> </a>
+          <a :href="courseLink">
+            查看完整课程大纲
+            <i class="iconfont hcsp-right"></i>
+          </a>
         </div>
       </div>
       <div class="col">
-        <img :src="courseListImg" alt="pic"/>
+        <img :src="courseListImg" alt="pic" />
       </div>
     </div>
     <div class="row wide pc">
-      <div class="image-wrapper">
-        <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-23.png')" alt="pic"/>
-        <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-19.png')" alt="pic"/>
-        <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-14.png')" alt="pic"/>
+      <div class="image-wrapper" id="project-images">
+        <img
+          v-for="(image, index) in projectImages"
+          :key="index"
+          :src="$cdn(image.url)"
+          alt="项目图"
+          :style="{transform: translateCalculator(index, imagesExpand, image.hover)}"
+          @mouseenter="() => hoverImage(index)"
+          @mouseleave="() => leaveImage(index)"
+          @click="() => reverseImageStatus(index)"
+        />
       </div>
       <div class="col vertical-center text-wrapper">
         <div class="text">
           <p>实战项目</p>
           <h4>{{projectTitle}}</h4>
           <p>{{projectDescription}}</p>
-          <a :href="projectLink">进一步了解课程详情 <i class="iconfont hcsp-right"></i> </a>
+          <a :href="projectLink">
+            进一步了解项目详情
+            <i class="iconfont hcsp-right"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -45,10 +58,17 @@
       :link-to="{link: projectLink, text: '进一步了解详细课程'}"
     >
       <template v-slot:image>
-        <div class="image-wrapper">
-          <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-23.png')" alt="pic"/>
-          <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-19.png')" alt="pic"/>
-          <img :src="$cdn('https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-10-1-14.png')" alt="pic"/>
+        <div class="image-wrapper mobile">
+          <img
+            v-for="(image, index) in projectImages"
+            :key="index"
+            :src="$cdn(image.url)"
+            alt="项目图"
+            :style="{transform: translateCalculator(index, imagesExpand, image.hover)}"
+            @mouseenter="() => hoverImage(index)"
+            @mouseleave="() => leaveImage(index)"
+            @click="() => reverseImageStatus(index)"
+          />
         </div>
       </template>
     </TextWithPic>
@@ -56,94 +76,129 @@
 </template>
 
 <script>
-  import TextWithPic from '../components/TextWithPic'
-  import { projectConfig } from "../lib/config";
-  export default {
-    name: 'project',
-    components: {
-      TextWithPic
+import TextWithPic from "../components/TextWithPic";
+import { projectConfig } from "../lib/config";
+export default {
+  name: "project",
+  components: {
+    TextWithPic
+  },
+  data() {
+    return {
+      imagesExpand: false,
+      isMobile: document.body.clientWidth < 500,
+      ...projectConfig[process.env.BUILD_FLAG]
+    };
+  },
+  methods: {
+    listenScrollToElement: function(selector) {
+      let offsetTotop = document.querySelector(selector).getBoundingClientRect().top;
+      let height = document.documentElement.clientHeight;
+      if (offsetTotop - height / 3 <= 0) return true;
+      else return false;
     },
-    data() {
-      return projectConfig[process.env.BUILD_FLAG]
+    listenScrollToImages: function() {
+      if (this.imagesExpand === this.listenScrollToElement("#project-images"))
+        return;
+      else {
+        this.imagesExpand = this.listenScrollToElement("#project-images");
+      }
+    },
+    translateCalculator(index, imagesExpand, hover = false) {
+      let imageCounts = this.projectImages.length;
+      let rowStep = document.documentElement.clientWidth * (this.isMobile ? 0.05 : 0.025);
+      let colStep = document.documentElement.clientWidth * (this.isMobile ? 0.2: 0.1) * 3 / imageCounts;
+      let floatUp = hover && index !== (imageCounts - 1)
+      if (imagesExpand) {
+        let offset = Math.floor(imageCounts / 2);
+        if (imageCounts % 2 === 1) {
+          return `translate3d(${rowStep * (index - offset)}px, ${colStep * (index - offset - (floatUp && 1))}px, 0)`;
+        } else if (imageCounts % 2 === 0) {
+          return `translate3d(${rowStep *(index - offset + 0.5)}px, ${colStep * (index - offset + 0.5 - (floatUp && 1))}px, 0)`;
+        }
+      } else return undefined
+    },
+    hoverImage(index) {
+      this.projectImages[index].hover = true
+      this.$set(this.projectImages, index, {hover: true, ...this.projectImages[index]})
+    },
+    leaveImage(index) {
+      this.projectImages[index].hover = false
+    },
+    reverseImageStatus(index) {
+      this.projectImages[index].hover = !this.projectImages[index].hover
     }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.listenScrollToImages);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.listenScrollToImages);
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import '../css/vars';
-  .project-wrapper {
-    background-color: #F2F2F2;
-    @media (min-width: 500px) {
-      background-color: #F0FBF9;
-      padding-bottom: 0;
-    }
-    .row {
-      display: flex;
-      max-width: 980px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      &.wide { max-width: 100vw; }
-    }
-    .row > .col {
-      max-width: 50%;
-      flex: 1;
-      .text {
-        display: block;
-        max-width: 70%;
-        h4, p {margin-bottom: 20px;}
-        a {color: $blue}
-      }
-      img {
-        width: 50vw;
-        margin-left: 5vw;
-      }
-      &.vertical-center {
-        display: flex;
-        align-items: center;
-      }
-    }
-    .image-wrapper {
-      margin: 10vh 0 10vh 10vw;
-      padding-bottom: 20vw;
-      position: relative;
-      img {
-        display: block;
-        position: relative;
-        vertical-align: middle;
-        width: 40vw;
-        top: 0;
-        left: 0;
-      }
-      img:nth-child(2) {
-        position: absolute;
-        top: 9vw;
-        left: 4vw;
-      }
-      img:nth-child(3) {
-        position: absolute;
-        top: 18vw;
-        left: 8vw;
-      }
-      @media (max-width: 499px) {
-        margin: 0;
-        height: 40vh;
-        img {width: 80vw; left: -10px}
-        img:nth-child(2) {
-          position: relative;
-          top: -60px;
-          left: 10px;
-        }
-        img:nth-child(3) {
-          position: relative;
-          top: -120px;
-          left: 30px;
-        }
-      }
-    }
-    .row > .text-wrapper {
-      margin-left: 220px;
+@import "../css/vars";
+.project-wrapper {
+  background-color: #f2f2f2;
+  @media (min-width: 500px) {
+    background-color: #f0fbf9;
+    padding-bottom: 0;
+  }
+  .row {
+    display: flex;
+    max-width: 980px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    &.wide {
+      max-width: 100vw;
     }
   }
-
+  .row > .col {
+    max-width: 50%;
+    flex: 1;
+    .text {
+      display: block;
+      max-width: 70%;
+      h4,
+      p {
+        margin-bottom: 20px;
+      }
+      a {
+        color: $blue;
+      }
+    }
+    img {
+      width: 50vw;
+      margin-left: 5vw;
+    }
+    &.vertical-center {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .image-wrapper {
+    position: relative;
+    width: 65vw;
+    height: 55vw;
+    img {
+      display: block;
+      position: absolute;
+      width: 60%;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    &.mobile {
+      width: 100%;
+      height: 70vw;
+      img {width: 80%;}
+    }
+  }
+}
 </style>

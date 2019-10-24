@@ -2,7 +2,7 @@
   <section class="course-wrapper section-margin">
     <div class="title title-margin">
       <h3>课程如何开展</h3>
-      <p v-html="description"></p>
+      <p v-html="description" class="long"></p>
     </div>
     <div class="image-wrapper pc">
       <div class="row" v-for="(row, rowIndex) in items">

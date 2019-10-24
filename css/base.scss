@@ -188,6 +188,9 @@ p {
     word-break: break-word;
     text-align: center;
   }
+  p.long {
+    max-width: 50em;
+  }
   padding-bottom: 10vh;
 }
 

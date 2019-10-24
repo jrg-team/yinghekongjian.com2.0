@@ -10,7 +10,7 @@
         <h5 class="text">播放影片</h5>
       </div>
       <a class="get-description" :href="descriptionUrl" target="_blank">
-        获取文字描述 <i class="iconfont hcsp-right"></i>
+        获取课程图文介绍 <i class="iconfont hcsp-right"></i>
       </a>
     </template>
   </custom-video>
