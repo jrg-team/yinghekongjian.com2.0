@@ -51,73 +51,12 @@
   </footer>
 </template>
 <script>
+import {footerConfig} from '../lib/config'
 export default {
   name: "MyFooter",
   data() {
     return {
-      pcItems: [
-        [
-          {
-            title: "前端系统课",
-            children: [
-              { text: "从入门到工作", link: "#" },
-              { text: "前端精进", link: "#" },
-              { text: "全栈课", link: "#" }
-            ]
-          },
-          {
-            title: "Java系统课",
-            children: [{ text: "从入门到工作", link: "#" }]
-          }
-        ],
-        [
-          {
-            title: "前端专题课",
-            children: [
-              { text: "JavaScript系列", link: "#" },
-              { text: "CSS系列", link: "#" },
-              { text: "TypeScript系列", link: "#" },
-              { text: "Http", link: "#" },
-              { text: "Vue", link: "#" },
-              { text: "React", link: "#" },
-              { text: "移动端系列", link: "#" },
-              { text: "设计模式系列", link: "#" },
-              { text: "算法系列", link: "#" }
-            ]
-          }
-        ],
-        [
-          {
-            title: "Java专题课",
-            children: [
-              { text: "算法系列", link: "#" },
-              { text: "微服务", link: "#" },
-              { text: "Java8", link: "#" }
-            ]
-          }
-        ],
-        [
-          {
-            title: "旗下产品",
-            children: [
-              { text: "硬核空间", link: "#" },
-              { text: "饥人谷", link: "#" },
-              { text: "写代码啦", link: "#" },
-              { text: "Hunger Works", link: "#" }
-            ]
-          },
-          {
-            title: "合作伙伴",
-            children: [{ text: "leanote", link: "https://leanote.com/" }]
-          }
-        ],
-        [
-          {
-            title: "关于 饥人谷",
-            children: [{ text: "关于我们", link: "about" }]
-          }
-        ]
-      ],
+      pcItems: footerConfig[process.env.BUILD_FLAG].items,
       mobileItems: [],
       showWechat: false
     };

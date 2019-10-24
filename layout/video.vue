@@ -69,7 +69,7 @@
   a.get-description {
     color: white;
     text-align: center;
-    max-width: 8em;
+    max-width: 10em;
     position: absolute;
     bottom: 40px;
     left: 0;
