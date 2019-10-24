@@ -1,7 +1,7 @@
 <template>
   <div class="background">
-    <section class="experience-wrapper section-margin" v-if="enable">
-      <div class="row pc">
+    <section class="experience-wrapper section-margin">
+      <div class="row pc" v-if="enable">
         <div class="title col">
           <h6>真实故事</h6>
           <h3>数千同学的真实转行经历</h3>
@@ -17,6 +17,7 @@
       <text-with-pic
         :image-src="pictureSrc"
         class="mobile text-with-pic-wrapper"
+        v-if="enable"
       >
         <div class="title col">
           <h6>真实故事</h6>
