@@ -31,7 +31,7 @@
           <span @click="onPhoneClick" class="phone">400-618-3005</span> ,
           <br class="mobile" />或者添加客服微信:
           <v-popover class="wechat" trigger="manual" :open="showWechat">
-            <span @mouseover="() => {showWechat = true}" @mouseout="() => {showWechat = false}">hungervalley</span>
+            <span @mouseover="() => {showWechat = true}" @mouseout="() => {showWechat = false}">xiedaimala03</span>
             <template slot="popover">
               <img src="http://static.xiedaimala.com/xdml/image/f40ceb64-df08-4420-9226-7f76dbff15d5/2018-12-5-13-40-23.png"/>
             </template>
