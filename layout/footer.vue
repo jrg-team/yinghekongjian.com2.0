@@ -33,7 +33,10 @@
           <v-popover class="wechat" trigger="manual" :open="showWechat">
             <span @mouseover="() => {showWechat = true}" @mouseout="() => {showWechat = false}">xiedaimala03</span>
             <template slot="popover">
-              <img src="http://static.xiedaimala.com/xdml/image/f40ceb64-df08-4420-9226-7f76dbff15d5/2018-12-5-13-40-23.png"/>
+              <div class="footer-icon-popover">
+                <img :src="wechatQrCode"/>
+                <p>打开微信扫描二维码，加班主任</p>
+              </div>
             </template>
           </v-popover>
         </div>
@@ -44,7 +47,40 @@
           <a>使用条款</a>
           <a>销售政策</a>
           <a>法律信息</a>
-          <a>网站地图</a>
+        </div>
+        <div class="icon-wrapper">
+          <v-popover>
+            <i class="iconfont hcsp-weixin"></i>
+            <template slot="popover">
+              <div class="footer-icon-popover">
+                <img :src="wechatQrCode"/>
+                <p>打开微信扫描二维码，加班主任</p>
+              </div>
+            </template>
+          </v-popover>
+          <v-popover>
+            <i class="iconfont hcsp-weibo"></i>
+            <template slot="popover" class="footer-icon-popover">
+              <div class="footer-icon-popover">
+                <a href="https://weibo.com/jirengu" target="_blank">
+                  <img :src="weiboQrcode"/>
+                </a>
+                <p>打开微博扫描二维码，关注我们</p>
+              </div>
+            </template>
+          </v-popover>
+          <v-popover>
+            <i class="iconfont hcsp-dianhua"></i>
+            <template slot="popover" class="footer-icon-popover">
+              <div class="footer-icon-popover">
+                <ul>
+                  <li>联系电话: 400-618-3005</li>
+                  <li>客服微信: xiedaimala03</li>
+                  <li class="contact-button"><span @click="showMeqia">在线咨询</span></li>
+                </ul>
+              </div>
+            </template>
+          </v-popover>
         </div>
       </section>
     </div>
@@ -56,9 +92,9 @@ export default {
   name: "MyFooter",
   data() {
     return {
-      pcItems: footerConfig[process.env.BUILD_FLAG].items,
       mobileItems: [],
-      showWechat: false
+      showWechat: false,
+      ...footerConfig[process.env.BUILD_FLAG]
     };
   },
   methods: {
@@ -72,6 +108,9 @@ export default {
     },
     onPhoneClick: function() {
       window.location.href = "tel:400-618-3005";
+    },
+    showMeqia: function () {
+      window._MEIQIA('showPanel')
     }
   },
   mounted() {

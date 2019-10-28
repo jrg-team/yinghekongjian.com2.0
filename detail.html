@@ -25,11 +25,32 @@
             <h2 class="name">{{item.sub_name}}</h2>
           </div>
         </swiper-slide>
-
-        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
-        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
+        <div slot="button-prev" class="swiper-button-prev">
+          <i class="iconfont hcsp-prev"></i>
+          <p>{{prevIndex(activeIndex, 'name')}}（{{prevIndex(activeIndex, 'sub_name')}}）</p>
+        </div>
+        <div slot="button-next" class="swiper-button-next">
+          <p>{{nextIndex(activeIndex, 'name')}}（{{nextIndex(activeIndex,'sub_name')}}）</p>
+          <i class="iconfont hcsp-next"></i>
+        </div>
       </swiper>
     </div>
+    <div class="tab-wrapper pc" :class="{'mini-tab': !isFirstPage}">
+      <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
+        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index}">
+          <template v-if="isFirstPage">
+            <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(slide.image_url)})`}"></div>
+            <div>{{slide.name}}</div>
+            <div>{{slide.sub_name}}</div>
+          </template>
+          <template v-else>
+            <div>{{slide.name}}</div>
+            <div>{{slide.sub_name}}</div>
+          </template>
+        </swiper-slide>
+      </swiper>
+    </div>
+    <div id='scroller-indicator'></div>
     <div class="swiper-container mobile">
       <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
         <swiper-slide :key="index" v-for="item,index in course_details">

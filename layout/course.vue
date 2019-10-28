@@ -81,7 +81,7 @@
   .mask-leave-active, .mask-enter-active {transition: opacity 0.4s ease 0.2s; transform: scale(1)}
   .mask-enter, .mask-leave-to {opacity: 0;}
   .course-wrapper {
-    background-color: #F2F2F2;
+    background-color: $v-popover-white;
     @media (max-width: 499px) {
       padding: 10vh 0 5vh;
       .title {

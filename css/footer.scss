@@ -24,6 +24,9 @@ footer> .content {
       .block + .block {
         margin-top: 24px;
       }
+      &:first-of-type {
+        flex: 1.5;
+      }
       a:hover {
         text-decoration: underline;
       }
@@ -61,6 +64,18 @@ footer> .content {
       }
       >a:last-child {border: none;}
     }
+    div.icon-wrapper {
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+      div.v-popover {
+        display: inline;
+      }
+      i.iconfont {
+        font-size: 36px;
+        color: #888888;
+      }
+    }
   }
   .v-popover.wechat {
     display: inline-block;
@@ -73,6 +88,23 @@ footer> .content {
     border-radius: 8px;
   }
 }
+.footer-icon-popover {
+  p {font-size: 13px; color: $v-popover-white;text-align: center; margin-top: 8px;}
+  li {text-align: center;}
+  .contact-button {
+    span {
+      cursor: pointer;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid $v-popover-white;
+      &:hover {
+        color: rgba($color: $v-popover-white, $alpha: 0.8); 
+        border: 1px solid rgba($color: $v-popover-white, $alpha: 0.8);
+      }
+    }
+    margin-top: 8px;
+  }
+}
 
 @media (max-width: 499px) {
   footer > .content > section.tip-wrapper {
@@ -81,6 +113,11 @@ footer> .content {
     .contact {border-bottom: none;}
     .copyright {
       a {display: inline-block; padding-right: 6px; margin-right: 5px;}
+    }
+    div.icon-wrapper {
+      position: relative;
+      bottom: 0;
+      margin-top: 12px;
     }
   }
   .slide-fade-enter-active {
@@ -118,5 +155,8 @@ footer> .content {
         }
       }
     }
+  }
+  .tooltip-inner {
+    max-width: 80vw !important;
   }
 }

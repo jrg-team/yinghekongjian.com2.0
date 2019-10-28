@@ -1,4 +1,4 @@
-@import url("https://at.alicdn.com/t/font_1376020_4zfqr42pf2l.css");
+@import url("https://at.alicdn.com/t/font_1376020_18x367mgpgv.css");
 
 h1 {
   font-size: 64px;
@@ -49,6 +49,7 @@ p {
   p{
     margin: 20px 0;
     word-break: break-all;
+    >code { padding: 0 4px; background: rgba(47,70,114,.1); border-radius: 4px; color: #606e7d; display: inline-block;}
   }
   h4{
     color: #111;
@@ -78,13 +79,16 @@ p {
   table{
     border-collapse: collapse;
     border: 1px solid #D6D6D6;
+    background: #565656;
     margin: 24px 0;
     width: 100%;
-    th,td{padding: 0 30px}
-    th{color: #333;text-align: center;padding: 10px 30px}
-    td{color: #666;line-height:2}
+    border-radius: 8px;
+    overflow: hidden;
+    th,td{padding: 0 30px; color: white;}
+    th{text-align: center;padding: 10px 30px}
+    td{line-height:2}
     thead{
-      background: #EEEEEE;
+      background: #424242;
       text-align: left;
       border: none;
     }
@@ -148,15 +152,16 @@ p {
     table{
       border-collapse: collapse;
       border: 1px solid #D6D6D6;
+      background: #565656;
       margin: 24px 0;
       width: 100%;
       font-size: 12px;
       text-align: center;
-      th,td{padding: 2px 2px}
-      th{color: #333;padding: 2px 2px}
-      td{color: #666;line-height:1.5}
+      th,td{padding: 2px 2px; color: white;}
+      th{padding: 2px 2px}
+      td{line-height:1.5}
       thead{
-        background: #EEEEEE;
+        background: #424242;
         border: none;
       }
       tbody {

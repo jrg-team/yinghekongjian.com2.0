@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <section class="experience-wrapper section-margin">
+    <section class="experience-wrapper" :class="{'section-margin': enable}">
       <div class="row pc" v-if="enable">
         <div class="title col">
           <h6>真实故事</h6>
@@ -130,7 +130,7 @@
     > a {font-size: 14px;}
   }
   section.contact-download-wrapper {
-    background-color: #F2F2F2;
+    background-color: $v-popover-white;
     padding: 15vh 0;
     display: flex;
     justify-content: center;
