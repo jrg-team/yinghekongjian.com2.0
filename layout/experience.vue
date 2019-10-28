@@ -29,19 +29,11 @@
         </div>
       </text-with-pic>
       <div class="row cards-wrapper">
-        <section class="card col">
-          <h6>闯关式任务</h6>
-          <h5>什么在激励着我们？</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dignissimos ipsa iusto labore
-            nihil qui, repellat reprehenderit sit vel?</p>
-          <a href="#">进一步了解 <i class="iconfont hcsp-right"></i></a>
-        </section>
-        <section class="card col">
-          <h6>闯关式任务</h6>
-          <h5>什么在激励着我们？</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dignissimos ipsa iusto labore
-            nihil qui, repellat reprehenderit sit vel?</p>
-          <a href="#">进一步了解 <i class="iconfont hcsp-right"></i></a>
+        <section class="card col" v-for="(card, index) in articleLinks" :key="index">
+          <h6>{{card.subTitle}}</h6>
+          <h5>{{card.title}}</h5>
+          <p>{{card.content}}</p>
+          <a :href="card.link" target="_blank">进一步了解 <i class="iconfont hcsp-right"></i></a>
         </section>
       </div>
     </section>
@@ -101,6 +93,7 @@
     .row {display: flex; align-items: center;}
     .row > .col {
       max-width: 50%;
+      flex: 1;
       &.title {
         padding-right: 5vw;
         h6 {margin-bottom: 10px; font-size: 18px;}
