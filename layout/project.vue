@@ -141,7 +141,7 @@ export default {
 <style lang="scss" scoped>
 @import "../css/vars";
 .project-wrapper {
-  background-color: #f2f2f2;
+  background-color: $v-popover-white;
   @media (min-width: 500px) {
     background-color: #f0fbf9;
     padding-bottom: 0;

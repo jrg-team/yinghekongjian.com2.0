@@ -11,7 +11,7 @@ const TYPE = process.env.BUILD_FLAG
 
 new Vue({
   el: '#app',
-  data(){
+  data() {
     return {
       swiperOption: {
         navigation: {
@@ -23,11 +23,18 @@ new Vue({
         spaceBetween: 30,
         on: {
           slideChange: () => {
-            if(this.swiper){
+            if (this.swiper) {
               this.activeIndex = this.swiper.activeIndex
             }
           }
         }
+      },
+      tabsSwiperOption: {
+        slidesPerView: 2,
+        centeredSlides: true,
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        virtualTranslate: true
       },
       phoneSwiperOption: {
         navigation: {
@@ -36,20 +43,30 @@ new Vue({
         },
         on: {
           slideChange: () => {
-            if(this.swiper){
+            if (this.swiper) {
               this.activeIndex = this.phoneSwiper.activeIndex
             }
           }
         }
       },
       activeIndex: 0,
-      course_details: []
+      course_details: [],
+      isFirstPage: true
     }
   },
-  created(){
+  created() {
     axios.get('/settings/course_details').then((response) => {
       this.course_details = response.data.resource.items[TYPE]
     })
+  },
+  mounted() {
+    this.$nextTick(() => {
+      const mySwiper = this.$refs.mySwiper.swiper
+      const swiperTabs = this.$refs.swiperTabs.swiper
+      mySwiper.controller.control = swiperTabs
+      swiperTabs.controller.control = mySwiper
+    })
+    window.addEventListener("scroll", this.scrollPassFirstPage);
   },
   components: {
     swiper,
@@ -61,11 +78,39 @@ new Vue({
     swiper() {
       return this.$refs.mySwiper.swiper
     },
-    phoneSwiper(){
+    phoneSwiper() {
       return this.$refs.myPhoneSwiper.swiper
     }
   },
   methods: {
+    prevIndex(current, key) {
+      if (this.course_details) {
+        let index = current === 0 ? this.course_details.length - 1 : current - 1
+        return this.course_details[index] && this.course_details[index][key]
+      }
+    },
+    nextIndex(current, key) {
+      if (this.course_details) {
+        let index = current >= this.course_details.length - 1 ? 0 : current + 1
+        return this.course_details[index] && this.course_details[index][key]
+      }
+    },
+    scrollPassFirstPage() {
+      let offsetTotop = document.querySelector("#scroller-indicator").getBoundingClientRect().top;
+      let currentStatus
+      console.log(offsetTotop)
+      if (offsetTotop <= 0) {currentStatus = false}
+      else {currentStatus = true}
+      if (this.isFirstPage === currentStatus)
+        return
+      else {
+        this.isFirstPage = currentStatus
+        console.log(currentStatus)
+      }
+    },
     marked
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.scrollPassFirstPage);
   }
 })
