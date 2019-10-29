@@ -116,33 +116,31 @@ $slider-width: 150px;
 
 .tab-wrapper {
   cursor: pointer;
-  &.pc{
-    font-size: 12px;
-    color: #333;
-    line-height: 1.33;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    .swiper-slide{
-      width: $slider-width !important;
-      overflow: hidden;
-      margin: 20px;
-      padding: 10px;
-      height: auto;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.33;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  .swiper-slide{
+    width: $slider-width !important;
+    overflow: hidden;
+    margin: 20px;
+    padding: 10px;
+    height: auto;
+    border-radius: 8px;
+    text-align: center;
+    &:hover {color: $blue;}
+    &.active {
+      background: rgba(0, 0, 0, 0.03);
+      font-weight: $font-bold;
+    }
+    .image-wrapper {
       border-radius: 8px;
-      text-align: center;
-      &:hover {color: $blue;}
-      &.active {
-        background: rgba(0, 0, 0, 0.03);
-        font-weight: $font-bold;
-      }
-      .image-wrapper {
-        border-radius: 8px;
-        display: inline-block; 
-        width: 100%; height: calc(150px * 0.45);
-        background-position: center;
-        background-size: cover;
-      }
+      display: inline-block; 
+      width: 100%; height: calc(150px * 0.45);
+      background-position: center;
+      background-size: cover;
     }
   }
   &.mobile{
@@ -152,7 +150,6 @@ $slider-width: 150px;
   }
   &.mini-tab {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
     background: white;
@@ -161,6 +158,9 @@ $slider-width: 150px;
       margin: 10px;
     }
   }
+  .fade-enter-active {transition: opacity 0.2s ease 0.2s; transform: scale(1)}
+  .fade-leave-active {transition: opacity 0.2s ease; transform: scale(1)}
+  .fade-enter, .fade-leave-to {opacity: 0;}
 }
 
 .fade-enter-active, .fade-leave-active {

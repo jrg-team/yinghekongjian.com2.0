@@ -35,7 +35,20 @@
         </div>
       </swiper>
     </div>
-    <div class="tab-wrapper pc" :class="{'mini-tab': !isFirstPage}">
+    <div class="swiper-container mobile">
+      <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
+        <swiper-slide :key="index" v-for="item,index in course_details">
+          <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_phone_url)})`}">
+            <div class="title name">{{item.name}}</div>
+            <h3 class="name">{{item.sub_name}}</h3>
+          </div>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
+        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
+      </swiper>
+    </div>
+    <div class="tab-wrapper" :class="{'mini-tab': !isFirstPage}" :style="{top: miniTabTop()}">
       <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
         <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index}">
           <template v-if="isFirstPage">
@@ -51,19 +64,6 @@
       </swiper>
     </div>
     <div id='scroller-indicator'></div>
-    <div class="swiper-container mobile">
-      <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
-        <swiper-slide :key="index" v-for="item,index in course_details">
-          <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_phone_url)})`}">
-            <div class="title name">{{item.name}}</div>
-            <h3 class="name">{{item.sub_name}}</h3>
-          </div>
-        </swiper-slide>
-        <!-- Optional controls -->
-        <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
-        <i class="iconfont hcsp-next swiper-button-next" slot="button-next"></i>
-      </swiper>
-    </div>
     <transition-group name="fade" tag="div">
       <section class="container" :key="index" v-for="item,index in course_details" v-if="index === activeIndex">
         <h2 class="title">{{item.article_title}}</h2>
