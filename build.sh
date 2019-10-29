@@ -5,5 +5,5 @@ git pull origin master &&
 npm run build:jirengu &&
 npm run build:java &&
 git add . &&
-git commit &&
+git commit -m 'rebuild' &&
 git push origin gh-pages
