@@ -7,6 +7,7 @@ import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
 import CustomVideo from '../components/CustomVideo'
 import pictureTextList from '../layout/pictureTextList'
+import pictureWithMask from '../components/pictureWithMask'
 
 const TYPE = process.env.BUILD_FLAG
 
@@ -49,6 +50,7 @@ new Vue({
     MyNavigator,
     MyFooter,
     pictureTextList,
-    CustomVideo
+    CustomVideo,
+    pictureWithMask
   }
 })
