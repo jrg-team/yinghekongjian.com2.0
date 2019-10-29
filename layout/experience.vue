@@ -17,12 +17,10 @@
       </template>
       <div class="row pc" v-if="enable">
         <div class="title col">
-          <h6>真实故事</h6>
-          <h3>数千同学的真实转行经历</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore molestiae, molestias
-            mollitia
-            nesciunt numquam pariatur quam qui reiciendis tenetur?</p>
-          <a href="#">查看详情<i class="iconfont hcsp-right"></i></a>
+          <h6>{{commentLink.subTitle}}</h6>
+          <h3>{{commentLink.title}}</h3>
+          <p>{{commentLink.content}}</p>
+          <a :href="commentLink.link" target="_blank">{{commentLink.linkTo}}<i class="iconfont hcsp-right"></i></a>
         </div>
         <div class="image-wrapper col">
           <img :src="$cdn(pictureSrc)" alt="前端转行经历"/>
@@ -34,12 +32,10 @@
         v-if="enable"
       >
         <div class="title col">
-          <h6>真实故事</h6>
-          <h3>数千同学的真实转行经历</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id inventore molestiae, molestias
-            mollitia
-            nesciunt numquam pariatur quam qui reiciendis tenetur?</p>
-          <black-button class="black-button">查看详情</black-button>
+          <h6>{{commentLink.subTitle}}</h6>
+          <h3>{{commentLink.title}}</h3>
+          <p>{{commentLink.content}}</p>
+          <black-button class="black-button" :linkTo="commentLink.link">{{commentLink.linkTo}}</black-button>
         </div>
       </text-with-pic>
       <div class="row cards-wrapper">
@@ -123,7 +119,7 @@
     }
     .block-wrapper {
       position: relative;
-      max-width: 80%;
+      max-width: 100%;
       left: 0;
       right: 0;
       top: 0;
@@ -136,8 +132,8 @@
       padding-bottom: 10vh;
       .block {
         margin: 12px 0;
-        min-width: calc(100% / 3);
-        max-width: calc(100% / 3);
+        min-width: calc(100% / 4);
+        max-width: calc(100% / 4);
         flex: 1;
         display: flex;
         justify-content: center;

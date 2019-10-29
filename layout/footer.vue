@@ -44,9 +44,9 @@
           Copyright © 2019 Hungervalley Inc. 保留所有权利。
           <br class="mobile" />
           <a>浙ICP备14041127号-1</a>
-          <a>隐私政策</a>
+          <!-- <a>隐私政策</a>
           <a>使用条款</a>
-          <a>法律信息</a>
+          <a>法律信息</a> -->
         </div>
         <div class="icon-wrapper">
           <v-popover>

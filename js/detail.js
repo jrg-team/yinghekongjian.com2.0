@@ -51,7 +51,8 @@ new Vue({
       },
       activeIndex: 0,
       course_details: [],
-      isFirstPage: true
+      isFirstPage: true,
+      isMobile: document.documentElement.clientWidth < 500
     }
   },
   created() {
@@ -66,7 +67,7 @@ new Vue({
       mySwiper.controller.control = swiperTabs
       swiperTabs.controller.control = mySwiper
     })
-    window.addEventListener("scroll", this.scrollPassFirstPage);
+    window.addEventListener("scroll", this.scrollPassFirstPage)
   },
   components: {
     swiper,
@@ -98,7 +99,6 @@ new Vue({
     scrollPassFirstPage() {
       let offsetTotop = document.querySelector("#scroller-indicator").getBoundingClientRect().top;
       let currentStatus
-      console.log(offsetTotop)
       if (offsetTotop <= 0) {currentStatus = false}
       else {currentStatus = true}
       if (this.isFirstPage === currentStatus)
@@ -108,9 +108,15 @@ new Vue({
         console.log(currentStatus)
       }
     },
+    miniTabTop() {
+      if (this.isMobile) {
+        let node = document.querySelector("nav.navigator")
+        return `${node && node.clientHeight}px`
+      } else return 0
+    },
     marked
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.scrollPassFirstPage);
+    window.removeEventListener("scroll", this.scrollPassFirstPage)
   }
 })
