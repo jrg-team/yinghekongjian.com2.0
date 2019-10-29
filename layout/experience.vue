@@ -1,6 +1,20 @@
 <template>
   <div class="background">
     <section class="experience-wrapper" :class="{'section-margin': enable}">
+      <template v-if="enable">
+        <div class="title title-margin">
+          <h3>让真实数据说话</h3>
+          <p>一些数据，或许可以代表我们的实力</p>
+        </div>
+        <div class="block-wrapper">
+          <div class="block" v-for="(block, index) in dataBlocks" :key="index">
+            <div>
+              <h2>{{block.title}}<span class="unit">{{block.unit}}</span></h2>
+              <span class="description">{{block.description}}</span>
+            </div>
+          </div>
+        </div>
+      </template>
       <div class="row pc" v-if="enable">
         <div class="title col">
           <h6>真实故事</h6>
@@ -105,6 +119,42 @@
       .title {
         p {margin-bottom: 30px;}
         margin: 20px 0;
+      }
+    }
+    .block-wrapper {
+      position: relative;
+      max-width: 80%;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      overflow: hidden;
+      padding-bottom: 10vh;
+      .block {
+        margin: 12px 0;
+        min-width: calc(100% / 3);
+        max-width: calc(100% / 3);
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        >div {width: fit-content; text-align: start;}
+        span.description {font-size: 12px; font-weight: $font-bold;}
+        span.unit {font-size: 24px; margin-left: 8px;}
+      }
+      @media (max-width: 499px) {
+        padding-bottom: 30px;
+        .block {
+          margin: 10px 0;
+          min-width: calc(100% / 2);
+          max-width: calc(100% / 2);
+          justify-content: flex-start;
+          >div {width: auto; margin-left: 12px;}
+          span.unit {font-size: 14px;}
+        }  
       }
     }
   }

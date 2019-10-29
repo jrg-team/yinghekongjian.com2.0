@@ -2,11 +2,11 @@
   <footer>
     <div class="content">
       <section class="col-wrapper pc">
-        <div class="col" v-for="col in pcItems">
-          <div class="block" v-for="block in col">
+        <div class="col" v-for="(col, colIndex) in pcItems" :key="colIndex">
+          <div class="block" v-for="(block, blockIndex) in col" :key="blockIndex">
             <h5>{{block.title}}</h5>
             <ul>
-              <li v-for="item in block.children">
+              <li v-for="(item, itemIndex) in block.children" :key="itemIndex">
                 <a :href="item.link">{{item.text}}</a>
               </li>
             </ul>

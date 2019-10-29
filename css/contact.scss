@@ -1,0 +1,28 @@
+@import './reset.scss';
+@import './base.scss';
+@import './navigator.scss';
+@import 'vars';
+
+section.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+        font-size: 42px;
+        text-align: center;
+        margin: 80px 0 50px 0;
+    }
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 499px) {
+    .pc {
+        display: none !important;
+    }
+    .mobile {
+        display: block;
+    }
+}
