@@ -156,6 +156,9 @@ $slider-width: 150px;
     box-shadow: 0 0 1px;
     .swiper-slide{
       margin: 10px;
+      @media (min-width: 500px) {
+        width: 200px !important;
+      }
     }
   }
   .fade-enter-active {transition: opacity 0.2s ease 0.2s; transform: scale(1)}
