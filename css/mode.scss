@@ -141,4 +141,7 @@ div.md-wrapper {
   h4 {
     text-align: start;
   }
+  @media (max-width: 499px) {
+    h3 {margin: 20px 0;}
+  }
 }
