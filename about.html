@@ -48,8 +48,9 @@
       </div>
     </section> -->
     <section class="pictures-wrapper">
-      <template v-for="(picture, index) in about.companies" :key="index">
+      <template v-for="(picture, index) in about.companies">
         <picture-with-mask
+          :key="index"
           :image-url="picture.image_url"
           :description="picture.content"
           :title="picture.title"
