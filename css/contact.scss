@@ -5,7 +5,7 @@
 
 section.wrapper {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
 
     h2 {
         font-size: 42px;
@@ -19,6 +19,10 @@ section.wrapper {
 }
 
 @media (max-width: 499px) {
+    section.wrapper {
+        max-width: 800px;
+        margin: 10vh 10px 5vh;
+    }
     .pc {
         display: none !important;
     }
