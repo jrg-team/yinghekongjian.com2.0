@@ -2,10 +2,16 @@
   <custom-video
     :poster="poster"
     :link="link"
+    :disabled="disabled"
   >
     <template slot-scope="slotProps">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <div class="center-icon-wrapper" :class="{playing: playing}" @click="() => {playing = true; slotProps.togglePlayStatus()}">
+      <div 
+        class="center-icon-wrapper" 
+        :class="{playing: playing}" 
+        @click="() => {playing = true; slotProps.togglePlayStatus()}"
+        v-if="!disabled"
+      >
         <i class="iconfont hcsp-bofang controller-button"></i>
         <h5 class="text">播放影片</h5>
       </div>

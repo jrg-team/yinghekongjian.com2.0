@@ -8,7 +8,7 @@
       </video>
     </div>
     <transition name="modal">
-      <div class="video-modal pc" v-show="modalVisible">
+      <div class="video-modal pc" v-show="modalVisible" v-if="!disabled">
         <div class="video-mask"></div>
         <div class="video-container">
           <video :poster="$cdn(poster)" controls ref="pcVideo">
@@ -27,6 +27,10 @@
       poster: {
         type: String,
         default: ''
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       },
       link: {
         type: String,
