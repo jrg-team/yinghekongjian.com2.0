@@ -9,8 +9,8 @@
     "vue": "./node_modules/vue/dist/vue.js"
   },
   "scripts": {
-    "build:java": "echo 'BUILD_FLAG=yinghekongjian' > .env && parcel build ./*.ejs --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist/java --out-dir dist/java",
-    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --public-url /yinghekongjian.com2.0/dist/jirengu --out-dir dist/jirengu"
+    "build:java": "echo 'BUILD_FLAG=yinghekongjian' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/java",
+    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/jirengu"
   },
   "dependencies": {
     "axios": "^0.19.0",
