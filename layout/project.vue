@@ -171,8 +171,7 @@ export default {
       }
     }
     img {
-      width: 50vw;
-      margin-left: 5vw;
+      width: 35vw;
     }
     &.vertical-center {
       display: flex;
