@@ -64,7 +64,7 @@
             <span class="download">下载 PDF 格式的课程大纲 <i class="iconfont hcsp-right"/></span>
             <template slot="popover">
               <div v-for="(pdf, index) in pdfLinks" :key="index" class="pdf-link">
-                <a :href="pdf.link" target="_blank">{{pdf.title}}</a>
+                <a :href="pdf.link" target="_blank"><i class="iconfont hcsp-xiazai"></i> {{pdf.title}} </a>
               </div>
             </template>
           </v-popover>
@@ -160,7 +160,7 @@
     }
   }
   section.card {
-    margin-top: 20vh;
+    margin-top: 10vh;
     background-color: white;
     padding: 40px 30px;
     border-radius: 10px;

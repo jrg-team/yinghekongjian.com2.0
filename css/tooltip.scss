@@ -8,10 +8,15 @@
     color: white;
     border-radius: 8px;
     padding: 1em;
-    max-width: 15em;
+    max-width: 30vw;
     font-size: 14px;
     word-break: break-word;
     line-height: 180%;
+    img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+    }
   }
 
   .tooltip-arrow {

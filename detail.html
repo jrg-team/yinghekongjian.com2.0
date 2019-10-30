@@ -57,8 +57,9 @@
             <div>{{slide.sub_name}}</div>
           </template>
           <template v-else>
-            <div>{{slide.name}}</div>
-            <div>{{slide.sub_name}}</div>
+            <div class="mobile">{{slide.name}}</div>
+            <div class="mobile">{{slide.sub_name}}</div>
+            <div class="pc">{{slide.name}}({{slide.sub_name}})</div>
           </template>
         </swiper-slide>
       </swiper>

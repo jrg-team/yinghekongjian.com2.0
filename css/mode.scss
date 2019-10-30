@@ -136,3 +136,9 @@ h2,h3,h4{
     display: block;
   }
 }
+
+div.md-wrapper {
+  h4 {
+    text-align: start;
+  }
+}
