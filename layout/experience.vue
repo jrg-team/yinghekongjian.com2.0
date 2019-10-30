@@ -38,7 +38,7 @@
           <black-button class="black-button" :linkTo="commentLink.link">{{commentLink.linkTo}}</black-button>
         </div>
       </text-with-pic>
-      <div class="row cards-wrapper">
+      <div class="row cards-wrapper" :class="{'card-margin': !enable}">
         <section class="card col" v-for="(card, index) in articleLinks" :key="index">
           <h6>{{card.subTitle}}</h6>
           <h5>{{card.title}}</h5>
@@ -153,6 +153,11 @@
         }  
       }
     }
+    div.cards-wrapper {
+      &.card-margin {
+        margin-bottom: 10vh;
+      }
+    }
   }
   section.card {
     margin-top: 20vh;
@@ -164,7 +169,7 @@
       font-size: 16px;
     }
     h5 {padding: 14px 0 30px;}
-    p {min-height: 108px;}
+    p {min-height: 54px; padding-bottom: 10px;}
     & + & {margin-left: 40px;}
     > a {font-size: 14px;}
   }
@@ -208,6 +213,9 @@
   @media (max-width: 499px) {
     .experience-wrapper > div.cards-wrapper {
       display: block;
+      &.card-margin {
+        margin-bottom: 5vh;
+      }
       > section.card {
         margin-top: 50px;
         max-width: 100%;

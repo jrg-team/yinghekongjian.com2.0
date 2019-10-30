@@ -151,6 +151,9 @@
           position: relative;
           margin: 0 auto;
           text-align: center;
+          @media (max-width: 499px) {
+            max-width: 95%;
+          }
         }
         h3 {
           margin-top: 20px;

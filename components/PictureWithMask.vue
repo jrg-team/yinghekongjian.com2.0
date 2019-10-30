@@ -2,7 +2,7 @@
   <div class="wrapper" :style="{minWidth: `calc(100% / ${12/computedGrid})`}">
     <div
       class="background"
-      :style="{backgroundImage: `url(${imageUrl})`}"
+      :style="{backgroundImage: `url(${$cdn(imageUrl)})`}"
       @mouseenter="() => {hovering = true}"
       @mouseleave="() => {hovering = false}"
     >

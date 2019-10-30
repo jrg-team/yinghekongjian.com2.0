@@ -21,7 +21,8 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide :key="index" v-for="video,index in about.videos">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(video.image_url)})`}">
-            <div @click="playVideo(video.url)" class="name"><span>{{video.name}}</span><i class="iconfont hcsp-bofang"></i></div>
+            <div @click="playVideo(video.url)" class="name"><span>{{video.name}}</span><i
+                class="iconfont hcsp-bofang"></i></div>
           </div>
         </swiper-slide>
         <i class="iconfont hcsp-prev swiper-button-prev" slot="button-prev"></i>
@@ -47,38 +48,14 @@
       </div>
     </section> -->
     <section class="pictures-wrapper">
-      <picture-with-mask 
-        image-url="https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem."
-        title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, veritatis."
-        grid="12"
-      >
-      </picture-with-mask>
-      <picture-with-mask 
-        image-url="https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem."
-        title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, veritatis."
-      >
-      </picture-with-mask>
-      <picture-with-mask 
-        image-url="https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem."
-        title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, veritatis."
-      >
-      </picture-with-mask>
-      <picture-with-mask 
-        image-url="https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem."
-        title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, veritatis."
-      >
-      </picture-with-mask>
-      <picture-with-mask 
-        image-url="https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet ad cumque sed, praesentium ex enim doloremque iusto perspiciatis fugiat quisquam modi optio rerum ullam asperiores reiciendis temporibus maiores exercitationem."
-        title="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, veritatis."
-      >
-      </picture-with-mask>
-      
+      <template v-for="(picture, index) in about.companies" :key="index">
+        <picture-with-mask
+          :image-url="picture.image_url"
+          :description="picture.content"
+          :title="picture.title"
+          :grid="index === 0 && 12 || 6">
+        </picture-with-mask>
+      </template>
     </section>
     <picture-text-list title="我们的产品" :listdata="about.products"></picture-text-list>
     <h2 class="pc">我们的活动</h2>
@@ -86,22 +63,18 @@
     <section class="activities">
       <div class="activity" :key="index" v-for="activity,index in about.activities">
         <div class="pc img-wrapper">
-          <img :src="$cdn(activity.image_url)" alt=""/>
+          <img :src="$cdn(activity.image_url)" alt="" />
           <div class="button-wrapper" @click="playVideo(activity.video_url)">
             <i class="iconfont hcsp-bofang"></i>
           </div>
         </div>
-        <img class="mobile" :src="$cdn(activity.image_url)" alt=""/>
+        <img class="mobile" :src="$cdn(activity.image_url)" alt="" />
         <div class="name">{{activity.name}}</div>
         <div class="introduction">{{activity.introduction}}</div>
         <div class="content">{{activity.content}}</div>
       </div>
     </section>
-    <custom-video
-      :poster-visible="false"
-      :link="videoUrl"
-      ref="aboutVideo"
-    ></custom-video>
+    <custom-video :poster-visible="false" :link="videoUrl" ref="aboutVideo"></custom-video>
     <my-footer></my-footer>
   </div>
 
