@@ -4,10 +4,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>硬核空间</title>
-  <meta name="keyword"
-    content="硬核空间, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
-  <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+  <title><%= process.env.BUILD_FLAG === 'jirengu' ? '饥人谷' : '硬核空间' %></title>
+  <% if (process.env.BUILD_FLAG === 'jirengu') { %>
+    <meta name="keyword" content="前端培训, Java培训, 算法培训, 靠谱的前端培训, 好的前端培训, 饥人谷, 前端培训机构, 专业的前端培训, 前端, Java, Node.js, HTML5">
+    <meta name="description" content="饥人谷，培训前端工程师、Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+  <% } %>
+  <% if (process.env.BUILD_FLAG === 'yinghekongjian') { %>
+    <meta name="keyword"
+        content="硬核空间, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
+    <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+  <% } %>
   <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="./css/detail.scss">
