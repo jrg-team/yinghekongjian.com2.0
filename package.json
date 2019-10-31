@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build:java": "echo 'BUILD_FLAG=yinghekongjian' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/java",
-    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/jirengu"
+    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --public-url /new --out-dir dist/jirengu"
   },
   "dependencies": {
     "axios": "^0.19.0",
