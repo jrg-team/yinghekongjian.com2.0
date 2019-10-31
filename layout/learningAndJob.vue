@@ -12,7 +12,7 @@
             <li>任课老师无时差答疑，有问题随时call老师</li>
             <li>大量学习资料，视频主导、文章辅助、作业练习，实时更新</li>
             <li>课程1V1作业批改指导，查漏补缺</li>
-            <a href="mode" class="pc">
+            <a href="/new/mode" class="pc">
               进一步了解
               <i class="iconfont hcsp-right"></i>
             </a>
@@ -32,7 +32,7 @@
                 </template>
               </v-popover>
             </li>
-            <a href="mode#class-indicator" class="pc">
+            <a href="/new/mode#class-indicator" class="pc">
               进一步了解
               <i class="iconfont hcsp-right"></i>
             </a>
@@ -47,7 +47,7 @@
             <li>简历指导，不造假简历，只需最真实的项目描述</li>
             <li>内推岗位，国内一线大厂皆可内推</li>
             <li>面试押题，涵盖大多数企业面试题，提前准备</li>
-            <a href="mode#job-indicator" class="pc">
+            <a href="/new/mode#job-indicator" class="pc">
               进一步了解
               <i class="iconfont hcsp-right"></i>
             </a>
@@ -58,7 +58,7 @@
           <ul>
             <li>承诺一周且5个任务内退全款，4个月内且高级任务前可申请退款（扣除已经学习的费用）</li>
             <li>退费条款写入合同，具有法律效应，真实保障</li>
-            <a href="mode#promise-indicator" class="pc">
+            <a href="/new/mode#promise-indicator" class="pc">
               进一步了解
               <i class="iconfont hcsp-right"></i>
             </a>

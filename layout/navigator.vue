@@ -19,7 +19,7 @@
     </nav>
     <nav class="white-navigator pc">
       <div class="content">
-        <a href="index">
+        <a href="/">
           <h5 v-if="buildType === 'yinghekongjian'">硬核空间</h5>
 		  <h5 v-else>饥人谷</h5>
         </a>

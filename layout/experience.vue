@@ -53,7 +53,7 @@
           <i class="iconfont hcsp-comment"></i>
           <h6>联系我们</h6>
           <p>可通过电话、微信或在线交流方式咨询。</p>
-          <a href="contact">进一步了解<i class="iconfont hcsp-right"></i></a>
+          <a href="/new/contact">进一步了解<i class="iconfont hcsp-right"></i></a>
         </div>
       </div>
       <div class="col">
