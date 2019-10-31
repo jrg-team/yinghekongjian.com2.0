@@ -156,7 +156,7 @@ meqiaButton.onclick = function () {
   return _MEIQIA('showPanel');
 };
 
-meqiaButton.src = "https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-24-21-18-27.png";
+meqiaButton.src = "https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-31-12-28-47.png";
 document.body.append(meqiaButton);
 },{}],"node_modules/vue/dist/vue.js":[function(require,module,exports) {
 var define;
@@ -21413,6 +21413,9 @@ var navigatorConfig = {
       }, {
         title: "关于我们",
         link: "about"
+      }, {
+        title: "回到旧版",
+        link: "/old2"
       }]
     }, {
       title: "硬核空间",
@@ -22291,7 +22294,16 @@ exports.default = _default;
             : _c("h5", [_vm._v("饥人谷")])
         ]),
         _vm._v(" "),
-        _vm._m(2)
+        _c(
+          "div",
+          { staticClass: "items" },
+          _vm._l(_vm.node[0].children, function(link) {
+            return _c("a", { key: link.title, attrs: { href: link.link } }, [
+              _vm._v(_vm._s(link.title))
+            ])
+          }),
+          0
+        )
       ])
     ]),
     _vm._v(" "),
@@ -22400,22 +22412,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "https://xiedaimala.com/bbs" } }, [
       _c("span", [_vm._v("河码社区")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "items" }, [
-      _c("a", { attrs: { href: "index" } }, [_vm._v("首页")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "detail" } }, [_vm._v("课程详情")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "mode" } }, [_vm._v("教学模式")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "projects" } }, [_vm._v("课程项目")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "about" } }, [_vm._v("关于我们")])
     ])
   }
 ]
@@ -51972,7 +51968,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "22301" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58150" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

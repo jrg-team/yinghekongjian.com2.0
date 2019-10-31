@@ -24,11 +24,7 @@
 		  <h5 v-else>饥人谷</h5>
         </a>
         <div class="items">
-          <a href="index">首页</a>
-          <a href="detail">课程详情</a>
-          <a href="mode">教学模式</a>
-          <a href="projects">课程项目</a>
-          <a href="about">关于我们</a>
+          <a v-for="link in node[0].children" :href="link.link" :key="link.title">{{link.title}}</a>
         </div>
       </div>
     </nav>
