@@ -23,7 +23,7 @@
 <body>
   <div id="app" v-cloak>
     <my-navigator></my-navigator>
-    <div class="swiper-container pc">
+    <div class="swiper-container pc" v-if="!isMobile">
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_url)})`}">
@@ -41,7 +41,7 @@
         </div>
       </swiper>
     </div>
-    <div class="swiper-container mobile">
+    <div class="swiper-container mobile" v-if="isMobile">
       <swiper :options="phoneSwiperOption" ref="myPhoneSwiper">
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_phone_url)})`}">

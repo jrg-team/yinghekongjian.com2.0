@@ -43,7 +43,7 @@ new Vue({
         },
         on: {
           slideChange: () => {
-            if (this.swiper) {
+            if (this.phoneSwiper) {
               this.activeIndex = this.phoneSwiper.activeIndex
             }
           }
@@ -62,7 +62,7 @@ new Vue({
   },
   mounted() {
     this.$nextTick(() => {
-      const mySwiper = this.$refs.mySwiper.swiper
+      const mySwiper = (this.$refs.mySwiper || this.$refs.myPhoneSwiper).swiper
       const swiperTabs = this.$refs.swiperTabs.swiper
       mySwiper.controller.control = swiperTabs
       swiperTabs.controller.control = mySwiper
