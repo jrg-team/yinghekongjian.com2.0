@@ -6,7 +6,7 @@
 
 ## 打包
 
-``npm run build``
+``bash build.sh``
 
 ## 发布到github预览
 
@@ -14,8 +14,7 @@
   git checkout gh-pages
   git fetch
   git pull origin master
-  npm run build:java
-  npm run build:jirengu
+  bash build.sh
   git add .
   git commit -m 'Your Commit Info'
   git push
