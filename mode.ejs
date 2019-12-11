@@ -25,7 +25,7 @@
     <img :src="$cdn(course_mode.imageUrl)" alt="" class="banner pc">
     <img :src="$cdn(course_mode.imageUrlPhone)" alt="" class="banner mobile">
     <picture-text-list title="课程安排与学习模式" :listdata="course_mode.arrangements"></picture-text-list>
-    <h3 class="pc">除了以上。还有</h3>
+    <h3 class="pc" id="class-indicator">除了以上。还有</h3>
     <h3 class="mobile">除了以上。还有</h3>
     <section class="pc additions">
       <div :key="index" v-for="addition,index in course_mode.additions" class="addition">
@@ -47,8 +47,8 @@
         </div>
       </div>
     </section>
-    <h2 class="pc">保障与就业</h2>
-    <h3 class="mobile">保障与就业</h3>
+    <h2 class="pc" id="job-indicator">保障与就业</h2>
+    <h3 class="mobile" id="promise-indicator">保障与就业</h3>
     <section class="pc guarantees">
       <div :key="index" :class="{odd: index % 2 === 0}" class="guarantee" v-for="guarantee,index in course_mode.guarantees">
         <div class="content">
