@@ -28,15 +28,14 @@
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(item.image_url)})`}">
             <div class="title name">{{item.name}}</div>
-            <h2 class="name">{{item.sub_name}}</h2>
           </div>
         </swiper-slide>
         <div slot="button-prev" class="swiper-button-prev">
           <i class="iconfont hcsp-prev"></i>
-          <p>{{prevIndex(activeIndex, 'name')}}（{{prevIndex(activeIndex, 'sub_name')}}）</p>
+          <p>{{prevIndex(activeIndex, 'name')}}</p>
         </div>
         <div slot="button-next" class="swiper-button-next">
-          <p>{{nextIndex(activeIndex, 'name')}}（{{nextIndex(activeIndex,'sub_name')}}）</p>
+          <p>{{nextIndex(activeIndex, 'name')}}</p>
           <i class="iconfont hcsp-next"></i>
         </div>
       </swiper>
@@ -46,7 +45,6 @@
         <swiper-slide :key="index" v-for="item,index in course_details">
           <div class="image-wrapper pc" :style="{backgroundImage: `url(${$cdn(item.image_phone_url)})`}">
             <div class="title name">{{item.name}}</div>
-            <h3 class="name">{{item.sub_name}}</h3>
           </div>
         </swiper-slide>
         <!-- Optional controls -->
@@ -56,15 +54,14 @@
     </div>
     <div class="tab-wrapper" :class="{'mini-tab': isMobile || !isFirstPage }" :style="{top: miniTabTop()}">
       <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
-        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index}">
+        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index, custom: isFirstPage}">
           <template v-if="!isMobile && isFirstPage">
             <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(slide.image_url)})`}"></div>
-            <div>{{slide.name}}</div>
-            <div>{{slide.sub_name}}</div>
+            <div class="name">{{slide.name}}</div>
           </template>
           <template v-else>
             <div class="mobile">{{slide.name}}</div>
-            <div class="pc">{{slide.name}}({{slide.sub_name}})</div>
+            <div class="pc">{{slide.name}}</div>
           </template>
         </swiper-slide>
       </swiper>

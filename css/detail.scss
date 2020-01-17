@@ -132,15 +132,25 @@ $slider-width: 150px;
     margin: 20px;
     padding: 10px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 4px;
     text-align: center;
+    &.custom {
+      background: rgba(0, 0, 0, 0.1);
+      opacity: .6;
+      padding: 0;
+      &.active {
+        opacity: 1;
+      }
+      div.name {
+        padding: 10px 0;
+      }
+    }
     &:hover {color: $blue;}
     &.active {
       background: rgba(0, 0, 0, 0.03);
       font-weight: $font-bold;
     }
     .image-wrapper {
-      border-radius: 8px;
       display: inline-block; 
       width: 100%; height: calc(150px * 0.45);
       background-position: center;
