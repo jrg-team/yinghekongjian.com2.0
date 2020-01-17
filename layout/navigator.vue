@@ -24,7 +24,7 @@
 		  <h5 v-else>饥人谷</h5>
         </a>
         <div class="items">
-          <a v-for="link in node[0].children" :href="link.link" :key="link.title" :class="{active: getItemStatus(link)}">{{link.title}}</a>
+          <a v-for="link in node[0].children" :href="link.link" :key="link.title" :class="{active: getItemStatus(link.link)}">{{link.title}}</a>
         </div>
       </div>
     </nav>
@@ -47,7 +47,7 @@
                 <transition name="submenu">
                   <ul v-if="item.expanded && item.children && item.children.length > 0">
                     <li v-for="child in item.children">
-                      <a :href="child.link" :class="{active: getItemStatus(link)}">{{child.title}}</a>
+                      <a :href="child.link" :class="{active: getItemStatus(link.link)}">{{child.title}}</a>
                     </li>
                   </ul>
                 </transition>
