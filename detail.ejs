@@ -54,7 +54,7 @@
     </div>
     <div class="tab-wrapper" :class="{'mini-tab': isMobile || !isFirstPage }" :style="{top: miniTabTop()}">
       <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
-        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index, custom: isFirstPage && activeIndex === index && !isMobile}">
+        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index, custom: isFirstPage && activeIndex === index || !isMobile}">
           <template v-if="!isMobile && isFirstPage">
             <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(slide.image_url)})`}"></div>
             <div class="name">{{slide.name}}</div>
