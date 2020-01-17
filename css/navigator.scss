@@ -73,6 +73,14 @@ header {
       position: relative;
       background-color: $black-navigator-bg-color;
       padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      > a {
+        color: #A5A5A5;
+        &.active {
+          color: white;
+        }
+      }
       .hcsp-zhankai {
         position: relative;
         z-index: $navigator-z-index

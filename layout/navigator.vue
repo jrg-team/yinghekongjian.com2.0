@@ -30,10 +30,9 @@
     </nav>
     <nav class="navigator mobile" @touchmove.prevent>
       <div class="icon-wrapper">
+        <a href="/"><i class="iconfont" :class="icon"></i></a>
+        <a v-for="link in node[0].children.slice(1, 4)" :href="link.link" :key="link.title" :class="{active: getItemStatus(link.link)}">{{link.title}}</a>
         <i class="iconfont hcsp-zhankai" @click="toggleModalVisible"></i>
-        <div class="logo">
-          <i class="iconfont" :class="icon"></i>
-        </div>
       </div>
       <transition name="menu">
         <section class="black-modal" v-show="modalVisible">
