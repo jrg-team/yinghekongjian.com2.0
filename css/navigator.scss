@@ -46,6 +46,9 @@ header {
           font-size: 12px;
           min-width: 4em;
           margin: 0 16px;
+          &.active {
+            font-size: 600;
+          }
         }
       }
     }
@@ -117,6 +120,9 @@ header {
         li.active {
           color: #A5A5A5;
           margin-bottom: 0;
+        }
+        a.active {
+          color: white;
         }
       }
     }
