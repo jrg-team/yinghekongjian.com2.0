@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <black-button class="button" linkTo="http://jirengu01.mikecrm.com/aJiF27K">预约试听</black-button>
+    <black-button class="button" :linkTo="apponitmentUrl">预约试听</black-button>
   </div>
 </template>
 
