@@ -80,10 +80,9 @@ export default {
       }
     },
     getItemStatus(link) {
-      if (location.pathname === '/') {
+      if (link === '/') {
         return location.pathname === link
-      }
-      return location.pathname.includes(link)
+      } else return location.pathname.includes(link)
     }
   },
   mounted() {
