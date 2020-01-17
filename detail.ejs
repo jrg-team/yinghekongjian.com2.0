@@ -54,7 +54,7 @@
     </div>
     <div class="tab-wrapper" :class="{'mini-tab': isMobile || !isFirstPage }" :style="{top: miniTabTop()}">
       <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
-        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index, custom: isFirstPage}">
+        <swiper-slide v-for="(slide, index) in course_details" :key="index" :class="{active: activeIndex === index, custom: isFirstPage && activeIndex === index && !isMobile}">
           <template v-if="!isMobile && isFirstPage">
             <div class="image-wrapper" :style="{backgroundImage: `url(${$cdn(slide.image_url)})`}"></div>
             <div class="name">{{slide.name}}</div>
@@ -68,7 +68,7 @@
     </div>
     <div id='scroller-indicator'></div>
     <transition-group name="fade" tag="div">
-      <section class="container" :key="index" v-for="item,index in course_details" v-if="index === activeIndex" :style="{top: isMobile ? '100px' : '0'}">
+      <section class="container" :key="index" v-for="item,index in course_details" v-if="index === activeIndex" :style="{top: isMobile ? '80px' : '0'}">
         <h2 class="title">{{item.article_title}}</h2>
         <div class="md-wrapper" v-html="marked(item.article)"></div>
       </section>

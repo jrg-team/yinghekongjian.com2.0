@@ -56,6 +56,7 @@
         </section>
       </transition>
     </nav>
+    <div class="mobile" style="background: transparent;height: 5vh;"></div>
   </header>
 </template>
 <script>
