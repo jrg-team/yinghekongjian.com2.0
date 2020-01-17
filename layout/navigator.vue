@@ -47,7 +47,7 @@
                 <transition name="submenu">
                   <ul v-if="item.expanded && item.children && item.children.length > 0">
                     <li v-for="child in item.children">
-                      <a :href="child.link" :class="{active: getItemStatus(link.link)}">{{child.title}}</a>
+                      <a :href="child.link" :class="{active: getItemStatus(child.link)}">{{child.title}}</a>
                     </li>
                   </ul>
                 </transition>
