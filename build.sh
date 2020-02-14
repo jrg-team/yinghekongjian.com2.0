@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-rm -r dist/* &&
+rm -rf dist/* &&
 echo 'BUILD_FLAG=yinghekongjian' > .env &&
 parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/java &&
 echo 'BUILD_FLAG=jirengu' > .env &&

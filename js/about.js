@@ -7,7 +7,7 @@ import MyNavigator from '../layout/navigator'
 import MyFooter from '../layout/footer'
 import CustomVideo from '../components/CustomVideo'
 import pictureTextList from '../layout/pictureTextList'
-import pictureWithMask from '../components/pictureWithMask'
+import pictureWithMask from '../components/PictureWithMask'
 
 const TYPE = process.env.BUILD_FLAG
 
