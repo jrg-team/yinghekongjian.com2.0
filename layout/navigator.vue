@@ -21,17 +21,40 @@
       <div class="content">
         <a href="/">
           <h5 v-if="buildType === 'yinghekongjian'">硬核空间</h5>
-		  <h5 v-else>饥人谷</h5>
+          <h5 v-else>饥人谷</h5>
         </a>
         <div class="items">
-          <a v-for="link in node[0].children" :href="link.link" :key="link.title" :class="{active: getItemStatus(link.link)}">{{link.title}}</a>
+          <template v-for="link in node[0].children">
+            <v-popover class="wechat" v-if="/交流群/.test(link.title)">
+              <span class="title">{{link.title}}<i class="iconfont hcsp-hot"/></span>
+              <template slot="popover">
+                <div class="navigator-icon-popover">
+                  <img :src="link.link" />
+                  <p v-html="link.text"></p>
+                </div>
+              </template>
+            </v-popover>
+            <a
+              :href="link.link"
+              :key="link.title"
+              :class="{active: getItemStatus(link.link)}"
+              v-else
+            >{{link.title}}</a>
+          </template>
         </div>
       </div>
     </nav>
     <nav class="navigator mobile" @touchmove.prevent>
       <div class="icon-wrapper">
-        <a href="/"><i class="iconfont" :class="icon"></i></a>
-        <a v-for="link in node[0].children.slice(1, 4)" :href="link.link" :key="link.title" :class="{active: getItemStatus(link.link)}">{{link.title}}</a>
+        <a href="/">
+          <i class="iconfont" :class="icon"></i>
+        </a>
+        <a
+          v-for="link in node[0].children.slice(1, 4)"
+          :href="link.link"
+          :key="link.title"
+          :class="{active: getItemStatus(link.link)}"
+        >{{link.title}}</a>
         <i class="iconfont hcsp-zhankai" @click="toggleModalVisible"></i>
       </div>
       <transition name="menu">
@@ -46,7 +69,10 @@
                 <transition name="submenu">
                   <ul v-if="item.expanded && item.children && item.children.length > 0">
                     <li v-for="child in item.children">
-                      <a :href="child.link" :class="{active: getItemStatus(child.link)}">{{child.title}}</a>
+                      <a
+                        :href="child.link"
+                        :class="{active: getItemStatus(child.link)}"
+                      >{{child.title}}</a>
                     </li>
                   </ul>
                 </transition>
@@ -60,13 +86,13 @@
   </header>
 </template>
 <script>
-import {navigatorConfig} from '../lib/config'
+import { navigatorConfig } from "../lib/config";
 export default {
   name: "MyNavigator",
   data() {
     return {
       modalVisible: false,
-	    buildType: process.env.BUILD_FLAG,
+      buildType: process.env.BUILD_FLAG,
       ...navigatorConfig[process.env.BUILD_FLAG]
     };
   },
@@ -80,13 +106,15 @@ export default {
       }
     },
     getItemStatus(link) {
-      if (link === '/') {
-        return location.pathname === link
-      } else return location.pathname.includes(link)
+      if (link === "/") {
+        return location.pathname === link;
+      } else return location.pathname.includes(link);
     }
   },
   mounted() {
-	document.getElementById('black-navigator-icon').classList.add(navigatorConfig[process.env.BUILD_FLAG].icon)
+    document
+      .getElementById("black-navigator-icon")
+      .classList.add(navigatorConfig[process.env.BUILD_FLAG].icon);
     if (process.env.BUILD_FLAG === "yinghekongjian") {
       let changeNode = document.getElementById("yinghekongjian-nav-item");
       let existingnode = document.getElementById("jirengu-nav-item");

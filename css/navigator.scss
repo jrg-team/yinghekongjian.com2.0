@@ -1,5 +1,15 @@
 @import 'vars';
 @import './base.scss';
+.navigator-icon-popover {
+  p {
+    font-size: 13px; 
+    color: $v-popover-white;
+    text-align: center; 
+    margin-top: 8px;
+    max-width: 200px;
+    word-break: break-all;
+  }
+}
 header {
   .content {
     margin: 0 auto;
@@ -39,12 +49,25 @@ header {
       padding: 20px 0 16px 0;
       justify-content: space-between;
       .items {
-        a {
+        div.v-popover {
+          display: inline;
+        }
+        span.title, a {
+          cursor: pointer;
           font-size: 12px;
           min-width: 4em;
           margin: 0 16px;
           &.active {
             font-weight: 600;
+          }
+        }
+        span.title {
+          position: relative;
+          .hcsp-hot {
+            color: red;
+            position: absolute;
+            right: -32px;
+            top: -5px;
           }
         }
       }
