@@ -72,7 +72,9 @@
                       <a
                         :href="child.link"
                         :class="{active: getItemStatus(child.link)}"
-                      >{{child.title}}</a>
+                      >
+                      {{child.title}}
+                      <i class="iconfont hcsp-hot" v-if="/交流群/.test(child.title)"/></a>
                     </li>
                   </ul>
                 </transition>

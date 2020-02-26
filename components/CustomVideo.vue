@@ -3,7 +3,11 @@
     <div class="video-background-wrapper">
       <slot :togglePlayStatus="togglePlayStatus"></slot>
       <video :poster="$cdn(poster)" ref="mobileVideo" class="mobile mobile-video"
-             :class="{active: isMobile && playing, hide: !posterVisible}">
+             :class="{active: isMobile && playing, hide: !posterVisible}"
+             x5-video-player-fullscreen="true"
+             x5-video-orientation="landscape"
+             style="object-fit:fill"
+             >
         <source :src="link" type="video/mp4">
       </video>
     </div>
