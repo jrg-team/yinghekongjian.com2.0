@@ -6,7 +6,6 @@
              :class="{active: isMobile && playing, hide: !posterVisible}"
              x5-video-player-fullscreen="true"
              x5-video-orientation="landscape"
-             style="object-fit:fill"
              >
         <source :src="link" type="video/mp4">
       </video>
