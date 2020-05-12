@@ -54,9 +54,6 @@
     },
     methods: {
       togglePlayStatus() {
-        if(/xiedaimala.com\/tasks/.test(this.link)) {
-          return window.open(this.link)
-        }
         const video = this.isMobile ? this.$refs.mobileVideo : this.$refs.pcVideo
         if (this.modalVisible) {
           this.playing = false

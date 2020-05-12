@@ -38,6 +38,9 @@ new Vue({
   },
   methods:{
     playVideo(videoUrl){
+      if(/xiedaimala.com\/tasks/.test(videoUrl)) {
+        return window.open(videoUrl)
+      }
       this.videoUrl = videoUrl
       this.$refs.aboutVideo.$refs.mobileVideo.src = videoUrl
       this.$refs.aboutVideo.$refs.pcVideo.src = videoUrl
