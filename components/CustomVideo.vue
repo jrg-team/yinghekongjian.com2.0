@@ -54,7 +54,7 @@
     },
     methods: {
       togglePlayStatus() {
-        if(this.link.test('xiedaimala.com/tasks')) {
+        if(/xiedaimala.com\/tasks/.test(this.link)) {
           return window.open(this.link)
         }
         const video = this.isMobile ? this.$refs.mobileVideo : this.$refs.pcVideo
