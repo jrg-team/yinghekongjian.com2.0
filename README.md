@@ -2,7 +2,7 @@
 
 ## 开发
 
-``parcel xxx.html``
+``parcel xxx.ejs``
 
 ## 打包
 

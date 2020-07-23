@@ -15,6 +15,9 @@
         <a href="https://xiedaimala.com/bbs">
           <span>河码社区</span>
         </a>
+        <a href="https://blog.jirengu.com/?cat=11">
+          <span>就业</span>
+        </a>
       </div>
     </nav>
     <nav class="white-navigator pc">
