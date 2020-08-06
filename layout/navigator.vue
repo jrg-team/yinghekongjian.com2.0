@@ -3,20 +3,20 @@
     <nav class="black-navigator pc">
       <div class="content" id="link-wrapper">
         <i class="iconfont" id="black-navigator-icon"></i>
-        <a href="https://jirengu.com" id="jirengu-nav-item">
+        <a href="https://jirengu.com" target="_blank" id="jirengu-nav-item">
           <span :class="{active: buildType === 'jirengu'}">饥人谷</span>
         </a>
-        <a href="https://yinghekongjian.com" id="yinghekongjian-nav-item">
-          <span :class="{active: buildType === 'yinghekongjian'}">硬核空间</span>
+        <a href="https://xiedaimala.com" target="_blank">
+          <span>课程平台</span>
         </a>
-        <a href="https://xiedaimala.com">
-          <span>写代码啦</span>
+        <a href="https://blog.jirengu.com/?cat=11" target="_blank">
+          <span>就业数据</span>
         </a>
-        <a href="https://xiedaimala.com/bbs">
+        <a href="https://xiedaimala.com/bbs" target="_blank">
           <span>河码社区</span>
         </a>
-        <a href="https://blog.jirengu.com/?cat=11">
-          <span>就业</span>
+        <a href="https://yinghekongjian.com" id="yinghekongjian-nav-item" target="_blank">
+          <span :class="{active: buildType === 'yinghekongjian'}">Java培训</span>
         </a>
       </div>
     </nav>
