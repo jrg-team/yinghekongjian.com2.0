@@ -12,6 +12,9 @@
         <a href="https://blog.jirengu.com/?cat=11" target="_blank">
           <span>就业数据</span>
         </a>
+        <a href="https://www.zhihu.com/question/41845934" target="_blank">
+          <span>学员评价</span>
+        </a>
         <a href="https://xiedaimala.com/bbs" target="_blank">
           <span>河码社区</span>
         </a>
