@@ -28,7 +28,7 @@
       <section class="tip-wrapper">
         <div class="contact">
           任何问题请致电
-          <span @click="onPhoneClick" class="phone">400-618-3005</span> ,
+          <span @click="onPhoneClick" class="phone">15558137209</span> ,
           <br class="mobile" />或者添加客服微信:
           <v-popover class="wechat" trigger="manual" :open="showWechat">
             <span @mouseover="() => {showWechat = true}" @mouseout="() => {showWechat = false}">xiedaimala03</span>
@@ -74,7 +74,7 @@
             <template slot="popover" class="footer-icon-popover">
               <div class="footer-icon-popover">
                 <ul>
-                  <li>联系电话: 400-618-3005</li>
+                  <li>联系电话: 15558137209</li>
                   <li>客服微信: xiedaimala03</li>
                   <li class="contact-button"><span @click="showMeqia">在线咨询</span></li>
                 </ul>
@@ -107,7 +107,7 @@ export default {
       }
     },
     onPhoneClick: function() {
-      window.location.href = "tel:400-618-3005";
+      window.location.href = "tel:15558137209";
     },
     showMeqia: function () {
       window._MEIQIA('showPanel')
