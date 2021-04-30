@@ -27,7 +27,7 @@
     .poster {
         max-width: 80vw;
     }
-    @media (min-width: 500px) {
+    @media (max-width: 500px) {
         .poster {
             max-width: 90vw;
         }
