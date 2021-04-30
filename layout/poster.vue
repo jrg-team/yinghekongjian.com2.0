@@ -11,8 +11,8 @@
         name: "poster",
         data() {
             return {
-                src: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-15-16-2-45.png',
-                descriptionUrl: "https://mp.weixin.qq.com/s/sWuDYKcYhJtPcOhxPJVQcw"
+                src: 'https://static.xiedaimala.com/xdml/image/2f52ffb4-4a2a-40c0-bd0d-d63d700669f8/2021-4-30-16-46-3.png',
+                descriptionUrl: "https://mp.weixin.qq.com/s/RVrYFPDmRSXQwCOKCifxaw"
             }
         }
     }
