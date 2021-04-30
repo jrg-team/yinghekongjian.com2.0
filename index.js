@@ -9,6 +9,7 @@ import Project from './layout/project'
 import Learning from './layout/learningAndJob'
 import Experience from './layout/experience'
 import Teacher from './layout/teacher'
+import Poster from './layout/poster'
 import {titleConfig} from './lib/config'
 
 new Vue({
@@ -22,7 +23,8 @@ new Vue({
     Project,
     Learning,
     Experience,
-    Teacher
+    Teacher,
+    Poster
   },
   data() {
     return {

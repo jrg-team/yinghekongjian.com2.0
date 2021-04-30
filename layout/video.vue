@@ -6,9 +6,9 @@
   >
     <template slot-scope="slotProps">
       <img class="poster pc" :src="$cdn(poster)" alt="封面"/>
-      <div 
-        class="center-icon-wrapper" 
-        :class="{playing: playing}" 
+      <div
+        class="center-icon-wrapper"
+        :class="{playing: playing}"
         @click="() => {playing = true; slotProps.togglePlayStatus()}"
         v-if="!disabled"
       >
@@ -20,7 +20,6 @@
       </a>
     </template>
   </custom-video>
-
 </template>
 
 <script>
