@@ -16,7 +16,7 @@
     "build:cplusplus": "echo 'BUILD_FLAG=cplusplus' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/cplusplus"
   },
   "dependencies": {
-    "@svgr/parcel-plugin-svgr": "^5.1.0",
+    "@svgr/parcel-plugin-svgr": "^5.5.0",
     "axios": "^0.19.0",
     "cross-env": "^6.0.3",
     "ejs": "^2.7.1",

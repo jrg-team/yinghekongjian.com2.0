@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <black-button class="mobile" linkTo='mode'>进一步了解</black-button>
+    <black-button class="mobile" :linkTo="href['promise']">进一步了解</black-button>
   </section>
 </template>
 
