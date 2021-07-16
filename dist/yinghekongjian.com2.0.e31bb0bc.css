@@ -2141,5 +2141,18 @@ section.teacher-wrapper .article-wrapper article > .teacher-introduction a {
     padding-bottom: 30px;
   }
 }
+.poster-wrapper[data-v-07f994] {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.poster[data-v-07f994] {
+  max-width: 80vw;
+}
+@media (max-width: 500px) {
+.poster[data-v-07f994] {
+    max-width: 90vw;
+}
+}
 
 /*# sourceMappingURL=/yinghekongjian.com2.0.e31bb0bc.css.map */

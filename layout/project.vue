@@ -1,14 +1,14 @@
 <template>
   <section class="project-wrapper section-margin">
     <div class="title title-margin">
-      <h3>{{title}}</h3>
-      <p>{{subTitle}}</p>
+      <h3>{{ title }}</h3>
+      <p>{{ subTitle }}</p>
     </div>
     <div class="row pc">
       <div class="col vertical-center">
         <div class="text">
-          <h4>{{courseTitle}}</h4>
-          <p v-html="courseDescription"></p>
+          <h4>{{ courseTitle }}</h4>
+          <p class="course-description" v-html="courseDescription"></p>
           <a :href="courseLink">
             查看完整课程大纲
             <i class="iconfont hcsp-right"></i>
@@ -26,7 +26,9 @@
           :key="index"
           :src="$cdn(image.url)"
           alt="项目图"
-          :style="{transform: translateCalculator(index, imagesExpand, image.hover)}"
+          :style="{
+            transform: translateCalculator(index, imagesExpand, image.hover),
+          }"
           @mouseenter="() => hoverImage(index)"
           @mouseleave="() => leaveImage(index)"
           @click="() => reverseImageStatus(index)"
@@ -35,8 +37,8 @@
       <div class="col vertical-center text-wrapper">
         <div class="text">
           <p>实战项目</p>
-          <h4>{{projectTitle}}</h4>
-          <p>{{projectDescription}}</p>
+          <h4>{{ projectTitle }}</h4>
+          <p>{{ projectDescription }}</p>
           <a :href="projectLink">
             进一步了解项目详情
             <i class="iconfont hcsp-right"></i>
@@ -49,13 +51,13 @@
       :image-src="courseListImg"
       :title="courseTitle"
       :content="courseDescription"
-      :link-to="{link: courseLink, text: '查看完整课程大纲'}"
+      :link-to="{ link: courseLink, text: '查看完整课程大纲' }"
     ></TextWithPic>
     <TextWithPic
       class="mobile"
       :title="projectTitle"
       :content="projectDescription"
-      :link-to="{link: projectLink, text: '进一步了解详细课程'}"
+      :link-to="{ link: projectLink, text: '进一步了解详细课程' }"
     >
       <template v-slot:image>
         <div class="image-wrapper mobile">
@@ -64,7 +66,9 @@
             :key="index"
             :src="$cdn(image.url)"
             alt="项目图"
-            :style="{transform: translateCalculator(index, imagesExpand, image.hover)}"
+            :style="{
+              transform: translateCalculator(index, imagesExpand, image.hover),
+            }"
             @mouseenter="() => hoverImage(index)"
             @mouseleave="() => leaveImage(index)"
             @click="() => reverseImageStatus(index)"
@@ -81,23 +85,25 @@ import { projectConfig } from "../lib/config";
 export default {
   name: "project",
   components: {
-    TextWithPic
+    TextWithPic,
   },
   data() {
     return {
       imagesExpand: false,
       isMobile: document.body.clientWidth < 500,
-      ...projectConfig[process.env.BUILD_FLAG]
+      ...projectConfig[process.env.BUILD_FLAG],
     };
   },
   methods: {
-    listenScrollToElement: function(selector) {
-      let offsetTotop = document.querySelector(selector).getBoundingClientRect().top;
+    listenScrollToElement: function (selector) {
+      let offsetTotop = document
+        .querySelector(selector)
+        .getBoundingClientRect().top;
       let height = document.documentElement.clientHeight;
       if (offsetTotop - height / 3 <= 0) return true;
       else return false;
     },
-    listenScrollToImages: function() {
+    listenScrollToImages: function () {
       if (this.imagesExpand === this.listenScrollToElement("#project-images"))
         return;
       else {
@@ -106,35 +112,48 @@ export default {
     },
     translateCalculator(index, imagesExpand, hover = false) {
       let imageCounts = this.projectImages.length;
-      let rowStep = document.documentElement.clientWidth * (this.isMobile ? 0.05 : 0.025);
-      let colStep = document.documentElement.clientWidth * (this.isMobile ? 0.2: 0.1) * 3 / imageCounts;
-      let floatUp = hover && index !== (imageCounts - 1) && this.projectImageFloatUp
+      let rowStep =
+        document.documentElement.clientWidth * (this.isMobile ? 0.05 : 0.025);
+      let colStep =
+        (document.documentElement.clientWidth *
+          (this.isMobile ? 0.2 : 0.1) *
+          3) /
+        imageCounts;
+      let floatUp =
+        hover && index !== imageCounts - 1 && this.projectImageFloatUp;
       if (imagesExpand) {
         let offset = Math.floor(imageCounts / 2);
         if (imageCounts % 2 === 1) {
-          return `translate3d(${rowStep * (index - offset)}px, ${colStep * (index - offset - (floatUp && 1))}px, 0)`;
+          return `translate3d(${rowStep * (index - offset)}px, ${
+            colStep * (index - offset - (floatUp && 1))
+          }px, 0)`;
         } else if (imageCounts % 2 === 0) {
-          return `translate3d(${rowStep *(index - offset + 0.5)}px, ${colStep * (index - offset + 0.5 - (floatUp && 1))}px, 0)`;
+          return `translate3d(${rowStep * (index - offset + 0.5)}px, ${
+            colStep * (index - offset + 0.5 - (floatUp && 1))
+          }px, 0)`;
         }
-      } else return undefined
+      } else return undefined;
     },
     hoverImage(index) {
-      this.projectImages[index].hover = true
-      this.$set(this.projectImages, index, {hover: true, ...this.projectImages[index]})
+      this.projectImages[index].hover = true;
+      this.$set(this.projectImages, index, {
+        hover: true,
+        ...this.projectImages[index],
+      });
     },
     leaveImage(index) {
-      this.projectImages[index].hover = false
+      this.projectImages[index].hover = false;
     },
     reverseImageStatus(index) {
-      this.projectImages[index].hover = !this.projectImages[index].hover
-    }
+      this.projectImages[index].hover = !this.projectImages[index].hover;
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.listenScrollToImages);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.listenScrollToImages);
-  }
+  },
 };
 </script>
 
@@ -196,7 +215,9 @@ export default {
     &.mobile {
       width: 100%;
       height: 70vw;
-      img {width: 80%;}
+      img {
+        width: 80%;
+      }
     }
   }
 }

@@ -25,3 +25,35 @@
   text-align: center;
   padding: 64px;
 }
+
+.course-description, .text-picture-wrapper {
+  .custom-title {
+    color: #2d9cdb;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .custom-content {
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .custom-content + .custom-title {
+    margin-top: 6px;
+  }
+}
+
+#cplusplus-course-target-3 {
+  margin-top: 30px;
+}
+@media (max-width: 499px) {
+  #cplusplus-course-target-3 {
+    margin-top: -30px;
+    margin-bottom: 30px;
+  }
+  #cplusplus-course-target-1 {
+    margin-bottom: 20px;
+  }
+  #cplusplus-course-description-first-title {
+    margin-top: 20px;
+  }
+}

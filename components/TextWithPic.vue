@@ -5,7 +5,7 @@
     </slot>
     <slot>
       <h3>{{title}}</h3>
-      <p>{{content}}</p>
+      <p v-html="content"></p>
       <a v-if="linkTo !== {}" :href="linkTo.link">{{linkTo.text}}<i class="iconfont hcsp-right"></i></a>
     </slot>
   </div>

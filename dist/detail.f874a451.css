@@ -1248,7 +1248,7 @@ section.container h2 {
   padding: 24px 28px;
 }
 .table-wrapper .title-block h3.title {
-  font-size: 28px;
+  font-size: 24px;
   color: #e5e5e5;
   line-height: 38px;
   margin-bottom: 4px;
@@ -1262,7 +1262,7 @@ section.container h2 {
   position: relative;
 }
 .table-wrapper .content-block .content-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -1272,7 +1272,7 @@ section.container h2 {
 .table-wrapper .content-block > ul.tasks > li {
   list-style: none;
   line-height: 250%;
-  font-size: 18px;
+  font-size: 14px;
 }
 .table-wrapper .content-block:before {
   content: "";
@@ -1286,6 +1286,19 @@ section.container h2 {
 
 .custom-title {
   color: #4284EB;
+}
+
+@media (max-width: 499px) {
+  .table-wrapper .title-block h3.title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .table-wrapper .content-block .content-title {
+    font-size: 18px;
+  }
+  .table-wrapper .content-block > ul.tasks > li {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=/detail.f874a451.css.map */

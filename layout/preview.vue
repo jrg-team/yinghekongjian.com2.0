@@ -6,7 +6,7 @@
         class="item"
         v-for="node in content"
         :key="node.title"
-        :style="node.style"
+        :id="node.id"
       >
         <h4>{{ node.title }}</h4>
         <ul>
@@ -14,9 +14,7 @@
         </ul>
       </div>
     </div>
-    <black-button class="button" :linkTo="appointmentUrl"
-      >预约试听</black-button
-    >
+    <black-button class="button" :linkTo="appointmentUrl">预约试听</black-button>
   </div>
 </template>
 
