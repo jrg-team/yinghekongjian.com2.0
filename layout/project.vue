@@ -8,7 +8,7 @@
       <div class="col vertical-center">
         <div class="text">
           <h4>{{courseTitle}}</h4>
-          <p>{{courseDescription}}</p>
+          <p v-html="courseDescription"></p>
           <a :href="courseLink">
             查看完整课程大纲
             <i class="iconfont hcsp-right"></i>

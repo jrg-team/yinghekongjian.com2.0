@@ -2,9 +2,9 @@
   <header>
     <nav class="black-navigator pc">
       <div class="content" id="link-wrapper">
-        <i class="iconfont" id="black-navigator-icon"></i>
-        <a href="https://jirengu.com" target="_blank" id="jirengu-nav-item">
-          <span :class="{active: buildType === 'jirengu'}">饥人谷</span>
+        <i class="iconfont" id="black-navigator-icon" :class="icon"></i>
+        <a :href="links[0].href" target="_blank">
+          <span class="active">{{links[0].name}}</span>
         </a>
         <a href="https://xiedaimala.com" target="_blank">
           <span>课程平台</span>
@@ -18,16 +18,15 @@
         <a href="https://xiedaimala.com/bbs" target="_blank">
           <span>河码社区</span>
         </a>
-        <a href="https://yinghekongjian.com" id="yinghekongjian-nav-item" target="_blank">
-          <span :class="{active: buildType === 'yinghekongjian'}">Java培训</span>
+        <a :href="link.href" target="_blank" v-for="link in links.slice(1)" :key="link.name">
+          <span>{{link.name}}</span>
         </a>
       </div>
     </nav>
     <nav class="white-navigator pc">
       <div class="content">
         <a href="/">
-          <h5 v-if="buildType === 'yinghekongjian'">硬核空间</h5>
-          <h5 v-else>饥人谷</h5>
+          <h5>{{name}}</h5>
         </a>
         <div class="items">
           <template v-for="link in node[0].children">
@@ -94,14 +93,15 @@
   </header>
 </template>
 <script>
-import { navigatorConfig } from "../lib/config";
+import { navigatorConfig as allConfig } from "../lib/config";
+const navigatorConfig = allConfig[process.env.BUILD_FLAG]
 export default {
   name: "MyNavigator",
   data() {
     return {
       modalVisible: false,
       buildType: process.env.BUILD_FLAG,
-      ...navigatorConfig[process.env.BUILD_FLAG]
+      ...navigatorConfig,
     };
   },
   methods: {
@@ -119,15 +119,14 @@ export default {
       } else return location.pathname.includes(link);
     }
   },
-  mounted() {
-    document
-      .getElementById("black-navigator-icon")
-      .classList.add(navigatorConfig[process.env.BUILD_FLAG].icon);
-    if (process.env.BUILD_FLAG === "yinghekongjian") {
-      let changeNode = document.getElementById("yinghekongjian-nav-item");
-      let existingnode = document.getElementById("jirengu-nav-item");
-      let p = document.getElementById("link-wrapper");
-      p.insertBefore(changeNode, existingnode);
+  computed: {
+    links() {
+      const baseLinks = Object.entries(allConfig).map(([key, value]) => ({
+        key: key,
+        name: value.name,
+        href: value.link
+      }))
+      return baseLinks.sort((_, b) => b.key === process.env.BUILD_FLAG ? 1 : -1 )
     }
   }
 };

@@ -9,9 +9,11 @@
     "vue": "./node_modules/vue/dist/vue.js"
   },
   "scripts": {
+    "start": "parcel index.ejs --no-cache",
     "build:all": "bash ./build.sh",
     "build:java": "echo 'BUILD_FLAG=yinghekongjian' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/java",
-    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/jirengu"
+    "build:jirengu": "echo 'BUILD_FLAG=jirengu' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/jirengu",
+    "build:cplusplus": "echo 'BUILD_FLAG=cplusplus' > .env && parcel build ./*.ejs --no-cache --no-source-maps --out-dir dist/cplusplus"
   },
   "dependencies": {
     "@svgr/parcel-plugin-svgr": "^5.1.0",

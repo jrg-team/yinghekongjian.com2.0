@@ -1,25 +1,22 @@
 <template>
   <div class="preview-wrapper section-margin">
-    <h3 class="title title-margin">{{title}}</h3>
+    <h3 class="title title-margin">{{ title }}</h3>
     <div class="items-wrapper">
-      <div class="row">
-        <div class="item" v-for="node in content.slice(0, this.content.length/2)">
-          <h4>{{node.title}}</h4>
-          <ul>
-            <li v-for="item in node.items">{{item}}</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="item" v-for="node in content.slice(this.content.length/2, this.content.length)">
-          <h4>{{node.title}}</h4>
-          <ul>
-            <li v-for="item in node.items">{{item}}</li>
-          </ul>
-        </div>
+      <div
+        class="item"
+        v-for="node in content"
+        :key="node.title"
+        :style="node.style"
+      >
+        <h4>{{ node.title }}</h4>
+        <ul>
+          <li v-for="item in node.items" :key="item">{{ item }}</li>
+        </ul>
       </div>
     </div>
-    <black-button class="button" :linkTo="apponitmentUrl">预约试听</black-button>
+    <black-button class="button" :linkTo="appointmentUrl"
+      >预约试听</black-button
+    >
   </div>
 </template>
 
@@ -30,11 +27,11 @@ import { previewConfig } from "../lib/config";
 export default {
   name: "preview",
   components: {
-    BlackButton
+    BlackButton,
   },
   data() {
     return previewConfig[process.env.BUILD_FLAG];
-  }
+  },
 };
 </script>
 
@@ -47,10 +44,7 @@ export default {
     font-size: 14px;
     color: white;
   }
-  .row {
-    min-width: 60vw;
-  }
-  .row > .item > ul {
+  .item > ul {
     margin-top: 1em;
     min-height: 5em;
     list-style: disc inside none;
@@ -70,13 +64,13 @@ export default {
     .items-wrapper {
       max-width: 70vw;
       flex: 1;
-      .row {
-        display: flex;
-      }
-      .row > .item {
-        max-width: 50%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .item {
+        width: 50%;
         padding: 0 5vw;
-        flex: 1;
+        flex-shrink: 0;
         word-break: break-word;
       }
     }

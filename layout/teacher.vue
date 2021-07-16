@@ -8,7 +8,7 @@
       </swiper-slide>
     </swiper>
     <div class="tab-wrapper">
-      <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab">
+      <swiper :options="tabsSwiperOption" ref="swiperTabs" class="tab" v-if="swiperSlides.length > 1">
         <swiper-slide v-for="(slide, index) in swiperSlides" :key="index">
           <div>{{slide.name}}</div>
         </swiper-slide>
@@ -136,6 +136,9 @@
       max-width: 60vw;
       position: relative;
       margin: 0 auto;
+      .highlight {
+        color: #4284eb;
+      }
       .fade-enter-active {
         transition: opacity .5s;
       }
