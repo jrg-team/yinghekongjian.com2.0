@@ -1,11 +1,11 @@
-@import './reset.scss';
-@import './base.scss';
-@import './navigator.scss';
-@import 'vars';
+@import "./reset.scss";
+@import "./base.scss";
+@import "./navigator.scss";
+@import "vars";
 
-.swiper-container{
-  &.pc{
-    .image-wrapper{
+.swiper-container {
+  &.pc {
+    .image-wrapper {
       max-width: 1000px;
       height: 450px;
       position: relative;
@@ -16,46 +16,47 @@
       background-position: center;
       background-size: cover;
       padding: 40px;
-      .name{
-        color: #FFF;
+      .name {
+        color: #fff;
         letter-spacing: 8px;
       }
-      >.title{
+      > .title {
         font-size: 64px;
         line-height: 150%;
         font-weight: 600;
       }
-      >h2{
+      > h2 {
         margin-top: 60px;
       }
     }
-    .iconfont{
+    .iconfont {
       color: #fff;
       font-size: 34px;
       line-height: 44px;
     }
-    .swiper-slide{
+    .swiper-slide {
       width: 1000px;
       border-radius: 8px;
       overflow: hidden;
     }
-    .swiper-slide-prev:after,.swiper-slide-next:after{
-      content: '';
+    .swiper-slide-prev:after,
+    .swiper-slide-next:after {
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
     }
-    .swiper-slide-prev:after{
+    .swiper-slide-prev:after {
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
     }
-    .swiper-slide-next:after{
+    .swiper-slide-next:after {
       background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
     }
   }
-  &.mobile{
-    .image-wrapper{
+  &.mobile {
+    .image-wrapper {
       max-width: 1000px;
       height: 450px;
       position: relative;
@@ -65,30 +66,30 @@
       background-position: center;
       background-size: cover;
       flex-direction: column;
-      .name{
-        color: #FFF;
+      .name {
+        color: #fff;
         //text-shadow: 0 0 4px #000; 大展说不加
       }
-      >.title{
+      > .title {
         font-size: 32px;
         line-height: 150%;
         font-weight: 600;
       }
-      >h3{
+      > h3 {
         margin-top: 30px;
       }
-
     }
-    .iconfont{
+    .iconfont {
       color: #fff;
       font-size: 20px;
       line-height: 44px;
     }
   }
-  .swiper-button-disabled{
+  .swiper-button-disabled {
     display: none;
   }
-  .swiper-button-prev,.swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     background-image: none;
     display: flex;
     align-items: center;
@@ -98,18 +99,17 @@
     }
     margin-top: 0;
     transform: translateY(-50%);
-    > p{ 
-      color: white; 
-      writing-mode:vertical-rl; 
-      height: max-content; 
+    > p {
+      color: white;
+      writing-mode: vertical-rl;
+      height: max-content;
       font-size: 13px;
-      letter-spacing: .3em;
+      letter-spacing: 0.3em;
       line-height: 200%;
       padding: 0 10px;
     }
   }
 }
-
 
 $slider-width: 150px;
 
@@ -126,7 +126,7 @@ $slider-width: 150px;
   font-weight: 400;
   display: flex;
   justify-content: center;
-  .swiper-slide{
+  .swiper-slide {
     width: $slider-width !important;
     overflow: hidden;
     margin: 20px;
@@ -136,7 +136,7 @@ $slider-width: 150px;
     text-align: center;
     &.custom {
       background: rgba(0, 0, 0, 0.1);
-      opacity: .6;
+      opacity: 0.6;
       padding: 10px;
       &.active {
         opacity: 1;
@@ -145,19 +145,22 @@ $slider-width: 150px;
         padding: 10px 0;
       }
     }
-    &:hover {color: $blue;}
+    &:hover {
+      color: $blue;
+    }
     &.active {
       background: rgba(0, 0, 0, 0.03);
       font-weight: $font-bold;
     }
     .image-wrapper {
-      display: inline-block; 
-      width: 100%; height: calc(150px * 0.45);
+      display: inline-block;
+      width: 100%;
+      height: calc(150px * 0.45);
       background-position: center;
       background-size: cover;
     }
   }
-  &.mobile{
+  &.mobile {
     font-size: 12px;
     line-height: 1.33;
     font-weight: 400;
@@ -169,31 +172,41 @@ $slider-width: 150px;
     background: white;
     box-shadow: 0 0 1px;
     z-index: 2;
-    .swiper-slide{
+    .swiper-slide {
       margin: 10px;
       @media (min-width: 500px) {
         width: 200px !important;
       }
     }
   }
-  .fade-enter-active {transition: opacity 0.2s ease 0.2s; transform: scale(1)}
-  .fade-leave-active {transition: opacity 0.2s ease; transform: scale(1)}
-  .fade-enter, .fade-leave-to {opacity: 0;}
+  .fade-enter-active {
+    transition: opacity 0.2s ease 0.2s;
+    transform: scale(1);
+  }
+  .fade-leave-active {
+    transition: opacity 0.2s ease;
+    transform: scale(1);
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 .fade-enter, .fade-leave-to
   /* .component-fade-leave-active for below version 2.1.8 */ {
   opacity: 0;
 }
 
-section.container{
+section.container {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  h2{
+  h2 {
     font-size: 42px;
     text-align: center;
     margin: 80px 0 50px 0;
@@ -211,13 +224,68 @@ section.container{
   .mobile {
     display: block;
   }
-  section.container{
+  section.container {
     padding: 20px;
     margin-top: -30px;
-    h2{
+    h2 {
       font-size: 28px;
       text-align: center;
       margin: 40px 0;
     }
   }
+}
+
+
+.table-wrapper + .table-wrapper {
+  margin-top: 40px;
+}
+.table-wrapper {
+  border-radius: 8px;
+  background-color: #313131;
+  overflow: hidden;
+  border: 2px solid #779af5;
+  color: #e5e5e5;
+  .title-block {
+    padding: 24px 28px;
+    h3.title {
+      font-size: 28px;
+      color: #e5e5e5;
+      line-height: 38px;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: #9DB7FB;
+      font-weight: 500;
+    }
+  }
+  .content-block {
+    padding: 24px 28px;
+    position: relative;
+    .content-title {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    > ul.tasks {
+      margin: 0 0 0 8px;
+      > li {
+        list-style: none;
+        line-height: 250%;
+        font-size: 18px;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      top: -1px;
+      background-color: #779af5;
+    }
+  }
+}
+
+.custom-title {
+  color: #4284EB;
 }
