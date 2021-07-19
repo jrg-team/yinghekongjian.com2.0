@@ -14898,7 +14898,7 @@ if (GlobalVue) {
 
 var _default = plugin;
 exports.default = _default;
-},{}],"../../.config/yarn/global/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{}],"node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -15026,7 +15026,9 @@ function fromByteArray (uint8) {
 
   // go through the array every three bytes, we'll deal with trailing stuff later
   for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
+    parts.push(encodeChunk(
+      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
+    ))
   }
 
   // pad the end with zeros, but make sure to not forget the extra bytes
@@ -15050,8 +15052,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"../../.config/yarn/global/node_modules/ieee754/index.js":[function(require,module,exports) {
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+},{}],"node_modules/ieee754/index.js":[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -15137,14 +15138,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"../../.config/yarn/global/node_modules/isarray/index.js":[function(require,module,exports) {
+},{}],"node_modules/isarray/index.js":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"../../.config/yarn/global/node_modules/node-libs-browser/node_modules/buffer/index.js":[function(require,module,exports) {
+},{}],"node_modules/buffer/index.js":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -16937,7 +16938,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"../../.config/yarn/global/node_modules/base64-js/index.js","ieee754":"../../.config/yarn/global/node_modules/ieee754/index.js","isarray":"../../.config/yarn/global/node_modules/isarray/index.js","buffer":"../../.config/yarn/global/node_modules/node-libs-browser/node_modules/buffer/index.js"}],"node_modules/v-tooltip/dist/v-tooltip.esm.js":[function(require,module,exports) {
+},{"base64-js":"node_modules/base64-js/index.js","ieee754":"node_modules/ieee754/index.js","isarray":"node_modules/isarray/index.js","buffer":"node_modules/buffer/index.js"}],"node_modules/v-tooltip/dist/v-tooltip.esm.js":[function(require,module,exports) {
 var global = arguments[3];
 var Buffer = require("buffer").Buffer;
 "use strict";
@@ -22197,7 +22198,7 @@ if (GlobalVue) {
 
 var _default2 = plugin;
 exports.default = _default2;
-},{"popper.js":"node_modules/popper.js/dist/esm/popper.js","vue-resize":"node_modules/vue-resize/dist/vue-resize.esm.js","buffer":"../../.config/yarn/global/node_modules/node-libs-browser/node_modules/buffer/index.js"}],"lib/vue.js":[function(require,module,exports) {
+},{"popper.js":"node_modules/popper.js/dist/esm/popper.js","vue-resize":"node_modules/vue-resize/dist/vue-resize.esm.js","buffer":"node_modules/buffer/index.js"}],"lib/vue.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22230,7 +22231,7 @@ _vue.default.use({
 
 var _default = _vue.default;
 exports.default = _default;
-},{"vue":"node_modules/vue/dist/vue.js","v-tooltip":"node_modules/v-tooltip/dist/v-tooltip.esm.js"}],"../../.config/yarn/global/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.js","v-tooltip":"node_modules/v-tooltip/dist/v-tooltip.esm.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -22262,7 +22263,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../.config/yarn/global/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -22297,12 +22298,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../.config/yarn/global/node_modules/parcel/src/builtins/bundle-url.js"}],"node_modules/swiper/dist/css/swiper.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/swiper/dist/css/swiper.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.config/yarn/global/node_modules/parcel/src/builtins/css-loader.js"}],"node_modules/marked/lib/marked.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/marked/lib/marked.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /**
@@ -24919,7 +24920,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js"}],"../../.config/yarn/global/node_modules/process/browser.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","../core/buildFullPath":"node_modules/axios/lib/core/buildFullPath.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js"}],"node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -25228,7 +25229,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"../../.config/yarn/global/node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"node_modules/process/browser.js"}],"node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -35909,6 +35910,11 @@ var footerConfig = {
         link: "https://leanote.com/"
       }]
     }]]
+  },
+  cplusplus: {
+    wechatQrCode: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-11-19-16-3-7.jpg',
+    weiboQrcode: 'https://jirengu.com/addons/theme/hunger-new/weibo_qr.10a01022.png',
+    record: '浙ICP备14041127号-1'
   }
 };
 exports.footerConfig = footerConfig;
@@ -35972,14 +35978,15 @@ var previewConfig = {
     title: "我们为何要学习C++？",
     content: [{
       title: '高性能',
-      items: ['在对执行效率有严格要求的领域，例如数据库引擎、编程语言编译器、游戏和音视频等领域，C++几乎是无可替代的选择。']
+      items: ['在对执行效率有严格要求的领域，例如数据库引擎、编程语言编译器、游戏和音视频等领域，C++几乎是无可替代的选择。'],
+      id: 'cplusplus-course-target-1'
     }, {
       title: '兼容C语言',
       items: ['可以很方便地调用操作系统的底层接口。']
     }, {
       title: '课程目标',
       items: ['熟悉C++语言特性和标准库', '掌握计算机科学的基本理论知识和常用算法设计技术', '能够独立设计开发一个工程项目', '胜任相当于阿里P6及以上的开发工作'],
-      style: "margin-top: 30px;"
+      id: 'cplusplus-course-target-3'
     }],
     appointmentUrl: 'http://jirengu01.mikecrm.com/xYsaCCj'
   }
@@ -36017,7 +36024,7 @@ var teacherConfig = {
       name: '九月老师',
       introduction: "<h3>\u4E5D\u6708\u8001\u5E08</h3><h6>\u5317\u5927\u7855\u58EB\uFF0C\u524D\u963F\u91CC\u817E\u8BAFC++\u7814\u53D1\u7ECF\u5386<br/><br/>\u53C2\u4E0E\u8BBE\u8BA1\u5F00\u53D1\u652F\u6491\u82B1\u5457\u53CC\u5341\u4E00\u7684\u8BA1\u7B97\u5F15\u64CE</h6>\n            <p>\u4F60\u597D\uFF0C\u6211\u662F\u4E5D\u6708\u3002</p>\n            <p>\u5F88\u591A\u4EBA\u4E5F\u8BB8\u4F1A\u8BA4\u4E3A\uFF0C\u4E00\u95E8\u7F16\u7A0B\u8BED\u8A00\u5C31\u662F\u4E00\u9879\u72EC\u7ACB\u7684\u6280\u80FD\u3002\u4F46\u5B9E\u9645\u5E76\u4E0D\u662F\u8FD9\u6837\uFF0C<span class=\"highlight\">\u4E0D\u540C\u7684\u8BED\u8A00\u4E4B\u95F4\u6216\u591A\u6216\u5C11\u4F1A\u5171\u4EAB\u67D0\u4E9B\u5E38\u89C1\u7684\u8BED\u8A00\u7279\u6027</span>\u3002\u6BD4\u5982C++\u548CJavaScript\u90FD\u652F\u6301\u9762\u5411\u5BF9\u8C61\u7684\u8303\u5F0F\uFF0CJava\u548CPython\u90FD\u6709\u5783\u573E\u56DE\u6536\uFF0CJavaScript\u548CGolang\u90FD\u652F\u6301\u534F\u7A0B\uFF0C\u5F53\u7136\u6211\u4E3E\u4EE5\u4E0A\u4E09\u4E2A\u4F8B\u5B50\u7684\u65F6\u5019\u4E5F\u9009\u4E86\u7EC4\u5185\u5DEE\u5F02\u6BD4\u8F83\u5927\u7684\u3002</p>\n            <p>\u6211\u63A5\u89E6\u8FC7 Java / Pascal / Python / JavaScript / Erlang / Rust \u7B49\u8BED\u8A00\uFF0C\u5B83\u4EEC\u5F7C\u6B64\u4E4B\u95F4\u5DEE\u5F02\u4E0D\u5C0F\u3002\u4F46\u662F\u8FFD\u6EAF\u5230\u5E95\u5C42\uFF0C\u6700\u7EC8\u4ECD\u7136\u662F\u4F5C\u4E3A\u673A\u5668\u6307\u4EE4\u800C\u8FD0\u884C\uFF0C\u5E76\u6CA1\u6709\u4EC0\u4E48\u795E\u5947\u7684\u9B54\u6CD5\u3002<span class=\"highlight\">\u56E0\u6B64\u5982\u679C\u638C\u63E1\u4E00\u95E8\u79BB\u673A\u5668\u8DB3\u591F\u8FD1\u7684\u8BED\u8A00\uFF0C\u662F\u53EF\u4EE5\u5BF9\u5176\u4ED6\u8BED\u8A00\u7684\u201C\u96BE\u5EA6\u201D\u4EA7\u751F\u514D\u75AB\u7684\u3002</span></p>\n            <p>\u6211\u7B2C\u4E00\u4EFD\u5DE5\u4F5C\u7684\u5F00\u53D1\u8BED\u8A00\u662FJava\uFF0C\u4F46\u90A3\u4E4B\u524D\u6211\u6CA1\u6709\u5B66\u4E60\u8FC7\uFF0C\u6709\u7740C++\u7684\u5E95\u5B50\uFF0C\u5728\u9762\u8BD5\u4E4B\u524D\u5927\u7565\u5730\u8FC7\u4E86\u4E00\u904D\u300ACore Java\u300B\u5C31\u987A\u5229\u5165\u804C\u4E86\uFF0C\u5E76\u4E14\u901A\u8FC7\u9605\u8BFBJVM specification\u8FD8\u5728\u90E8\u95E8\u505AJava\u4E00\u4E9B\u8BED\u8A00\u7279\u6027\u7684\u5B9E\u73B0\u539F\u7406\u5206\u4EAB\u3002</p>\n            <p>\u8FD9\u4E9B\u4E60\u60EF\u6211\u4E00\u76F4\u90FD\u6709\uFF0C\u5E76\u4E14\u53D7\u76CA\u826F\u591A\u3002\u6211\u89C9\u5F97\u6BCF\u4E2A\u7A0B\u5E8F\u5458\u90FD\u5E94\u8BE5\u6709\u8FD9\u4E9B\u597D\u4E60\u60EF\uFF0C\u56E0\u6B64\u6211\u5728\u8BFE\u7A0B\u4E2D\u7528\u5404\u79CD\u529E\u6CD5\u57F9\u517B\u5B66\u751F\u517B\u6210\u8FD9\u4E9B\u4E60\u60EF\u3002</p>\n            <p>\u4F60\u4E5F\u53EF\u4EE5\u901A\u8FC7\u638C\u63E1C++\u8FD9\u4E00\u8DB3\u591F\u63A5\u8FD1\u673A\u5668\uFF0C\u540C\u65F6\u4E5F\u5177\u5907\u4E30\u5BCC\u62BD\u8C61\u8BED\u4E49\u7684\u8BED\u8A00\uFF0C\u66F4\u597D\u5730\u7406\u89E3\u8BA1\u7B97\u673A\u7CFB\u7EDF\u3002\u5E0C\u671B\u5728\u4F60\u5B66\u4E60\u7F16\u7A0B\u7684\u8DEF\u7A0B\u4E2D\uFF0C\u53EF\u4EE5\u5E2E\u5230\u4F60\u3002</p>",
       image: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-10-52-33.png',
-      mobileImage: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-22-16-38-36.png'
+      mobileImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-18-24-6.png'
     }]
   }
 };
@@ -36156,7 +36163,7 @@ var projectConfig = {
     title: '全面、深度、紧贴实战',
     subTitle: '深入到C++的每个知识点，分模块从基础到工程实践、到算法、到项目，知识点融会贯通，学以致用，胜任工作',
     courseTitle: '体系课程涵盖8大阶段，初、中、高级C++核心知识',
-    courseDescription: "<div class=\"title\">\u9636\u6BB5\u4E00\uFF1AC++\u8BED\u8A00\u57FA\u7840\u592F\u5B9E\uFF088\u5468\uFF09</div><div class=\"content\">\u719F\u6089C++\u8BED\u8A00\u8BED\u6CD5\u3001\u638C\u63E1\u517C\u6709\u5E95\u5C42\u6548\u7387\u548C\u9AD8\u5C42\u62BD\u8C61\u7684\u601D\u7EF4\u65B9\u5F0F\u3002</div>\n    <div class=\"title\">\u9636\u6BB5\u4E8C\uFF1A\u5DE5\u7A0B\u80FD\u529B\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"content\">\u638C\u63E1\u5F00\u53D1\u4E2D\u5E38\u7528\u5DE5\u5177\uFF0C\u63D0\u9AD8\u7814\u53D1\u6548\u7387\u548C\u5F62\u6210\u826F\u597D\u7684\u5F00\u53D1\u4E60\u60EF\u3002</div>\n    <div class=\"title\">\u9636\u6BB5\u4E09\uFF1A\u5E76\u53D1\u7F16\u7A0B\u548C\u7F51\u7EDCIO\uFF083\u5468\uFF09</div><div class=\"content\">\u7406\u89E3\u5E76\u53D1\u548C\u5E76\u884C\u7684\u6280\u672F\u624B\u6BB5\uFF0C\u5B66\u4E60\u9AD8\u6548\u5E94\u7528\u7A0B\u5E8F\u7684\u5F00\u53D1\u548C\u8BBE\u8BA1\u6743\u8861\u3002</div>\n    <div class=\"title\">\u9636\u6BB5\u56DB\uFF1A\u7B97\u6CD5\u7CBE\u8FDB\uFF086\u5468\uFF09</div><div class=\"content\">\u6784\u5EFA\u5BF9\u57FA\u7840\u7B97\u6CD5\u548C\u6570\u636E\u7ED3\u6784\u7684\u77E5\u8BC6\u4F53\u7CFB\uFF0C\u63D0\u9AD8\u7F16\u7801\u5185\u529F\u3002</div>\n    <div class=\"title\">\u9636\u6BB5\u4E94\uFF1A\u9879\u76EE\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"content\">\u901A\u8FC7\u4ECE\u57FA\u7840\u670D\u52A1\u5230\u5E94\u7528\u7684\u9879\u76EE\u5B9E\u6218\uFF0C\u57F9\u517B\u901A\u7528\u7684\u7CFB\u7EDF\u8BBE\u8BA1\u548C\u5F00\u53D1\u7ECF\u9A8C\u3002</div>\n    <div class=\"title\">\u9636\u6BB5\u516D\uFF1A\u627E\u5DE5\u4F5C\uFF081\u5468\uFF09</div><div class=\"content\">\u7B80\u5386\u6307\u5BFC\u548C\u6295\u9012\u6280\u5DE7\uFF0C\u7B14\u8BD5\u9762\u8BD5\u9AD8\u9891\u8003\u70B9\u8BB2\u89E3\uFF0C\u6307\u5BFC\u9762\u8BD5\u6280\u5DE7\uFF0C\u987A\u5229\u5165\u804C\u3002</div>",
+    courseDescription: "<div class=\"custom-title\" id=\"cplusplus-course-description-first-title\">\u9636\u6BB5\u4E00\uFF1AC++\u8BED\u8A00\u57FA\u7840\u592F\u5B9E\uFF088\u5468\uFF09</div><div class=\"custom-content\">\u719F\u6089C++\u8BED\u8A00\u8BED\u6CD5\u3001\u638C\u63E1\u517C\u6709\u5E95\u5C42\u6548\u7387\u548C\u9AD8\u5C42\u62BD\u8C61\u7684\u601D\u7EF4\u65B9\u5F0F\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E8C\uFF1A\u5DE5\u7A0B\u80FD\u529B\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"custom-content\">\u638C\u63E1\u5F00\u53D1\u4E2D\u5E38\u7528\u5DE5\u5177\uFF0C\u63D0\u9AD8\u7814\u53D1\u6548\u7387\u548C\u5F62\u6210\u826F\u597D\u7684\u5F00\u53D1\u4E60\u60EF\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E09\uFF1A\u5E76\u53D1\u7F16\u7A0B\u548C\u7F51\u7EDCIO\uFF083\u5468\uFF09</div><div class=\"custom-content\">\u7406\u89E3\u5E76\u53D1\u548C\u5E76\u884C\u7684\u6280\u672F\u624B\u6BB5\uFF0C\u5B66\u4E60\u9AD8\u6548\u5E94\u7528\u7A0B\u5E8F\u7684\u5F00\u53D1\u548C\u8BBE\u8BA1\u6743\u8861\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u56DB\uFF1A\u7B97\u6CD5\u7CBE\u8FDB\uFF086\u5468\uFF09</div><div class=\"custom-content\">\u6784\u5EFA\u5BF9\u57FA\u7840\u7B97\u6CD5\u548C\u6570\u636E\u7ED3\u6784\u7684\u77E5\u8BC6\u4F53\u7CFB\uFF0C\u63D0\u9AD8\u7F16\u7801\u5185\u529F\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E94\uFF1A\u9879\u76EE\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"custom-content\">\u901A\u8FC7\u4ECE\u57FA\u7840\u670D\u52A1\u5230\u5E94\u7528\u7684\u9879\u76EE\u5B9E\u6218\uFF0C\u57F9\u517B\u901A\u7528\u7684\u7CFB\u7EDF\u8BBE\u8BA1\u548C\u5F00\u53D1\u7ECF\u9A8C\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u516D\uFF1A\u627E\u5DE5\u4F5C\uFF081\u5468\uFF09</div><div class=\"custom-content\">\u7B80\u5386\u6307\u5BFC\u548C\u6295\u9012\u6280\u5DE7\uFF0C\u7B14\u8BD5\u9762\u8BD5\u9AD8\u9891\u8003\u70B9\u8BB2\u89E3\uFF0C\u6307\u5BFC\u9762\u8BD5\u6280\u5DE7\uFF0C\u987A\u5229\u5165\u804C\u3002</div>",
     courseLink: '/C++/detail',
     courseListImg: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-11-52-2.png',
     projectTitle: '十大实战项目，让你轻松应对日常工作与面试',
@@ -36164,15 +36171,13 @@ var projectConfig = {
     projectLink: '/C++/detail#project-indicator',
     projectImageFloatUp: true,
     projectImages: [{
-      url: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-29-16-43-40.png'
+      url: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-19-3-1.png'
     }, {
-      url: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-29-16-43-46.png'
+      url: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-19-3-6.png'
     }, {
-      url: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-29-16-43-51.png'
+      url: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-19-3-10.png'
     }, {
-      url: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-29-16-44-7.png'
-    }, {
-      url: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-29-16-44-15.png'
+      url: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-19-3-13.png'
     }]
   }
 };
@@ -36277,7 +36282,7 @@ var experienceConfig = {
     pictureSrc: 'https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-9-10-16-2-11.png',
     pdfLinks: [{
       title: '饥人谷2021版 C++课程大纲.pdf',
-      link: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-30-18-11-1.pdf'
+      link: 'https://static.xiedaimala.com//xdml/%E9%A5%A5%E4%BA%BA%E8%B0%B72021%E7%89%88C%2B%2B%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2.pdf'
     }],
     articleLinks: [{
       title: 'C++学习指南',
@@ -36579,19 +36584,15 @@ exports.default = void 0;
 
 var _config = require("../lib/config");
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -36951,7 +36952,7 @@ render._withStripped = true
       
       }
     })();
-},{"../lib/config":"lib/config.js","_css_loader":"../../.config/yarn/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/footer.vue":[function(require,module,exports) {
+},{"../lib/config":"lib/config.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/footer.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36961,7 +36962,7 @@ exports.default = void 0;
 
 var _config = require("../lib/config");
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -36978,7 +36979,7 @@ var _default = {
   methods: {
     expandedList: function expandedList(colIndex) {
       if (this.mobileItems.length) {
-        this.$set(this.mobileItems, colIndex, _objectSpread(_objectSpread({}, this.mobileItems[colIndex]), {}, {
+        this.$set(this.mobileItems, colIndex, _objectSpread({}, this.mobileItems[colIndex], {
           expanded: !this.mobileItems[colIndex].expanded
         }));
       }
@@ -36994,7 +36995,7 @@ var _default = {
     var resultList = [];
     this.pcItems.map(function (item) {
       return item.map(function (col) {
-        resultList.push(_objectSpread(_objectSpread({}, col), {}, {
+        resultList.push(_objectSpread({}, col, {
           expanded: false
         }));
       });
@@ -37265,7 +37266,7 @@ render._withStripped = true
       
       }
     })();
-},{"../lib/config":"lib/config.js","_css_loader":"../../.config/yarn/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"js/detail.js":[function(require,module,exports) {
+},{"../lib/config":"lib/config.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"js/detail.js":[function(require,module,exports) {
 "use strict";
 
 require("../lib/init");
@@ -37407,7 +37408,7 @@ new _vue.default({
     window.removeEventListener("scroll", this.scrollPassFirstPage);
   }
 });
-},{"../lib/init":"lib/init.js","../lib/vue":"lib/vue.js","swiper/dist/css/swiper.css":"node_modules/swiper/dist/css/swiper.css","marked":"node_modules/marked/lib/marked.js","../lib/axios":"lib/axios.js","vue-awesome-swiper":"node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js","../layout/navigator":"layout/navigator.vue","../layout/footer":"layout/footer.vue"}],"../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../lib/init":"lib/init.js","../lib/vue":"lib/vue.js","swiper/dist/css/swiper.css":"node_modules/swiper/dist/css/swiper.css","marked":"node_modules/marked/lib/marked.js","../lib/axios":"lib/axios.js","vue-awesome-swiper":"node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js","../layout/navigator":"layout/navigator.vue","../layout/footer":"layout/footer.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -37435,7 +37436,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38313" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40495" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -37466,8 +37467,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 
@@ -37610,5 +37612,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","js/detail.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/detail.js"], null)
 //# sourceMappingURL=/detail.975b991d.js.map

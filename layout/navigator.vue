@@ -25,7 +25,7 @@
     </nav>
     <nav class="white-navigator pc">
       <div class="content">
-        <a href="/">
+        <a :href="link">
           <h5>{{name}}</h5>
         </a>
         <div class="items">
