@@ -4,7 +4,7 @@
       <div class="content" id="link-wrapper">
         <i class="iconfont" id="black-navigator-icon" :class="icon"></i>
         <a :href="links[0].href" target="_blank">
-          <span class="active">{{links[0].name}}</span>
+          <span class="active">{{ links[0].name }}</span>
         </a>
         <a href="https://xiedaimala.com" target="_blank">
           <span>课程平台</span>
@@ -18,20 +18,19 @@
         <a href="https://xiedaimala.com/bbs" target="_blank">
           <span>河码社区</span>
         </a>
-        <a :href="link.href" target="_blank" v-for="link in links.slice(1)" :key="link.name">
-          <span>{{link.name}}</span>
-        </a>
       </div>
     </nav>
-    <nav class="white-navigator pc">
+    <nav class="white-navigator pc" :class="{fixed: pcWhiteNavbarFixed}">
       <div class="content">
         <a :href="link">
-          <h5>{{name}}</h5>
+          <h5>{{ name }}</h5>
         </a>
         <div class="items">
           <template v-for="link in node[0].children">
-            <v-popover class="wechat" v-if="/交流群/.test(link.title)">
-              <span class="title">{{link.title}}<i class="iconfont hcsp-hot"/></span>
+            <v-popover class="wechat" v-if="/交流群/.test(link.title)" :key="link.title">
+              <span class="title"
+                >{{ link.title }}<i class="iconfont hcsp-hot"
+              /></span>
               <template slot="popover">
                 <div class="navigator-icon-popover">
                   <img :src="link.link" />
@@ -42,44 +41,58 @@
             <a
               :href="link.link"
               :key="link.title"
-              :class="{active: getItemStatus(link.link)}"
+              :class="{ active: getItemStatus(link.link) }"
               v-else
-            >{{link.title}}</a>
+              >{{ link.title }}</a
+            >
           </template>
         </div>
       </div>
     </nav>
     <nav class="navigator mobile" @touchmove.prevent>
       <div class="icon-wrapper">
-        <a href="/">
+        <a :href="link">
           <i class="iconfont" :class="icon"></i>
         </a>
         <a
           v-for="link in node[0].children.slice(1, 4)"
           :href="link.link"
           :key="link.title"
-          :class="{active: getItemStatus(link.link)}"
-        >{{link.title}}</a>
+          :class="{ active: getItemStatus(link.link) }"
+          >{{ link.title }}</a
+        >
         <i class="iconfont hcsp-zhankai" @click="toggleModalVisible"></i>
       </div>
       <transition name="menu">
         <section class="black-modal" v-show="modalVisible">
           <div class="items-wrapper">
             <ul>
-              <li v-for="(item,index) in node" :class="{active: item.expanded}">
+              <li
+                v-for="(item, index) in node"
+                :key="index"
+                :class="{ active: item.expanded }"
+              >
                 <a
                   :href="item.link || 'javascript:void(0);'"
                   @click="toggleSubmenu(index)"
-                >{{item.title}}</a>
+                  >{{ item.title }}</a
+                >
                 <transition name="submenu">
-                  <ul v-if="item.expanded && item.children && item.children.length > 0">
-                    <li v-for="child in item.children">
+                  <ul
+                    v-if="
+                      item.expanded && item.children && item.children.length > 0
+                    "
+                  >
+                    <li v-for="child in item.children" :key="child.link">
                       <a
                         :href="child.link"
-                        :class="{active: getItemStatus(child.link)}"
+                        :class="{ active: getItemStatus(child.link) }"
                       >
-                      {{child.title}}
-                      <i class="iconfont hcsp-hot" v-if="/交流群/.test(child.title)"/></a>
+                        {{ child.title }}
+                        <i
+                          class="iconfont hcsp-hot"
+                          v-if="/交流群/.test(child.title)"
+                      /></a>
                     </li>
                   </ul>
                 </transition>
@@ -89,18 +102,20 @@
         </section>
       </transition>
     </nav>
-    <div class="mobile" style="background: transparent;height: 5vh;"></div>
+    <div class="mobile" style="background: transparent; height: 5vh"></div>
   </header>
 </template>
 <script>
 import { navigatorConfig as allConfig } from "../lib/config";
-const navigatorConfig = allConfig[process.env.BUILD_FLAG]
+const navigatorConfig = allConfig[process.env.BUILD_FLAG];
 export default {
   name: "MyNavigator",
   data() {
     return {
       modalVisible: false,
       buildType: process.env.BUILD_FLAG,
+      isMobile: document.documentElement.clientWidth < 500,
+      pcWhiteNavbarFixed: false,
       ...navigatorConfig,
     };
   },
@@ -117,18 +132,37 @@ export default {
       if (link === "/") {
         return location.pathname === link;
       } else return location.pathname.includes(link);
-    }
+    },
+    scrollHandler() {
+      if (this.isMobile) return;
+      const scrollTop =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const newMode = scrollTop > 48 ? true : false;
+      if (newMode === this.pcWhiteNavbarFixed) return;
+      else
+        requestAnimationFrame(() => {
+          this.pcWhiteNavbarFixed = newMode;
+        });
+    },
+  },
+  mounted() {
+    !this.isMobile && document?.addEventListener("scroll", this.scrollHandler);
+  },
+  beforeDestroy() {
+    !this.isMobile && document?.removeEventListener("scroll", this.scrollHandler);
   },
   computed: {
     links() {
       const baseLinks = Object.entries(allConfig).map(([key, value]) => ({
         key: key,
-        name: value.name,
-        href: value.link
-      }))
-      return baseLinks.sort((_, b) => b.key === process.env.BUILD_FLAG ? 1 : -1 )
-    }
-  }
+        name: value.alias,
+        href: value.link,
+      }));
+      return baseLinks.sort((_, b) =>
+        b.key === process.env.BUILD_FLAG ? 1 : -1
+      );
+    },
+  },
 };
 </script>
 

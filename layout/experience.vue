@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <section class="experience-wrapper" :class="{'section-margin': enable, 'default-margin': !enabled}">
+    <section class="experience-wrapper" :class="{'section-margin': enable, 'default-margin': !enable}">
       <template v-if="enable">
         <div class="title title-margin">
           <h3>让真实数据说话</h3>
