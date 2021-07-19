@@ -7,6 +7,7 @@
         v-for="node in content"
         :key="node.title"
         :id="node.id"
+        :class="node.class"
       >
         <h4>{{ node.title }}</h4>
         <ul>
@@ -14,7 +15,19 @@
         </ul>
       </div>
     </div>
-    <black-button class="button" :linkTo="appointmentUrl">预约试听</black-button>
+    <template v-if="courseTarget">
+      <h3 class="course-target-title title">{{ courseTarget.title }}</h3>
+      <div class="items-wrapper">
+        <div class="item" :class="courseTarget.class" style="width: auto">
+          <ul>
+            <li v-for="item in courseTarget.items" :key="item">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+    <black-button class="button" :linkTo="appointmentUrl"
+      >预约试听</black-button
+    >
   </div>
 </template>
 

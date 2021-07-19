@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="content">
-      <section class="col-wrapper pc">
+      <section class="col-wrapper pc" v-if="pcItems">
         <div class="col" v-for="(col, colIndex) in pcItems" :key="colIndex">
           <div class="block" v-for="(block, blockIndex) in col" :key="blockIndex">
             <h5>{{block.title}}</h5>
@@ -13,7 +13,7 @@
           </div>
         </div>
       </section>
-      <section class="col-wrapper-mobile mobile">
+      <section class="col-wrapper-mobile mobile" v-if="mobileItems">
         <div class="col" v-for="(col, colIndex) in mobileItems" :key="colIndex">
           <h6 @click="expandedList(colIndex)" :class="{active: col.expanded}">{{col.title}}</h6>
           <transition name="slide-fade" tag="div">
@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     expandedList: function(colIndex) {
-      if (this.mobileItems.length) {
+      if (this.mobileItems && this.mobileItems.length) {
         this.$set(this.mobileItems, colIndex, {
           ...this.mobileItems[colIndex],
           expanded: !this.mobileItems[colIndex].expanded
@@ -115,8 +115,8 @@ export default {
   },
   mounted() {
     let resultList = [];
-    this.pcItems.map(item => {
-      return item.map(col => {
+    this.pcItems && this.pcItems.forEach(item => {
+      return item.forEach(col => {
         resultList.push({ ...col, expanded: false });
       });
     });

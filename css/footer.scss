@@ -5,7 +5,7 @@ footer {
 footer> .content {
   padding-top: 36px;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: $content-max-width;
   position: relative;
   display: flex;
   flex: 1;

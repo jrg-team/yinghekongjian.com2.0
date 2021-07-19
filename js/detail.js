@@ -97,15 +97,14 @@ new Vue({
       }
     },
     scrollPassFirstPage() {
-      let offsetTotop = document.querySelector("#scroller-indicator").getBoundingClientRect().top;
+      let offsetToTop = document.querySelector("#scroller-indicator").getBoundingClientRect().top;
       let currentStatus
-      if (offsetTotop <= 0) {currentStatus = false}
+      if (offsetToTop <= 0) {currentStatus = false}
       else {currentStatus = true}
       if (this.isFirstPage === currentStatus)
         return
       else {
         this.isFirstPage = currentStatus
-        console.log(currentStatus)
       }
     },
     miniTabTop() {

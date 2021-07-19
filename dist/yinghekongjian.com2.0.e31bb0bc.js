@@ -22245,50 +22245,11 @@ var titleConfig = {
 };
 exports.titleConfig = titleConfig;
 var navigatorConfig = {
-  yinghekongjian: {
-    name: '硬核空间',
-    link: 'https://yinghekongjian.com',
-    node: [{
-      title: "硬核空间",
-      expanded: true,
-      children: [{
-        title: "介绍",
-        link: "/"
-      }, {
-        title: "课程详情",
-        link: "detail"
-      }, {
-        title: "教学模式",
-        link: "mode"
-      }, {
-        title: "课程项目",
-        link: "projects"
-      }, {
-        title: "关于我们",
-        link: "about"
-      }, {
-        title: "Java交流群",
-        link: "https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-25-10-30-24.png",
-        text: '添加客服微信：xiedaimala04，<br/>备注 Java群'
-      }]
-    }, {
-      title: "饥人谷",
-      expanded: false,
-      link: "https://jirengu.com"
-    }, {
-      title: "写代码啦",
-      expanded: false,
-      link: "https://xiedaimala.com"
-    }, {
-      title: "河码社区",
-      expanded: false,
-      link: "https://xiedaimala.com/bbs"
-    }],
-    icon: 'hcsp-icon-white'
-  },
   jirengu: {
     name: '饥人谷',
     link: 'https://jirengu.com',
+    miniImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-15-6-24.png',
+    alias: '饥人谷前端',
     node: [{
       title: "饥人谷",
       expanded: true,
@@ -22334,9 +22295,54 @@ var navigatorConfig = {
     }],
     icon: 'hcsp-jrg-logo-white'
   },
+  yinghekongjian: {
+    name: '硬核空间',
+    alias: '饥人谷Java',
+    link: 'https://yinghekongjian.com',
+    miniImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-15-6-19.png',
+    node: [{
+      title: "硬核空间",
+      expanded: true,
+      children: [{
+        title: "介绍",
+        link: "/"
+      }, {
+        title: "课程详情",
+        link: "detail"
+      }, {
+        title: "教学模式",
+        link: "mode"
+      }, {
+        title: "课程项目",
+        link: "projects"
+      }, {
+        title: "关于我们",
+        link: "about"
+      }, {
+        title: "Java交流群",
+        link: "https://static.xiedaimala.com/xdml/image/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-10-25-10-30-24.png",
+        text: '添加客服微信：xiedaimala04，<br/>备注 Java群'
+      }]
+    }, {
+      title: "饥人谷",
+      expanded: false,
+      link: "https://jirengu.com"
+    }, {
+      title: "写代码啦",
+      expanded: false,
+      link: "https://xiedaimala.com"
+    }, {
+      title: "河码社区",
+      expanded: false,
+      link: "https://xiedaimala.com/bbs"
+    }],
+    icon: 'hcsp-icon-white'
+  },
   cplusplus: {
     name: '饥人谷C++',
+    alias: '饥人谷C++',
     link: 'https://jirengu.com/C++/',
+    miniImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-15-6-16.jpg',
     node: [{
       title: "饥人谷C++",
       expanded: true,
@@ -22550,7 +22556,8 @@ var footerConfig = {
   cplusplus: {
     wechatQrCode: 'https://static.xiedaimala.com/xdml/file/6e556a51-b8ff-466f-bda6-7d1847e39f2e/2019-11-19-16-3-7.jpg',
     weiboQrcode: 'https://jirengu.com/addons/theme/hunger-new/weibo_qr.10a01022.png',
-    record: '浙ICP备14041127号-1'
+    record: '浙ICP备14041127号-1',
+    pcItems: null
   }
 };
 exports.footerConfig = footerConfig;
@@ -22569,7 +22576,7 @@ var videoConfig = {
   },
   cplusplus: {
     disabled: true,
-    poster: 'https://static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-10-45-59.jpg',
+    poster: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-14-8-28.jpg',
     link: 'https://static.xiedaimala.com/jrg-spread.mp4',
     descriptionUrl: "https://mp.weixin.qq.com/s/Cv-lQzPJOGXuP-0medh0YA"
   }
@@ -22615,15 +22622,41 @@ var previewConfig = {
     content: [{
       title: '高性能',
       items: ['在对执行效率有严格要求的领域，例如数据库引擎、编程语言编译器、游戏和音视频等领域，C++几乎是无可替代的选择。'],
-      id: 'cplusplus-course-target-1'
+      class: 'cplusplus-course-advantage cplusplus-course-margin-bottom'
+    }, {
+      title: '跨语言支持',
+      items: ['其他诸如Python, Java等各种语言都提供了调用C++库的能力，例如Tensorflow就是用C++实现内核而对外提供Python接口。'],
+      class: 'cplusplus-course-advantage cplusplus-course-margin-bottom'
+    }, {
+      title: '抽象能力',
+      items: ['支持面向对象、函数式、泛型等编程范式，具有丰富的语义表达能力。'],
+      class: 'cplusplus-course-advantage'
     }, {
       title: '兼容C语言',
-      items: ['可以很方便地调用操作系统的底层接口。']
+      items: ['可以很方便地调用操作系统的底层接口。'],
+      class: 'cplusplus-course-advantage'
     }, {
+      title: '强大的社区',
+      items: ['开发者中高手众多，Google, Microsoft, Intel, Tencent等大厂均积极参与。'],
+      class: 'cplusplus-course-advantage'
+    }, {
+      title: '完善的工具链',
+      items: ['在众多大厂的支持下，拥有完备的编译、调试、分析、优化等工具。'],
+      class: 'cplusplus-course-advantage'
+    }, {
+      title: '灵活性',
+      items: ['开发者可以自主管理内存、CPU等资源的分配，按需采用不同的策略。'],
+      class: 'cplusplus-course-target'
+    }, {
+      title: '不可替代性',
+      items: ['学习C++可以掌握多种编程范式，掌握阅读其他语言源码的能力，使学会其他语言变得轻松，具有更高的不可替代性。'],
+      class: 'cplusplus-course-advantage'
+    }],
+    courseTarget: {
       title: '课程目标',
       items: ['熟悉C++语言特性和标准库', '掌握计算机科学的基本理论知识和常用算法设计技术', '能够独立设计开发一个工程项目', '胜任相当于阿里P6及以上的开发工作'],
-      id: 'cplusplus-course-target-3'
-    }],
+      class: 'cplusplus-course-target'
+    },
     appointmentUrl: 'http://jirengu01.mikecrm.com/xYsaCCj'
   }
 };
@@ -22659,8 +22692,8 @@ var teacherConfig = {
     teacherList: [{
       name: '九月老师',
       introduction: "<h3>\u4E5D\u6708\u8001\u5E08</h3><h6>\u5317\u5927\u7855\u58EB\uFF0C\u524D\u963F\u91CC\u817E\u8BAFC++\u7814\u53D1\u7ECF\u5386<br/><br/>\u53C2\u4E0E\u8BBE\u8BA1\u5F00\u53D1\u652F\u6491\u82B1\u5457\u53CC\u5341\u4E00\u7684\u8BA1\u7B97\u5F15\u64CE</h6>\n            <p>\u4F60\u597D\uFF0C\u6211\u662F\u4E5D\u6708\u3002</p>\n            <p>\u5F88\u591A\u4EBA\u4E5F\u8BB8\u4F1A\u8BA4\u4E3A\uFF0C\u4E00\u95E8\u7F16\u7A0B\u8BED\u8A00\u5C31\u662F\u4E00\u9879\u72EC\u7ACB\u7684\u6280\u80FD\u3002\u4F46\u5B9E\u9645\u5E76\u4E0D\u662F\u8FD9\u6837\uFF0C<span class=\"highlight\">\u4E0D\u540C\u7684\u8BED\u8A00\u4E4B\u95F4\u6216\u591A\u6216\u5C11\u4F1A\u5171\u4EAB\u67D0\u4E9B\u5E38\u89C1\u7684\u8BED\u8A00\u7279\u6027</span>\u3002\u6BD4\u5982C++\u548CJavaScript\u90FD\u652F\u6301\u9762\u5411\u5BF9\u8C61\u7684\u8303\u5F0F\uFF0CJava\u548CPython\u90FD\u6709\u5783\u573E\u56DE\u6536\uFF0CJavaScript\u548CGolang\u90FD\u652F\u6301\u534F\u7A0B\uFF0C\u5F53\u7136\u6211\u4E3E\u4EE5\u4E0A\u4E09\u4E2A\u4F8B\u5B50\u7684\u65F6\u5019\u4E5F\u9009\u4E86\u7EC4\u5185\u5DEE\u5F02\u6BD4\u8F83\u5927\u7684\u3002</p>\n            <p>\u6211\u63A5\u89E6\u8FC7 Java / Pascal / Python / JavaScript / Erlang / Rust \u7B49\u8BED\u8A00\uFF0C\u5B83\u4EEC\u5F7C\u6B64\u4E4B\u95F4\u5DEE\u5F02\u4E0D\u5C0F\u3002\u4F46\u662F\u8FFD\u6EAF\u5230\u5E95\u5C42\uFF0C\u6700\u7EC8\u4ECD\u7136\u662F\u4F5C\u4E3A\u673A\u5668\u6307\u4EE4\u800C\u8FD0\u884C\uFF0C\u5E76\u6CA1\u6709\u4EC0\u4E48\u795E\u5947\u7684\u9B54\u6CD5\u3002<span class=\"highlight\">\u56E0\u6B64\u5982\u679C\u638C\u63E1\u4E00\u95E8\u79BB\u673A\u5668\u8DB3\u591F\u8FD1\u7684\u8BED\u8A00\uFF0C\u662F\u53EF\u4EE5\u5BF9\u5176\u4ED6\u8BED\u8A00\u7684\u201C\u96BE\u5EA6\u201D\u4EA7\u751F\u514D\u75AB\u7684\u3002</span></p>\n            <p>\u6211\u7B2C\u4E00\u4EFD\u5DE5\u4F5C\u7684\u5F00\u53D1\u8BED\u8A00\u662FJava\uFF0C\u4F46\u90A3\u4E4B\u524D\u6211\u6CA1\u6709\u5B66\u4E60\u8FC7\uFF0C\u6709\u7740C++\u7684\u5E95\u5B50\uFF0C\u5728\u9762\u8BD5\u4E4B\u524D\u5927\u7565\u5730\u8FC7\u4E86\u4E00\u904D\u300ACore Java\u300B\u5C31\u987A\u5229\u5165\u804C\u4E86\uFF0C\u5E76\u4E14\u901A\u8FC7\u9605\u8BFBJVM specification\u8FD8\u5728\u90E8\u95E8\u505AJava\u4E00\u4E9B\u8BED\u8A00\u7279\u6027\u7684\u5B9E\u73B0\u539F\u7406\u5206\u4EAB\u3002</p>\n            <p>\u8FD9\u4E9B\u4E60\u60EF\u6211\u4E00\u76F4\u90FD\u6709\uFF0C\u5E76\u4E14\u53D7\u76CA\u826F\u591A\u3002\u6211\u89C9\u5F97\u6BCF\u4E2A\u7A0B\u5E8F\u5458\u90FD\u5E94\u8BE5\u6709\u8FD9\u4E9B\u597D\u4E60\u60EF\uFF0C\u56E0\u6B64\u6211\u5728\u8BFE\u7A0B\u4E2D\u7528\u5404\u79CD\u529E\u6CD5\u57F9\u517B\u5B66\u751F\u517B\u6210\u8FD9\u4E9B\u4E60\u60EF\u3002</p>\n            <p>\u4F60\u4E5F\u53EF\u4EE5\u901A\u8FC7\u638C\u63E1C++\u8FD9\u4E00\u8DB3\u591F\u63A5\u8FD1\u673A\u5668\uFF0C\u540C\u65F6\u4E5F\u5177\u5907\u4E30\u5BCC\u62BD\u8C61\u8BED\u4E49\u7684\u8BED\u8A00\uFF0C\u66F4\u597D\u5730\u7406\u89E3\u8BA1\u7B97\u673A\u7CFB\u7EDF\u3002\u5E0C\u671B\u5728\u4F60\u5B66\u4E60\u7F16\u7A0B\u7684\u8DEF\u7A0B\u4E2D\uFF0C\u53EF\u4EE5\u5E2E\u5230\u4F60\u3002</p>",
-      image: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-10-52-33.png',
-      mobileImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-18-24-6.png'
+      image: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-14-44-29.png',
+      mobileImage: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-19-14-44-33.png'
     }]
   }
 };
@@ -22802,7 +22835,7 @@ var projectConfig = {
     courseDescription: "<div class=\"custom-title\" id=\"cplusplus-course-description-first-title\">\u9636\u6BB5\u4E00\uFF1AC++\u8BED\u8A00\u57FA\u7840\u592F\u5B9E\uFF088\u5468\uFF09</div><div class=\"custom-content\">\u719F\u6089C++\u8BED\u8A00\u8BED\u6CD5\u3001\u638C\u63E1\u517C\u6709\u5E95\u5C42\u6548\u7387\u548C\u9AD8\u5C42\u62BD\u8C61\u7684\u601D\u7EF4\u65B9\u5F0F\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E8C\uFF1A\u5DE5\u7A0B\u80FD\u529B\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"custom-content\">\u638C\u63E1\u5F00\u53D1\u4E2D\u5E38\u7528\u5DE5\u5177\uFF0C\u63D0\u9AD8\u7814\u53D1\u6548\u7387\u548C\u5F62\u6210\u826F\u597D\u7684\u5F00\u53D1\u4E60\u60EF\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E09\uFF1A\u5E76\u53D1\u7F16\u7A0B\u548C\u7F51\u7EDCIO\uFF083\u5468\uFF09</div><div class=\"custom-content\">\u7406\u89E3\u5E76\u53D1\u548C\u5E76\u884C\u7684\u6280\u672F\u624B\u6BB5\uFF0C\u5B66\u4E60\u9AD8\u6548\u5E94\u7528\u7A0B\u5E8F\u7684\u5F00\u53D1\u548C\u8BBE\u8BA1\u6743\u8861\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u56DB\uFF1A\u7B97\u6CD5\u7CBE\u8FDB\uFF086\u5468\uFF09</div><div class=\"custom-content\">\u6784\u5EFA\u5BF9\u57FA\u7840\u7B97\u6CD5\u548C\u6570\u636E\u7ED3\u6784\u7684\u77E5\u8BC6\u4F53\u7CFB\uFF0C\u63D0\u9AD8\u7F16\u7801\u5185\u529F\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u4E94\uFF1A\u9879\u76EE\u5B9E\u8DF5\uFF084\u5468\uFF09</div><div class=\"custom-content\">\u901A\u8FC7\u4ECE\u57FA\u7840\u670D\u52A1\u5230\u5E94\u7528\u7684\u9879\u76EE\u5B9E\u6218\uFF0C\u57F9\u517B\u901A\u7528\u7684\u7CFB\u7EDF\u8BBE\u8BA1\u548C\u5F00\u53D1\u7ECF\u9A8C\u3002</div>\n    <div class=\"custom-title\">\u9636\u6BB5\u516D\uFF1A\u627E\u5DE5\u4F5C\uFF081\u5468\uFF09</div><div class=\"custom-content\">\u7B80\u5386\u6307\u5BFC\u548C\u6295\u9012\u6280\u5DE7\uFF0C\u7B14\u8BD5\u9762\u8BD5\u9AD8\u9891\u8003\u70B9\u8BB2\u89E3\uFF0C\u6307\u5BFC\u9762\u8BD5\u6280\u5DE7\uFF0C\u987A\u5229\u5165\u804C\u3002</div>",
     courseLink: '/C++/detail',
     courseListImg: '//static.xiedaimala.com/xdml/image/5939aa7c-d446-47c4-a9c1-ea1e52b10249/2021-7-16-11-52-2.png',
-    projectTitle: '十大实战项目，让你轻松应对日常工作与面试',
+    projectTitle: '四大实战项目，让你轻松应对日常工作与面试',
     projectDescription: '全新项目，各有侧重，拒绝平庸，拒绝千篇一律；完全与实际工作所对应，在学习过程中体验工作的乐趣；提前感受项目的各大环节，将知识点融会贯通。',
     projectLink: '/C++/detail#project-indicator',
     projectImageFloatUp: true,
@@ -23681,7 +23714,7 @@ var _default = {
   },
   methods: {
     expandedList: function expandedList(colIndex) {
-      if (this.mobileItems.length) {
+      if (this.mobileItems && this.mobileItems.length) {
         this.$set(this.mobileItems, colIndex, _objectSpread({}, this.mobileItems[colIndex], {
           expanded: !this.mobileItems[colIndex].expanded
         }));
@@ -23696,8 +23729,8 @@ var _default = {
   },
   mounted: function mounted() {
     var resultList = [];
-    this.pcItems.map(function (item) {
-      return item.map(function (col) {
+    this.pcItems && this.pcItems.forEach(function (item) {
+      return item.forEach(function (col) {
         resultList.push(_objectSpread({}, col, {
           expanded: false
         }));
@@ -23721,62 +23754,21 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("footer", [
     _c("div", { staticClass: "content" }, [
-      _c(
-        "section",
-        { staticClass: "col-wrapper pc" },
-        _vm._l(_vm.pcItems, function(col, colIndex) {
-          return _c(
-            "div",
-            { key: colIndex, staticClass: "col" },
-            _vm._l(col, function(block, blockIndex) {
-              return _c("div", { key: blockIndex, staticClass: "block" }, [
-                _c("h5", [_vm._v(_vm._s(block.title))]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  _vm._l(block.children, function(item, itemIndex) {
-                    return _c("li", { key: itemIndex }, [
-                      _c("a", { attrs: { href: item.link } }, [
-                        _vm._v(_vm._s(item.text))
-                      ])
-                    ])
-                  }),
-                  0
-                )
-              ])
-            }),
-            0
-          )
-        }),
-        0
-      ),
-      _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "col-wrapper-mobile mobile" },
-        _vm._l(_vm.mobileItems, function(col, colIndex) {
-          return _c(
-            "div",
-            { key: colIndex, staticClass: "col" },
-            [
-              _c(
-                "h6",
-                {
-                  class: { active: col.expanded },
-                  on: {
-                    click: function($event) {
-                      return _vm.expandedList(colIndex)
-                    }
-                  }
-                },
-                [_vm._v(_vm._s(col.title))]
-              ),
-              _vm._v(" "),
-              _c("transition", { attrs: { name: "slide-fade", tag: "div" } }, [
-                col.expanded
-                  ? _c(
+      _vm.pcItems
+        ? _c(
+            "section",
+            { staticClass: "col-wrapper pc" },
+            _vm._l(_vm.pcItems, function(col, colIndex) {
+              return _c(
+                "div",
+                { key: colIndex, staticClass: "col" },
+                _vm._l(col, function(block, blockIndex) {
+                  return _c("div", { key: blockIndex, staticClass: "block" }, [
+                    _c("h5", [_vm._v(_vm._s(block.title))]),
+                    _vm._v(" "),
+                    _c(
                       "ul",
-                      _vm._l(col.children, function(item, itemIndex) {
+                      _vm._l(block.children, function(item, itemIndex) {
                         return _c("li", { key: itemIndex }, [
                           _c("a", { attrs: { href: item.link } }, [
                             _vm._v(_vm._s(item.text))
@@ -23785,14 +23777,63 @@ exports.default = _default;
                       }),
                       0
                     )
-                  : _vm._e()
-              ])
-            ],
-            1
+                  ])
+                }),
+                0
+              )
+            }),
+            0
           )
-        }),
-        0
-      ),
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.mobileItems
+        ? _c(
+            "section",
+            { staticClass: "col-wrapper-mobile mobile" },
+            _vm._l(_vm.mobileItems, function(col, colIndex) {
+              return _c(
+                "div",
+                { key: colIndex, staticClass: "col" },
+                [
+                  _c(
+                    "h6",
+                    {
+                      class: { active: col.expanded },
+                      on: {
+                        click: function($event) {
+                          return _vm.expandedList(colIndex)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(col.title))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "transition",
+                    { attrs: { name: "slide-fade", tag: "div" } },
+                    [
+                      col.expanded
+                        ? _c(
+                            "ul",
+                            _vm._l(col.children, function(item, itemIndex) {
+                              return _c("li", { key: itemIndex }, [
+                                _c("a", { attrs: { href: item.link } }, [
+                                  _vm._v(_vm._s(item.text))
+                                ])
+                              ])
+                            }),
+                            0
+                          )
+                        : _vm._e()
+                    ]
+                  )
+                ],
+                1
+              )
+            }),
+            0
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c("section", { staticClass: "tip-wrapper" }, [
         _c(
@@ -24084,6 +24125,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   name: "preview",
   components: {
@@ -24120,7 +24174,12 @@ exports.default = _default;
         _vm._l(_vm.content, function(node) {
           return _c(
             "div",
-            { key: node.title, staticClass: "item", attrs: { id: node.id } },
+            {
+              key: node.title,
+              staticClass: "item",
+              class: node.class,
+              attrs: { id: node.id }
+            },
             [
               _c("h4", [_vm._v(_vm._s(node.title))]),
               _vm._v(" "),
@@ -24137,13 +24196,41 @@ exports.default = _default;
         0
       ),
       _vm._v(" "),
+      _vm.courseTarget
+        ? [
+            _c("h3", { staticClass: "course-target-title title" }, [
+              _vm._v(_vm._s(_vm.courseTarget.title))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "items-wrapper" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "item",
+                  class: _vm.courseTarget.class,
+                  staticStyle: { width: "auto" }
+                },
+                [
+                  _c(
+                    "ul",
+                    _vm._l(_vm.courseTarget.items, function(item) {
+                      return _c("li", { key: item }, [_vm._v(_vm._s(item))])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ]
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "black-button",
         { staticClass: "button", attrs: { linkTo: _vm.appointmentUrl } },
         [_vm._v("预约试听")]
       )
     ],
-    1
+    2
   )
 }
 var staticRenderFns = []
@@ -42639,7 +42726,7 @@ exports.default = _default;
       "section",
       {
         staticClass: "experience-wrapper",
-        class: { "section-margin": _vm.enable }
+        class: { "section-margin": _vm.enable, "default-margin": !_vm.enabled }
       },
       [
         _vm.enable
@@ -53074,7 +53161,121 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"layout/tabNavigator.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _config = require("../lib/config");
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var links = Object.entries(_config.navigatorConfig).map(function (_ref) {
+  var _ref2 = _slicedToArray(_ref, 2),
+      key = _ref2[0],
+      value = _ref2[1];
+
+  return {
+    key: key,
+    href: value.link,
+    active: "cplusplus" === key,
+    image: value.miniImage,
+    name: value.alias
+  };
+});
+var _default = {
+  name: "TabNavigator",
+  data: function data() {
+    return {
+      links: links,
+      isMobile: document.body.clientWidth < 500
+    };
+  }
+};
+exports.default = _default;
+        var $4bacc3 = exports.default || module.exports;
+      
+      if (typeof $4bacc3 === 'function') {
+        $4bacc3 = $4bacc3.options;
+      }
+    
+        /* template */
+        Object.assign($4bacc3, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "tab-navigator-wrapper tab-wrapper",
+      class: { mobile: _vm.isMobile }
+    },
+    _vm._l(_vm.links, function(item) {
+      return _c(
+        "a",
+        {
+          key: item.key,
+          staticClass: "swiper-slide custom swiper-slide-active",
+          class: { active: item.active },
+          attrs: { href: item.href }
+        },
+        [
+          _c("div", {
+            staticClass: "image-wrapper pc",
+            style: "background-image: url(" + item.image + ")"
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "name" }, [_vm._v(_vm._s(item.name))])
+        ]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-4bacc3",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$4bacc3', $4bacc3);
+          } else {
+            api.reload('$4bacc3', $4bacc3);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"../lib/config":"lib/config.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./lib/init.js");
@@ -53101,6 +53302,8 @@ var _teacher = _interopRequireDefault(require("./layout/teacher"));
 
 var _poster = _interopRequireDefault(require("./layout/poster"));
 
+var _tabNavigator = _interopRequireDefault(require("./layout/tabNavigator"));
+
 var _config = require("./lib/config");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -53117,7 +53320,8 @@ new _vue.default({
     Learning: _learningAndJob.default,
     Experience: _experience.default,
     Teacher: _teacher.default,
-    Poster: _poster.default
+    Poster: _poster.default,
+    TabNavigator: _tabNavigator.default
   },
   data: function data() {
     return {
@@ -53125,7 +53329,7 @@ new _vue.default({
     };
   }
 });
-},{"./lib/init.js":"lib/init.js","./lib/vue":"lib/vue.js","./layout/navigator":"layout/navigator.vue","./layout/footer":"layout/footer.vue","./layout/preview":"layout/preview.vue","./layout/video":"layout/video.vue","./layout/course":"layout/course.vue","./layout/project":"layout/project.vue","./layout/learningAndJob":"layout/learningAndJob.vue","./layout/experience":"layout/experience.vue","./layout/teacher":"layout/teacher.vue","./layout/poster":"layout/poster.vue","./lib/config":"lib/config.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./lib/init.js":"lib/init.js","./lib/vue":"lib/vue.js","./layout/navigator":"layout/navigator.vue","./layout/footer":"layout/footer.vue","./layout/preview":"layout/preview.vue","./layout/video":"layout/video.vue","./layout/course":"layout/course.vue","./layout/project":"layout/project.vue","./layout/learningAndJob":"layout/learningAndJob.vue","./layout/experience":"layout/experience.vue","./layout/teacher":"layout/teacher.vue","./layout/poster":"layout/poster.vue","./layout/tabNavigator":"layout/tabNavigator.vue","./lib/config":"lib/config.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -53153,7 +53357,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39485" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

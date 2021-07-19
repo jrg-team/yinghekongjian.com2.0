@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <section class="experience-wrapper" :class="{'section-margin': enable}">
+    <section class="experience-wrapper" :class="{'section-margin': enable, 'default-margin': !enabled}">
       <template v-if="enable">
         <div class="title title-margin">
           <h3>让真实数据说话</h3>
@@ -99,8 +99,8 @@
   section.experience-wrapper {
     margin: 0 auto;
     position: relative;
-    max-width: 980px;
-    .row {display: flex; align-items: center;}
+    max-width: $content-max-width;
+    .row {display: flex; align-items: center; overflow: auto;}
     .row > .col {
       max-width: 50%;
       flex: 1;
@@ -239,5 +239,8 @@
       color: $blue;
       font-size: 14px;
     }
+  }
+  .default-margin {
+    padding: 0 20px;
   }
 </style>

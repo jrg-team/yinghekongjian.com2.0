@@ -1235,6 +1235,7 @@ section.experience-wrapper[data-v-862de2] {
 section.experience-wrapper .row[data-v-862de2] {
   display: flex;
   align-items: center;
+  overflow: auto;
 }
 section.experience-wrapper .row > .col[data-v-862de2] {
   max-width: 50%;
@@ -1407,6 +1408,9 @@ section.contact-download-wrapper div.text-wrapper > i.iconfont[data-v-862de2] {
   cursor: pointer;
   color: #3475C6;
   font-size: 14px;
+}
+.default-margin[data-v-862de2] {
+  padding: 0 20px;
 }
 /**
  * Swiper 4.5.1
@@ -2153,6 +2157,101 @@ section.teacher-wrapper .article-wrapper article > .teacher-introduction a {
 .poster[data-v-07f994] {
     max-width: 90vw;
 }
+}
+.tab-wrapper[data-v-4bacc3] {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.33;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+.tab-wrapper .swiper-slide[data-v-4bacc3] {
+  width: 260px !important;
+  overflow: hidden;
+  margin: 20px;
+  padding: 10px;
+  height: auto;
+  border-radius: 4px;
+  text-align: center;
+}
+.tab-wrapper .swiper-slide.custom[data-v-4bacc3] {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  padding: 10px;
+}
+.tab-wrapper .swiper-slide.custom.active[data-v-4bacc3] {
+  opacity: 1;
+}
+.tab-wrapper .swiper-slide.custom div.name[data-v-4bacc3] {
+  padding: 10px 0;
+}
+.tab-wrapper .swiper-slide[data-v-4bacc3]:hover {
+  color: #3475C6;
+}
+.tab-wrapper .swiper-slide.active[data-v-4bacc3] {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
+}
+.tab-wrapper .swiper-slide .image-wrapper[data-v-4bacc3] {
+  display: inline-block;
+  width: 100%;
+  height: calc(260px * 0.45);
+  background-position: center;
+  background-size: cover;
+}
+.tab-wrapper.mobile[data-v-4bacc3] {
+  line-height: 1.33;
+  font-weight: 400;
+  font-size: 12px;
+}
+.tab-wrapper.mobile .swiper-slide[data-v-4bacc3] {
+  width: 100px !important;
+  margin: 7.5px;
+}
+.tab-wrapper.mobile .swiper-slide div.name[data-v-4bacc3] {
+  padding: 0;
+}
+.tab-wrapper.mini-tab[data-v-4bacc3] {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 0 1px;
+  z-index: 2;
+}
+.tab-wrapper.mini-tab .swiper-slide[data-v-4bacc3] {
+  margin: 10px;
+}
+@media (min-width: 500px) {
+.tab-wrapper.mini-tab .swiper-slide[data-v-4bacc3] {
+    width: 200px !important;
+}
+}
+.tab-wrapper .fade-enter-active[data-v-4bacc3] {
+  transition: opacity 0.2s ease 0.2s;
+  transform: scale(1);
+}
+.tab-wrapper .fade-leave-active[data-v-4bacc3] {
+  transition: opacity 0.2s ease;
+  transform: scale(1);
+}
+.tab-wrapper .fade-enter[data-v-4bacc3],
+.tab-wrapper .fade-leave-to[data-v-4bacc3] {
+  opacity: 0;
+}
+.fade-enter-active[data-v-4bacc3],
+.fade-leave-active[data-v-4bacc3] {
+  transition: opacity 0.3s ease;
+}
+.fade-enter[data-v-4bacc3], .fade-leave-to[data-v-4bacc3] {
+  opacity: 0;
+}
+.tab-navigator-wrapper[data-v-4bacc3] {
+  margin-top: 20px;
+  margin-bottom: -30px;
 }
 
 /*# sourceMappingURL=/yinghekongjian.com2.0.e31bb0bc.css.map */

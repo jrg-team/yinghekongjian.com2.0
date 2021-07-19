@@ -10,6 +10,7 @@ import Learning from './layout/learningAndJob'
 import Experience from './layout/experience'
 import Teacher from './layout/teacher'
 import Poster from './layout/poster'
+import TabNavigator from './layout/tabNavigator'
 import {titleConfig} from './lib/config'
 
 new Vue({
@@ -24,7 +25,8 @@ new Vue({
     Learning,
     Experience,
     Teacher,
-    Poster
+    Poster,
+    TabNavigator
   },
   data() {
     return {

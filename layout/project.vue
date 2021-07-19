@@ -167,7 +167,7 @@ export default {
   }
   .row {
     display: flex;
-    max-width: 980px;
+    max-width: $content-max-width;
     left: 0;
     right: 0;
     margin: 0 auto;

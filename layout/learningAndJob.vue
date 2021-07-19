@@ -113,7 +113,7 @@ export default {
 .learning-wrapper {
   background-color: $v-popover-white;
   .text-wrapper {
-    max-width: 980px;
+    max-width: $content-max-width;
     position: relative;
     left: 0;
     right: 0;

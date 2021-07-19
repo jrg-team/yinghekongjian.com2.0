@@ -1,0 +1,99 @@
+@import "vars";
+$slider-width: 150px !default;
+$slider-margin: 20px !default;
+$slider-name-font-size: 12px !default;
+$mini-slider-width: $slider-width !default;
+$mini-slider-margin: $slider-margin !default;
+$mini-slider-name-font-size: $slider-name-font-size !default;
+
+.tab-wrapper {
+  position: relative;
+  cursor: pointer;
+  font-size: $slider-name-font-size;
+  color: #333;
+  line-height: 1.33;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  .swiper-slide {
+    width: $slider-width !important;
+    overflow: hidden;
+    margin: $slider-margin;
+    padding: 10px;
+    height: auto;
+    border-radius: 4px;
+    text-align: center;
+    &.custom {
+      background: rgba(0, 0, 0, 0.1);
+      opacity: 0.6;
+      padding: 10px;
+      &.active {
+        opacity: 1;
+      }
+      div.name {
+        padding: 10px 0;
+      }
+    }
+    &:hover {
+      color: $blue;
+    }
+    &.active {
+      background: rgba(0, 0, 0, 0.03);
+      font-weight: $font-bold;
+    }
+    .image-wrapper {
+      display: inline-block;
+      width: 100%;
+      height: calc(#{$slider-width} * 0.45);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &.mobile {
+    line-height: 1.33;
+    font-weight: 400;
+    font-size: $mini-slider-name-font-size;
+    .swiper-slide {
+      width: $mini-slider-width !important;
+      margin: $mini-slider-margin;
+      div.name {
+        padding: 0;
+      }
+    }
+  }
+  &.mini-tab {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 0 1px;
+    z-index: 2;
+    .swiper-slide {
+      margin: 10px;
+      @media (min-width: 500px) {
+        width: 200px !important;
+      }
+    }
+  }
+  .fade-enter-active {
+    transition: opacity 0.2s ease 0.2s;
+    transform: scale(1);
+  }
+  .fade-leave-active {
+    transition: opacity 0.2s ease;
+    transform: scale(1);
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter, .fade-leave-to
+  /* .component-fade-leave-active for below version 2.1.8 */ {
+  opacity: 0;
+}

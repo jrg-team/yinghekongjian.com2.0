@@ -42,18 +42,25 @@
   }
 }
 
-#cplusplus-course-target-3 {
-  margin-top: 30px;
+.cplusplus-course-advantage li {
+  list-style: none;
+  text-indent: 0 !important;
+  margin-left: 0 !important;
 }
+
+.cplusplus-course-margin-bottom {
+  margin-bottom: 20px;
+}
+
+.course-target-title {
+  margin: 10vh 0 20px 0;
+}
+
 @media (max-width: 499px) {
-  #cplusplus-course-target-3 {
-    margin-top: -30px;
+  .course-target-title {
+    margin: 30px 0 20px 0;
+  }
+  .cplusplus-course-target {
     margin-bottom: 30px;
-  }
-  #cplusplus-course-target-1 {
-    margin-bottom: 20px;
-  }
-  #cplusplus-course-description-first-title {
-    margin-top: 20px;
   }
 }
