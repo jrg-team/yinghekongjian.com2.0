@@ -20,6 +20,7 @@
         </a>
       </div>
     </nav>
+    <div v-if="pcWhiteNavbarFixed" style="height: 66px"></div>
     <nav class="white-navigator pc" :class="{fixed: pcWhiteNavbarFixed}">
       <div class="content">
         <a :href="link">

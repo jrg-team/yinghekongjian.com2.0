@@ -4,24 +4,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title><%= {jirengu: "饥人谷官网",  yinghekongjian: "硬核空间官网", cplusplus: "饥人谷C++官网"}[process.env.BUILD_FLAG] %></title>
-  <% if (process.env.BUILD_FLAG === 'jirengu') { %>
-    <meta name="keywords" content="饥人谷前端, 前端培训, Java培训, 算法培训, 靠谱的前端培训, 好的前端培训, 饥人谷, 前端培训机构, 专业的前端培训, 前端, Java, Node.js, HTML5">
+  <title>
+    <%= {jirengu: "饥人谷官网" , yinghekongjian: "硬核空间官网" , cplusplus: "饥人谷C++官网" }[process.env.BUILD_FLAG] %>
+  </title>
+  <% if (process.env.BUILD_FLAG==='jirengu' ) { %>
+    <meta name="keywords"
+      content="饥人谷前端, 前端培训, Java培训, 算法培训, 靠谱的前端培训, 好的前端培训, 饥人谷, 前端培训机构, 专业的前端培训, 前端, Java, Node.js, HTML5">
     <meta name="description" content="饥人谷，培训前端工程师、Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
-  <% } %>
-  <% if (process.env.BUILD_FLAG === 'yinghekongjian') { %>
-    <meta name="keywords"
-        content="硬核空间, 硬核空间Java, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
-    <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
-  <% } %>
-  <% if (process.env.BUILD_FLAG === 'cplusplus') { %>
-    <meta name="keywords"
-        content="饥人谷C++, C++, C加加, C++培训, 算法培训, C, 靠谱的C++培训, 好的C++培训, 饥人谷, 前端培训机构, 高级编程, 基础架构, 基础服务">
-    <meta name="description" content="饥人谷，培训C++工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
-  <% } %>
-  <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-  <link rel="stylesheet" href="./css/mode.scss">
+    <% } %>
+      <% if (process.env.BUILD_FLAG==='yinghekongjian' ) { %>
+        <meta name="keywords"
+          content="硬核空间, 硬核空间Java, 硬核空间培训, Java培训, 算法培训, 靠谱的Java培训, 好的Java培训, 饥人谷, Java培训机构, 专业的Java培训, 前端, Java, Node.js, spring, Maven, Gradle, HTML5">
+        <meta name="description" content="硬核空间，培训Java工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+        <% } %>
+          <% if (process.env.BUILD_FLAG==='cplusplus' ) { %>
+            <meta name="keywords"
+              content="饥人谷C++, C++, C加加, C++培训, 算法培训, C, 靠谱的C++培训, 好的C++培训, 饥人谷, 前端培训机构, 高级编程, 基础架构, 基础服务">
+            <meta name="description" content="饥人谷，培训C++工程师、算法工程师，老师来自百度、腾讯、阿里、亚马逊、网易等一线互联网公司">
+            <% } %>
+              <meta name="viewport" charset="UTF-8" content="user-scalable=no" />
+              <meta name="viewport"
+                content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+              <link rel="stylesheet" href="./css/mode.scss">
 </head>
 
 <body>
@@ -30,32 +34,35 @@
     <img :src="$cdn(course_mode.imageUrl)" alt="" class="banner pc">
     <img :src="$cdn(course_mode.imageUrlPhone)" alt="" class="banner mobile">
     <picture-text-list title="课程安排与学习模式" :listdata="course_mode.arrangements"></picture-text-list>
-    <h3 class="pc" id="class-indicator">除了以上。还有</h3>
-    <h3 class="mobile">除了以上。还有</h3>
-    <section class="pc additions">
-      <div :key="index" v-for="addition,index in course_mode.additions" class="addition">
-        <div class="imgWrapper">
-          <img :src="$cdn(addition.image_url)" alt="">
+    <template v-if="course_mode.additions && course_mode.additions.length">
+      <h3 class="pc" id="class-indicator">除了以上。还有</h3>
+      <h3 class="mobile">除了以上。还有</h3>
+      <section class="pc additions">
+        <div :key="index" v-for="addition,index in course_mode.additions" class="addition">
+          <div class="imgWrapper">
+            <img :src="$cdn(addition.image_url)" alt="">
+          </div>
+          <div class="content">
+            <div class="md-wrapper" v-html="marked(addition.content)"></div>
+          </div>
         </div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(addition.content)"></div>
+      </section>
+      <section class="mobile additions">
+        <div :key="index" v-for="addition,index in course_mode.additions" class="addition">
+          <div class="imgWrapper">
+            <img :src="$cdn(addition.image_url)" alt="">
+          </div>
+          <div class="content">
+            <div class="md-wrapper" v-html="marked(addition.content)"></div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="mobile additions">
-      <div :key="index" v-for="addition,index in course_mode.additions" class="addition">
-        <div class="imgWrapper">
-          <img :src="$cdn(addition.image_url)" alt="">
-        </div>
-        <div class="content">
-          <div class="md-wrapper" v-html="marked(addition.content)"></div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </template>
     <h2 class="pc" id="job-indicator">保障与就业</h2>
     <h3 class="mobile" id="promise-indicator">保障与就业</h3>
     <section class="pc guarantees">
-      <div :key="index" :class="{odd: index % 2 === 0}" class="guarantee" v-for="guarantee,index in course_mode.guarantees">
+      <div :key="index" :class="{odd: index % 2 === 0}" class="guarantee"
+        v-for="guarantee,index in course_mode.guarantees">
         <div class="content">
           <div class="md-wrapper" v-html="marked(guarantee.content)"></div>
         </div>
